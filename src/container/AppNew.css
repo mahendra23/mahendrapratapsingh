@@ -1,0 +1,10 @@
+.App-new {
+  min-width: 100%;
+  align-items: center;
+}
+.App-new-body {
+  min-width: 100%;
+  min-height: 100%;
+  align-items: center;
+  justify-content: center;
+}

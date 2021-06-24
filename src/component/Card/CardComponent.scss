@@ -1,0 +1,53 @@
+.Card-image {
+    height: 20vmin;
+    border-radius: 50%;
+}
+
+.Card-container {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1em;
+    background: #0483d8;
+    border-radius: 0.4em;
+    margin-top: 5%;
+    margin-left: 20%;
+}
+
+.Card-container-text {
+    color: white;
+    font-style: italic;
+}
+
+.Card-header{
+    display:flex;
+    flex-direction:row;
+    width:100%;
+  }
+
+.Card-title{
+    position: relative;
+    left: 10%;
+    font-size: 50px;
+    font-weight: bold;
+    color: #0483d8;
+}
+
+.Card-title-shape {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left: 10%;
+    height: 15%;
+    width: 60%;
+    border-radius:50%;
+    background: white;
+}
+
+.Card-description{
+    max-width:100%;
+    padding:1em;
+    word-wrap:break-word;
+    white-space: pre;
+}

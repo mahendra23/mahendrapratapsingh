@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/mahen-portfolio-app/static/css/main.7c8627d6.chunk.css",
+    "main.js": "/mahen-portfolio-app/static/js/main.3081eeaa.chunk.js",
+    "main.js.map": "/mahen-portfolio-app/static/js/main.3081eeaa.chunk.js.map",
+    "runtime-main.js": "/mahen-portfolio-app/static/js/runtime-main.5ca48f0a.js",
+    "runtime-main.js.map": "/mahen-portfolio-app/static/js/runtime-main.5ca48f0a.js.map",
+    "static/js/2.9fca0d13.chunk.js": "/mahen-portfolio-app/static/js/2.9fca0d13.chunk.js",
+    "static/js/2.9fca0d13.chunk.js.map": "/mahen-portfolio-app/static/js/2.9fca0d13.chunk.js.map",
+    "index.html": "/mahen-portfolio-app/index.html",
+    "static/css/main.7c8627d6.chunk.css.map": "/mahen-portfolio-app/static/css/main.7c8627d6.chunk.css.map",
+    "static/js/2.9fca0d13.chunk.js.LICENSE.txt": "/mahen-portfolio-app/static/js/2.9fca0d13.chunk.js.LICENSE.txt",
+    "static/media/Mahen.dd822d5f.jpg": "/mahen-portfolio-app/static/media/Mahen.dd822d5f.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5ca48f0a.js",
+    "static/js/2.9fca0d13.chunk.js",
+    "static/css/main.7c8627d6.chunk.css",
+    "static/js/main.3081eeaa.chunk.js"
+  ]
+}

@@ -1,23 +1,22 @@
-import React from 'react';
-import logo from './images/Mahen.jpg';
+import React, { useState, useEffect } from "react";
 import './App.css';
-import { GitReposListContainer } from './container/GitRepos/GitReposListContainer';
-import { QueryClient, QueryClientProvider } from 'react-query';
-
-const queryClient = new QueryClient();
+import Preloader from "./component/preloader/Preloader";
+import Home from "./sections/Home/Home";
 
 function App() {
+  const [load, upadateLoad] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      upadateLoad(false);
+    }, 1000);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <a aria-current="page" href="/">
-          <img src={logo} className="mahen-logo" alt="logo" />
-          <span className="mahen-head">Mahen</span>
-        </a>
-      </header>
-      <QueryClientProvider client={queryClient}>
-        <GitReposListContainer />
-      </QueryClientProvider>
+    <div>
+      <Preloader load={load} />
+      <div className="App">
+        <Home />
+      </div>
     </div>
   );
 }

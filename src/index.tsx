@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import AppNew from './container/AppNew';
+import App from './App';
 
 import { worker } from './api-mocks/browser';
 worker.start();
 
 ReactDOM.render(
   <React.StrictMode>
-    <AppNew />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

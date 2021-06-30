@@ -1,0 +1,135 @@
+@import "../../globalColor";
+
+.Welcome-section {
+    flex-grow: 1;
+    width: 100%;
+    height:90vh;
+    text-align: left;
+    background-color: $darkBackground;
+    background-image: url("../../images/home/home-bg3.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.Welcome-section-text {
+  flex-grow: 1;
+  width: 50%;
+  height:80vh;
+  position: relative;
+  top: 3%;
+  left: 50%;
+}
+
+.Welcome-heading {
+  font-size: $headingFontSize;
+  font-style: italic !important;
+  font-weight: bold;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+}
+
+.Welcome-name {
+  font-size: $headingFontSize;
+  font-style: italic !important;
+  font-weight: bold;
+  position: absolute;
+  top: 25%;
+  left: 10%;
+}
+
+.Welcome-desc {
+  font-size: $headingFontSize;
+  position: absolute;
+  top: 40%;
+  left: 10%;
+}
+
+.Welcome-type {
+  position: absolute;
+  top: 75%;
+  left: 10%;
+}
+
+.Typewriter__wrapper {
+  font-size: 2.2em !important;
+  font-weight: 600 !important;
+}
+
+.Typewriter__cursor {
+  font-size: 2.4em !important;
+}
+
+@media (max-width: 767px) {
+  .Typewriter__wrapper {
+    font-size: 1.4em !important;
+    font-weight: 500 !important;
+    position: absolute !important;
+  }
+  .Typewriter__cursor {
+    display: none !important;
+  }
+  .Welcome-heading {
+    font-size: 1.8em !important;
+    font-style: italic !important;
+    font-weight: bold;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+  }
+  .Welcome-name {
+    font-size: 1.8em !important;
+    font-style: italic !important;
+    font-weight: bold;
+    position: absolute;
+    top: 25%;
+    left: 10%;
+  }
+  .Welcome-desc {
+    font-size: 1.8em !important;
+    position: absolute;
+    top: 40%;
+    left: 10%;
+  }
+}
+.Welcome-section-text-img {
+  width: 100%;
+}
+
+  
+  
+  .Welcome-wave {
+    animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
+    animation-duration: 2.1s; /* Change to speed up or slow down */
+    animation-iteration-count: infinite; /* Never stop waving :) */
+    transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
+    display: inline-block;
+  }
+  
+  @keyframes wave-animation {
+    0% {
+      transform: rotate(0deg);
+    }
+    10% {
+      transform: rotate(14deg);
+    } /* The following five values can be played with to make the waving more or less extreme */
+    20% {
+      transform: rotate(-8deg);
+    }
+    30% {
+      transform: rotate(14deg);
+    }
+    40% {
+      transform: rotate(-4deg);
+    }
+    50% {
+      transform: rotate(10deg);
+    }
+    60% {
+      transform: rotate(0deg);
+    } /* Reset for the last half to pause */
+    100% {
+      transform: rotate(0deg);
+    }
+  }

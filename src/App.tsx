@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import './App.css';
-import Preloader from "./component/preloader/Preloader";
-import Home from "./sections/Home/Home";
+import './App.scss';
+import HomeLayout from "./components/homelayout/HomeLayout";
+import Preloader from "./components/preloader/Preloader";
 
 function App() {
   const [load, upadateLoad] = useState(true);
@@ -15,7 +15,7 @@ function App() {
     <div>
       <Preloader load={load} />
       <div className="App">
-        <Home />
+        <HomeLayout />
       </div>
     </div>
   );

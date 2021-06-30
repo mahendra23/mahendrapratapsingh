@@ -3,9 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
-import { worker } from './api-mocks/browser';
-worker.start();
-
 ReactDOM.render(
   <React.StrictMode>
     <App />

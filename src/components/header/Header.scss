@@ -1,0 +1,9 @@
+@import "../../globalColor";
+
+.Header-button:hover {
+    background-color: $buttonColor !important;
+}
+
+.Header-button {
+    padding: 15px 20px;
+}

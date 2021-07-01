@@ -1,6 +1,8 @@
 import React, { ReactElement } from 'react'
 import "./WelcomeSection.scss";
 import Type from "./Type";
+import ArrowDropDownCircleRoundedIcon from '@material-ui/icons/ArrowDropDownCircleRounded';
+import Header from '../header/Header';
 
 // export default function WelcomeSection(): ReactElement {
 //     return (
@@ -25,6 +27,7 @@ import Type from "./Type";
 export default function WelcomeSection(): ReactElement {
     return (
         <div className="Welcome-section" id="welcome-section">
+            <Header />
             <div id="Welcome-section-text" className="Welcome-section-text">
                 <p className="Welcome-heading">Hi There! <span className="Welcome-wave">👋</span></p>
                 <p className="Welcome-name">I'M MAHENDRA PRATAP SINGH</p>

@@ -1,6 +1,3 @@
-/* Change colors in this file to style to your needs on a global level. 
-Certain colors are used for different and multiply types of elements. 
-For greater control over colors visit each components .scss file. */
 //my blue color
 $myBlue: #0483d8;
 
@@ -9,9 +6,10 @@ $darkBackground: #000000;
 
 //Text
 $headingFontSize: 2.7em !important;
-$normalFontSize: 2.7em !important;
-$textColor: #ffffff;
-
+$normalFontSize: 1.8em !important;
+$smallFontSize: 1.2em !important;
+$textColor: whitesmoke;
+$textColorDark: #000000;
 
 
 
@@ -23,14 +21,13 @@ $topButtonHover: #000;
 
 // text colors light theme
 $titleColor: #0671af;
-$textColor: #000000;
 $subTitle: #868e96;
 $cardSubtitle: #666666;
 $talkCardSubTitle: #7f8287;
 $blogCardTitleColor: #262626;
 
 // text color dark theme
-$textColorDark: #ffffff;
+// $textColorDark: #ffffff;
 
 // toggle switch colors
 $toggleCheck: #2196f3;

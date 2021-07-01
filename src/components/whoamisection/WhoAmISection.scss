@@ -1,0 +1,71 @@
+@import "../../globalColor";
+
+.Whoami-section {
+    flex-grow: 1;
+    width: 100%;
+    height: 100vh;
+    background-color: $darkBackground;
+    color: $textColor;
+}
+
+.Whoami-section-heading {
+    font-size: $headingFontSize;
+    font-style: italic !important;
+    font-weight: bold;
+    position: relative;
+    top: 3%;
+}
+.Whoami-section-image-container {
+    flex-grow: 1;
+    position: relative;
+    top: 10%;
+    left: -35%;
+}
+
+.Whoami-section-image {
+    height: 20vh;
+    border-radius: 50%;
+}
+
+.Whoami-section-text-container {
+    font-size: $smallFontSize;
+    flex-grow: 1;
+    width: 55%;
+    height:auto;
+    position: relative;
+    top: -15%;
+    left: 35%;
+    text-align: left;
+}
+
+@media (max-width: 767px) {
+    .Whoami-section-heading {
+        font-size: $headingFontSize;
+        font-style: italic !important;
+        font-weight: bold;
+        position: relative;
+        top: 5%;
+    }
+    .Whoami-section-image-container {
+        flex-grow: 1;
+        position: relative;
+        top: 15%;
+        left: -35%;
+    }
+    .Whoami-section-image {
+        height: 20vh;
+        border-radius: 50%;
+    }   
+}
+
+.Whoami-section-button {
+    // flex-grow: 1;
+    width: 50;
+    height: 35;
+    border-radius: 5%;
+    font-size: $smallFontSize;
+    font-style: italic !important;
+    font-weight: bold;
+    background-color: $myBlue;
+    background-size: cover;
+}

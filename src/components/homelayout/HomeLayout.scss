@@ -1,8 +1,4 @@
 .Home-layout {
-  display: flex;
-  flex-direction: column;
-}
-.Home-layout {
-  display: flex;
-  flex-direction: column;
+  flex-grow: 1;
+  overflow: hidden;
 }

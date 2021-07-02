@@ -1,41 +1,23 @@
 import React, { ReactElement } from 'react'
-import "./WelcomeSection.scss";
+import Grid from '@material-ui/core/Grid';
 import Type from "./Type";
-import ArrowDropDownCircleRoundedIcon from '@material-ui/icons/ArrowDropDownCircleRounded';
-import Header from '../header/Header';
-
-// export default function WelcomeSection(): ReactElement {
-//     return (
-//         <div className="Welcome-section" id="welcome-section">
-//             <Grid container spacing={7}>
-//                 <Grid item xs={7} id="Welcome-section-text" className="Welcome-section-text">
-//                     <p className="Welcome-heading">Hi There! <span className="Welcome-wave">👋</span></p>
-//                     <p className="Welcome-heading">I'M MAHENDRA PRATAP SINGH</p>
-//                     <p className="Welcome-desc">A passionate Full Stack Automation Engineer 🚀 +</p>
-//                     <div style={{ padding: 50, textAlign: "left" }}>
-//                         <Type />
-//                     </div>
-//                 </Grid>
-//                 {/* <Grid item xs={5} id="Welcome-section-image" className="Welcome-section-image">
-//                      <img id="welcome-image" src={welcomeimage} className="Welcome-image" alt="home" />
-//                 </Grid> */}
-//             </Grid>
-//         </div>
-//     )
-// }
+import "./WelcomeSection.scss";
 
 export default function WelcomeSection(): ReactElement {
     return (
-        <div className="Welcome-section" id="welcome-section">
-            <Header />
-            <div id="Welcome-section-text" className="Welcome-section-text">
-                <p className="Welcome-heading">Hi There! <span className="Welcome-wave">👋</span></p>
-                <p className="Welcome-name">I'M MAHENDRA PRATAP SINGH</p>
-                <p className="Welcome-desc">A passionate Full Stack Automation Engineer 🚀 +</p>
-                <div className="Welcome-type">
-                    <Type />
-                </div>
-            </div>
+        <div className="welcomesection">
+            <Grid container spacing={1}>
+                <Grid item xs={12} className="welcometext">
+                    <p className="welcome">Hi There! <span className="Welcome-wave">👋</span></p>
+                    <p className="welcomename">I'M MAHENDRA PRATAP SINGH</p>
+                    <p className="welcomedesc">A passionate Full Stack Automation Engineer 🚀 +</p>
+                </Grid>
+                <Grid item xs={12}>
+                    <div className="welcometype">
+                        <Type />
+                    </div>
+                </Grid>
+            </Grid>
         </div>
     )
 }

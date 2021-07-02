@@ -1,71 +1,84 @@
 @import "../../globalColor";
 
-.Whoami-section {
-    flex-grow: 1;
+.whoamisection {
     width: 100%;
-    height: 100vh;
-    background-color: $darkBackground;
+    height: autto;
+    display: flex;
     color: $textColor;
+    flex-direction: column;
+    padding: 20px;
 }
 
-.Whoami-section-heading {
+.whoamisection-heading-container {
     font-size: $headingFontSize;
-    font-style: italic !important;
-    font-weight: bold;
+    display: flex;
     position: relative;
-    top: 3%;
-}
-.Whoami-section-image-container {
-    flex-grow: 1;
-    position: relative;
-    top: 10%;
-    left: -35%;
+    left: 40%;
+    line-height: 1px;
 }
 
-.Whoami-section-image {
+.whoamisection-desc-container {
+    font-size: $smallFontSize;
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
+}
+
+.whoamisection-desc-image-container {
+    position: relative;
+    left: 10%;
+}
+
+.whoamisection-desc-image {
     height: 20vh;
     border-radius: 50%;
 }
 
-.Whoami-section-text-container {
-    font-size: $smallFontSize;
-    flex-grow: 1;
-    width: 55%;
-    height:auto;
+.whoamisection-desc-detail {
+    max-width: 100%;
     position: relative;
-    top: -15%;
-    left: 35%;
-    text-align: left;
+    left: 20%;
+}
+
+.downloadResume-button {
+    width:200px;
+    height: 50px;
+    background-color: $mylightBlue;
+    font-size: $xsmallFontSize;
+    font-weight: bold;
+    color: $textColor;
 }
 
 @media (max-width: 767px) {
-    .Whoami-section-heading {
-        font-size: $headingFontSize;
-        font-style: italic !important;
-        font-weight: bold;
+    .whoamisection-heading-container {
+        font-size: $normalFontSize;
+        display: flex;
         position: relative;
-        top: 5%;
+        left: 23%;
     }
-    .Whoami-section-image-container {
-        flex-grow: 1;
-        position: relative;
-        top: 15%;
-        left: -35%;
-    }
-    .Whoami-section-image {
-        height: 20vh;
-        border-radius: 50%;
-    }   
-}
 
-.Whoami-section-button {
-    // flex-grow: 1;
-    width: 50;
-    height: 35;
-    border-radius: 5%;
-    font-size: $smallFontSize;
-    font-style: italic !important;
-    font-weight: bold;
-    background-color: $myBlue;
-    background-size: cover;
+    .whoamisection-desc-container {
+        font-size: $smallFontSize;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .whoamisection-desc-image-container {
+        position: relative;
+        left: 27%;
+    }
+
+    .whoamisection-desc-image {
+        height: 15vh;
+        border-radius: 50%;
+    }
+
+    .whoamisection-desc-detail {
+        max-width: 90%;
+        position: relative;
+        left: 2%;
+        padding:5px;
+    }
 }

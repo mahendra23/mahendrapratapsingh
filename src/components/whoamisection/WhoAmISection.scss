@@ -2,9 +2,9 @@
 
 .whoamisection {
     width: 100%;
-    height: autto;
+    height: 90vh;
     display: flex;
-    color: $textColor;
+    color: $textColorLight;
     flex-direction: column;
     padding: 20px;
 }
@@ -13,7 +13,7 @@
     font-size: $headingFontSize;
     display: flex;
     position: relative;
-    left: 40%;
+    left: 35%;
     line-height: 1px;
 }
 
@@ -21,7 +21,8 @@
     font-size: $smallFontSize;
     text-align: left;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    position: relative;
 }
 
 .whoamisection-desc-image-container {
@@ -30,14 +31,20 @@
 }
 
 .whoamisection-desc-image {
-    height: 20vh;
+    height: 30vh;
     border-radius: 50%;
 }
 
 .whoamisection-desc-detail {
-    max-width: 100%;
+    max-width: 60%;
     position: relative;
-    left: 20%;
+    left: 15%;
+}
+
+.whoamisection-downloadResume-container {
+    position: relative;
+    top: 20%;
+    padding: 20px;
 }
 
 .downloadResume-button {
@@ -46,7 +53,7 @@
     background-color: $mylightBlue;
     font-size: $xsmallFontSize;
     font-weight: bold;
-    color: $textColor;
+    color: $textColorLight;
 }
 
 @media (max-width: 767px) {

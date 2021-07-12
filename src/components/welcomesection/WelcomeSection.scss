@@ -1,17 +1,56 @@
 @import "../../globalColor";
 
-.Welcome-section {
-  flex-grow: 1;
+.welcomesection {
   width: 100%;
-  height:100vh;
+  height: 100vh;
+  display: flex;
+  color: $textColorLight;
+  padding: 20px;
+  background-image: linear-gradient(to right, $mylightBlue, black);
   text-align: left;
-  background-color: $darkBackground;
-  background-image: url("../../images/home/home-bg3.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  color: $textColorDark;
-  align-self: right;
+  word-wrap: break-word;
+  position: relative;
+}
+
+.welcomesection-text-container {
+  width: 100%;
+  height: 50%;
+  position: relative;
+  left: 5%;
+  top: 15%;
+  line-height: -5px;
+}
+
+.welcome {
+  font-size: $headingFontSize;
+  font-style: italic !important;
+  font-weight: bold;
+}
+
+.welcomename {
+  font-size: $headingFontSize;
+  font-style: italic !important;
+  font-weight: bold;
+}
+
+.welcomedesc {
+  font-size: $headingFontSize;
+  font-style: italic !important;
+  font-weight: bold;
+}
+
+.welcomesection-image-container {
+  display: flex;
+}
+
+.welcomesection-image-container img {
+  display: flex;
+  height: 60vh;
+  width: 70%;
+
+  position: relative;
+  top: 20%;
+  left: 20%;
 }
 
 .Typewriter__wrapper {
@@ -57,59 +96,69 @@
   }
 }
 
-.welcomesection {
-  flex-grow: 1;
-  width: 100%;
-  height: 100vh;
-  color: $textColorDark;
-  background-image: url("../../images/home/home-bg2.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size:cover;
-  text-align: left;
-  word-wrap: break-word;
-};
-.welcometext {
-  font-size: $headingFontSize;
-  font-style: italic !important;
-  font-weight: bold;
-};
-.welcome {
-  position: relative;
-  left: 50%;
-}
-.welcomename {
-  position: relative;
-  left: 40%;
-}
-.welcomedesc {
-  position: relative;
-  left: 29%;
-};
-.welcometype {
-  position: relative;
-  left: 50%;
-}
 @media (max-width: 767px) {
   .Typewriter__wrapper {
     font-size: 1.4em !important;
     font-weight: 500 !important;
-    // position: absolute !important;
   }
   .Typewriter__cursor {
     display: none !important;
   }
+  .welcomesection {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: $textColorLight;
+    padding: 5px;
+    background-image: linear-gradient(to right, $mylightBlue, black);
+    text-align: left;
+    word-wrap: break-word;
+    position: relative;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  
+  .welcomesection-text-container {
+    width: 90%;
+    height: 50%;
+    position: relative;
+    left: 5%;
+    top: 5%;
+    line-height: -5px;
+  }
+  
   .welcome {
-    font-size: 1.0em !important;
+    font-size: $normalFontSize;
     font-style: italic !important;
     font-weight: bold;
   }
+  
   .welcomename {
-    font-size: 1.0em !important;
+    font-size: $normalFontSize;
     font-style: italic !important;
     font-weight: bold;
   }
+  
   .welcomedesc {
-    font-size: 0.8em !important;
+    font-size: $smallFontSize;
+    font-style: italic !important;
+    font-weight: bold;
+  }
+  
+  .welcomesection-image-container {
+    position: relative;
+    top: 0%;
+    left: 10%;
+    align-self: flex-start;
+    justify-content: flex-start;
+  }
+  
+  .welcomesection-image-container img {
+    height: 40vh;
+    width: 80%;
+    position: relative;
+    left: 0%;
+    top: 10%;
   }
 }

@@ -1,111 +1,109 @@
 @import "../../globalColor";
 
 .experiencesection {
+    color: $textColorLight;
+    min-height: 100vh;
     width: 100%;
-    height: auto;
     display: flex;
     flex-direction: column;
-    position: relative;
-    color: $textColorLight;
-    padding: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
-.experiencesection-heading-container {
+.experiencesection-heading {
     font-size: $headingFontSize;
-    display: flex;
-    position: relative;
-    left: 35%;
-    line-height: 1px;
+    align-items: center;
+    justify-content: center;
+    margin: 10;
 }
 
 .experiencesection-timeline-container {
-    display: flex;
-    flex-direction: column;
+    width: 90%;
+    height: auto;
+    max-width: 800px;
+    margin: 0 auto;
     position: relative;
-    left: 20%;
-    width: 60%;
-    margin: 10px 0;
+    // background-color: rgb(132, 73, 155);
 }
 
-.experiencesection-timeline-container::after {
-    background-color:$mylightBlue;
+.experiencesection-timeline-container::before {
+    background-color: white;
     content:'';
     width: 5px;
-    height: 100%;
+    height: 99%;
     position: absolute;
-    left: calc(50% - 5px);
+    left: 12px;
+    top: 10px;
 }
 
-.experience-item-container {
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 10px;
-    padding-left: 10px;
-    margin: 20px 0;
-    width: 35%;
-    position: relative;
+.experiencesection-timeline-container ul{
+    list-style: none;
+    padding-right: 25px;
 }
 
-.experience-item-container:nth-child(odd) {
-    align-self: flex-end;
-    justify-content: flex-start;
-    padding-right: 10px;
-    padding-left: 10px;
+.experiencesection-timeline-container ul li {
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 75px;
+    margin-left: 100px;
+    background-color: $myBlue;
 }
 
-.experience-item-content {
-    text-align: right;
-    background-color: $mylightBlue;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
+.experiencesection-timeline-container ul li::before {
+    content: '';
+    background-color: $myOrange;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+}
+
+.experiencesection-timeline-item-container {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    position: relative;
-}
-
-.experience-item-container:nth-child(odd) .experience-item-content {
-    text-align: left;
     align-items: flex-start;
 }
 
-.experience-item-content .experience-item-circle {
-    background-color: $mylightBlue;
-    border: 3px solid #000399;
-    width: 30px;
-    height: 30px;
+.experiencesection-timeline-item-container p{
+    line-height: 1px;
+}
+
+.experiencesection-timeline-item-container::before {
+    content: '';
+    width: 20px;
+    height: 20px;
     transform: rotate(45deg);
-    position: absolute;
-    top: 30%;
-    right: -178px;
-    z-index: 100;
+    background-color: $myBlue;
+    position: relative;
+    left: -3%;
+
 }
 
-.experience-item-container:nth-child(odd) .experience-item-content .experience-item-circle {
-    right: auto;
-    left: -181px;
-}
+@media (max-width: 767px) {
+    .experiencesection-timeline-container {
+        max-width: 700px;
+    }
 
-.experience-item-content p {
-    font-size: $mediumFontSize;
-    font-style: italic !important;
-    line-height: 4px;
-    margin: 15px 0;
-    padding-right: 10px;
-}
+    .experiencesection-timeline-container::before {
+        position: absolute;
+        left: 15px;
+    }
 
-.experience-item-container:nth-child(odd) .experience-item-content p {
-    padding-left: 10px;
-}
+    .experiencesection-timeline-container ul{
+        padding-right: 5px;
+    }
+    
+    .experiencesection-timeline-container ul li {
+        padding: 10px;
+        border-radius: 20px;
+        margin-bottom: 50px;
+        margin-left: 3px;
+        background-color: $myBlue;
+    }
 
-.experience-item-content time {
-    font-size: $mediumFontSize;
-    font-style: italic !important;
-    line-height: 4px;
-    margin: 15px 0;
-    padding-right: 10px;
-}
-
-.experience-item-container:nth-child(odd) .experience-item-content time {
-    padding-left: 10px;
+    .experiencesection-timeline-container ul li::before {
+        position: absolute;
+        left: 3px;
+    }
 }

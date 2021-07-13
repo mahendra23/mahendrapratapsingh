@@ -9,16 +9,11 @@ interface ExperienceItemProps {
 
 export default function ExperienceItem(data: ExperienceItemProps): ReactElement {
     return (
-        <div className="experience-item-container">
-            <div className="experience-item-content">
-                <time className="experience-item-date">
-                    {data.date}
-                </time>
-                <p>{data.company}</p>
-                <p>{data.title}</p>
-                {data.type && <p>{data.type}</p>}
-                <span className="experience-item-circle" />
-            </div>
+        <div className="experiencesection-timeline-item-container">
+            <h2>{data.title}</h2>
+            <p>{data.company}</p>
+            <p>{data.date}</p>
+            {data.type && <p>{data.type}</p>}
         </div>
     )
 }

@@ -1,9 +1,23 @@
 @import "../../globalColor";
 
-.Header-button:hover {
-    background-color: $buttonColor !important;
+.header-container a:hover {
+    color: $myOrange;
 }
 
-.Header-button {
-    padding: 15px 20px;
+.header-section {
+    height: 50px;
+    width: 100%;
+    background-image: linear-gradient(to right, $mylightBlue, black);
+}
+
+.header-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.header-container a {
+    color: $textColorLight;
+    font-size: $smallFontSize;
+    width: 80px;
 }

@@ -3,7 +3,6 @@ import './App.scss';
 import HomeLayout from "./components/homelayout/HomeLayout";
 import Preloader from "./components/preloader/Preloader";
 
-
 function App() {
   
   const [load, upadateLoad] = useState(true);

@@ -1,0 +1,121 @@
+@import "../../globalColor";
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+
+.aboutmesection {
+    font-family: "Oswald" !important;
+    width: 100%;
+    min-height: 90vh;
+    padding: 1px;
+    margin: 1px;
+    align-items: center;
+    justify-content: center;
+    background-color: $myGray;
+}
+
+.aboutme-container {
+    display: flex;
+    width: 80%;
+    padding: 20px;
+    position: relative;
+    top: 5%;
+    left: 10%;
+}
+
+.aboutme-image-container {
+    margin: 5%;
+    position: relative;
+    left: -5%;
+}
+
+.aboutme-image {
+    border-radius: 50%;
+    height: 30vh;
+}
+
+.aboutme-description-container {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 70%;
+    padding: 10px;
+}
+
+.aboutme-description-container h1{
+    font-size: $headingFontSize;
+}
+
+.aboutme-description-container p{
+    font-size: $normalFontSize;
+}
+
+.aboutme-contactdetails-container {
+    display: flex;
+}
+
+.aboutme-contactme-container {
+    margin: 1px;
+    padding: 1px;
+}
+
+.aboutme-contactme-container h1{
+    font-size: $normalFontSize;
+    padding: 1px;
+}
+
+.aboutme-contactme-container p{
+    font-size: $smallFontSize;
+    font-style: italic;
+    line-height: 5px;
+}
+
+.aboutme-contactme-icon-container {
+    display: flex;
+}
+
+.aboutme-contactme-icon-container a{
+    color: inherit;
+}
+
+.contactme-option {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: $mylightBlue;
+    margin: 5px;
+    padding: 1px;
+}
+
+.contactme-option-icon {
+    position: relative;
+    top: 10%;
+    left: 20%;
+}
+
+.aboutme-resume-container {
+    position: relative;
+    left: 20%;
+    top: 30%;
+    height: 40px;
+    width: 180px;
+    background-color: $mylightBlue;
+    align-items: center;
+    justify-content: center;
+    border-width: 2px;
+    border-color: $myBlue;
+    border-radius: 2px;
+    border-style: solid;
+}
+
+.aboutme-resume-container a{
+    font-size: $smallFontSize;
+    color: $textColorLight;
+    position: relative;
+    left: 10%;
+    top: 10%;
+    text-decoration: none;
+}
+
+.blue {
+    color: $mylightBlue;
+}
+

@@ -8,7 +8,7 @@ export default function Header(): ReactElement {
         <a href="#welcomesection">
           Home
         </a>
-        <a href="#whoamisection">
+        <a href="#aboutmesection">
           About
         </a>
         <a href="#experiencesection">

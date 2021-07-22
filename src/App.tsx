@@ -26,11 +26,11 @@ function App() {
       <div className="App">
         <Header />
         <Switch>
-          <Route path="/mahendrapratapsingh" exact component={WelcomeSection} />
-          <Route path="/mahendrapratapsingh/About" component={AboutSection} />
-          <Route path="/mahendrapratapsingh/Experience" component={ExperienceSection} />
-          <Route path="/mahendrapratapsingh/Skills" component={SkillsSection} />
-          <Route path="/mahendrapratapsingh/Projects" component={ProjectsSection} />
+          <Route exact path="/mahendrapratapsingh" component={WelcomeSection} />
+          <Route exact path="/mahendrapratapsingh/About" component={AboutSection} />
+          <Route exact path="/mahendrapratapsingh/Experience" component={ExperienceSection} />
+          <Route exact path="/mahendrapratapsingh/Skills" component={SkillsSection} />
+          <Route exact path="/mahendrapratapsingh/Projects" component={ProjectsSection} />
         </Switch>
         <Footer />
       </div>

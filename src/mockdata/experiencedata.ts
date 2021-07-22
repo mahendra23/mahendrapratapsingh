@@ -1,5 +1,5 @@
 export const experiencedata = {
-    title: "Journey So Far...",
+    title: "JOURNEY SO FAR...",
     workexp: [
         {
             id: 1,

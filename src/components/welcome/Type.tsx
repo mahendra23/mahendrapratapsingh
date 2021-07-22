@@ -8,7 +8,7 @@ export default function Type(): ReactElement {
             strings: [
                 "Can do iOS Development",
                 "Can do React development",
-                "Test Management",
+                "Project Management",
             ],
             autoStart: true,
             loop: true,

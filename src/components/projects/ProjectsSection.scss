@@ -1,0 +1,51 @@
+@import "../../globalColor";
+
+.projectsection {
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px 0px;
+    margin: 10px auto;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.projectsection h1 {
+    position: relative;
+    left: -3%;
+    font-size: $headingFontSize;
+    padding: 20px 0px;
+    margin: 10px;
+    letter-spacing: 5px;
+}
+
+.projectcontainer {
+    width: 90%;
+    height: 70vh;
+    position: absolute;
+    left: 5%;
+    top: 20%;
+    display: flex;
+    justify-content: space-around;
+    background-color: $myBlue;
+    padding: 20px 1px;
+}
+
+@media only screen and (max-width: 768px) {
+    .projectsection {
+        width: 100%;
+        height: auto;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .projectcontainer {
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+        // margin: 0;
+        padding: 10px 10px;
+        align-items: center;
+        justify-content: center;
+    }   
+}

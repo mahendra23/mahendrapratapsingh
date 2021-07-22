@@ -1,0 +1,155 @@
+@import "../../globalColor";
+
+.aboutsection {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $myGray;
+    margin-top: 70px;
+    padding: 10px;
+}
+
+.about-container {
+    display: flex;
+    width: 80%;
+}
+
+.about-image-container {
+    margin: 60px;
+    padding-top: 20px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.about-image {
+    border-radius: 50%;
+    height: 30vh;
+}
+
+.about-description-container {
+    display: flex;
+    flex-direction: column;
+    margin: 40px 40px;
+    padding: 10px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.about-description-container p {
+    font-size: $normalFontSize;
+    padding-left: 10px;
+}
+
+.about-contactdetails-container {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-self: space-between;
+}
+
+.about-contactme-container {
+    margin-right: 100px;
+    align-items: left;
+}
+
+.about-contactme-container p {
+    font-size: $smallFontSize;
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+}
+
+.about-contactme-icon-container {
+    display: flex;
+    width: 75%;
+    padding: 10px 1px;
+    justify-content: space-around;
+}
+
+.about-resume-container {
+    margin: 10px 100px;
+    padding: 10px 10px 10px 15px;
+    background-color: $mylightBlue;
+    height: 50px;
+    width: 250px;
+    border-width: 2px;
+    border-color: $myBlue;
+    border-radius: 2px;
+    border-style: solid;
+}
+
+.about-resume-container a{
+    font-size: $smallFontSize;
+    color: $textColorLight;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.blue {
+    color: $mylightBlue;
+}
+
+@media only screen and (max-width: 768px) {
+    .aboutsection {
+        height: auto;
+        flex-direction: column;
+        padding: 10px 10px;
+        margin-top: 70px;
+    }
+    
+    .about-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .about-image-container {
+        margin: 10px 10px;
+        padding: 10px 10px;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .about-image {
+        height: 10vh;
+    }
+    
+    .about-description-container {
+        margin: 1px auto;
+        padding: 1px 1px;
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .about-description-container h1 {
+        font-size: $mediumFontSize;
+    }
+    
+    .about-description-container p {
+        font-size: 25px !important;
+        padding-left: 1px;
+    }
+    
+    .about-contactdetails-container {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .about-contactme-container {
+        margin-right: 1px;
+        width: 100%;
+    }
+    
+    .about-contactme-icon-container {
+        position: relative;
+        left: -5%;
+    }
+    
+    .about-resume-container {
+        margin-top: 10px;
+        position: relative;
+        left: -20%;
+    }
+}

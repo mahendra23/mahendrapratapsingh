@@ -1,21 +1,23 @@
 import React from 'react';
 import "./HomeLayout.scss";
-import WelcomeSection from '../welcomesection/WelcomeSection';
+import WelcomeSection from '../welcome/WelcomeSection';
 import ExperienceSection from '../experience/ExperienceSection';
-import Header from '../header/Header';
 import ProjectsSection from '../projects/ProjectsSection';
-import AboutmeSection from '../aboutme/AboutmeSection';
+import AboutmeSection from '../about/AboutSection';
+import SkillsSection from '../skills/SkillsSection';
+import FooterComponent from '../Footer/FooterComponent';
 
 export default function HomeLayout() {
 
   return (
     <div>
-      <Header />
       <div className="Home-layout">
         <WelcomeSection />
         <AboutmeSection />
         <ExperienceSection />
+        <SkillsSection />
         <ProjectsSection />
+        <FooterComponent />
       </div>
     </div>
   );

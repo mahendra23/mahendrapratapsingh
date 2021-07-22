@@ -3,28 +3,11 @@
 .App {
   text-align: center;
   background-color:$darkBackground;
-  color:$textColorLight;
+  color: $textColorLight;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: $appHeaderBG;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: $textColorDark;
-}
-
-.App-link {
-  color: $appLink;
-}
-
-.subTitle {
-  color: $subTitle;
+#no-scroll {
+  overflow: hidden;
+  height: 100vh;
 }

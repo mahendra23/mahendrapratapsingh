@@ -7,7 +7,7 @@ import Preloader from "./components/preloader/Preloader";
 import WelcomeSection from "./components/welcome/WelcomeSection";
 import ExperienceSection from './components/experience/ExperienceSection';
 import ProjectsSection from './components/projects/ProjectsSection';
-import AboutmeSection from './components/about/AboutSection';
+import AboutSection from './components/about/AboutSection';
 import SkillsSection from './components/skills/SkillsSection';
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
         <Header />
         <Switch>
           <Route path="/mahendrapratapsingh" exact component={WelcomeSection} />
-          <Route path="/Aboutme" component={AboutmeSection} />
+          <Route path="/About" component={AboutSection} />
           <Route path="/Experience" component={ExperienceSection} />
           <Route path="/Skills" component={SkillsSection} />
           <Route path="/Projects" component={ProjectsSection} />

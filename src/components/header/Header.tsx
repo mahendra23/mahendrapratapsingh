@@ -9,7 +9,7 @@ export default function Header(): ReactElement {
           <a href="/mahendrapratapsingh">HOME</a>
         </div>
         <div className="header-item-container">
-          <a href="/Aboutme">ABOUT</a>
+          <a href="/About">ABOUT</a>
         </div>
         <div className="header-item-container">
           <a href="/Experience">JOURNEY</a>

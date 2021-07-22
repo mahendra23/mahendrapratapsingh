@@ -8,13 +8,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 20px;
+    margin: 1px;
 }
 
 .experiencesection-heading {
     font-size: $headingFontSize;
-    align-items: center;
-    justify-content: center;
-    margin: 10;
+    letter-spacing: 5px;
 }
 
 .experiencesection-timeline-container {
@@ -84,7 +84,7 @@
     z-index: -1;
 }
 
-@media (max-width: 767px) {
+@media only screen and (max-width: 768px) {
     .experiencesection-timeline-container {
         max-width: 700px;
     }
@@ -109,11 +109,5 @@
     .experiencesection-timeline-container ul li::before {
         position: absolute;
         left: 3px;
-    }
-
-    .experiencesection-timeline-item-container::before {
-        position: absolute;
-        left: 0%;
-        z-index: -1;
     }
 }

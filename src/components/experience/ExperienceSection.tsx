@@ -8,7 +8,7 @@ export default function ExperienceSection(): ReactElement {
     return (
         <section>
             <div id="experiencesection" className="experiencesection">
-                <h2 className="experiencesection-heading">{experiencedata.title}</h2>
+                <h1 className="experiencesection-heading">{experiencedata.title}</h1>
                 <div className="experiencesection-timeline-container">
                     <ul>
                         {experiencedata.workexp.map((data) => (

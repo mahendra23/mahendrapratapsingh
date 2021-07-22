@@ -1,0 +1,76 @@
+@import "../../globalColor";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.accordion {
+    width: 60%;
+    margin: 18px auto;
+    color: $textColorLight;
+    font-weight: bold;
+}
+
+.headingcontainer {
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+}
+
+.accordionheading {
+    padding: 14px 0;
+    background-color: $myBlueDark;
+}
+
+.accordionheading .headingcontainer {
+    display: flex;
+    align-items: center;
+    padding: 10px 30px;
+    justify-content: space-between;
+}
+
+.accordionheading p {
+    font-size: $mediumFontSize;
+    letter-spacing: 1.5px;
+}
+
+.accordionheading span {
+    cursor: pointer;
+}
+
+.accordioncontent {
+    display: flex;
+    overflow: hidden;
+    transition: all 500ms ease-in-out;
+    height: 0;
+    opacity: 0;
+}
+
+.accordioncontent .show {
+    height: 180px;
+    opacity: 1;
+}
+
+.contentcontainer {
+    background-color: $mylightBlue;
+    margin: auto;
+}
+
+.row {
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.contentcontainer span {
+    font-size: $smallFontSize;
+}
+
+@media only screen and (max-width: 768px) {
+    .accordion {
+        width: 90%;
+        margin: 10px auto;
+    }
+}

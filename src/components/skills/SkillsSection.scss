@@ -1,0 +1,33 @@
+@import "../../globalColor";
+
+.skillssection {
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px 0;
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: $myGray;
+}
+
+.skillssection h1 {
+    position: relative;
+    left: -3%;
+    letter-spacing: 5px;
+}
+
+h1{
+    font-size: $headingFontSize;
+    padding: 20px 0;
+    margin: 10px;
+}
+
+.skills-container {
+    padding: 50px;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 5%;
+    background-color: $myBlue;
+}

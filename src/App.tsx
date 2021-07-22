@@ -27,10 +27,10 @@ function App() {
         <Header />
         <Switch>
           <Route path="/mahendrapratapsingh" exact component={WelcomeSection} />
-          <Route path="/About" component={AboutSection} />
-          <Route path="/Experience" component={ExperienceSection} />
-          <Route path="/Skills" component={SkillsSection} />
-          <Route path="/Projects" component={ProjectsSection} />
+          <Route path="/mahendrapratapsingh/About" component={AboutSection} />
+          <Route path="/mahendrapratapsingh/Experience" component={ExperienceSection} />
+          <Route path="/mahendrapratapsingh/Skills" component={SkillsSection} />
+          <Route path="/mahendrapratapsingh/Projects" component={ProjectsSection} />
         </Switch>
         <Footer />
       </div>

@@ -9,16 +9,16 @@ export default function Header(): ReactElement {
           <a href="/mahendrapratapsingh">HOME</a>
         </div>
         <div className="header-item-container">
-          <a href="/About">ABOUT</a>
+          <a href="/mahendrapratapsingh/About">ABOUT</a>
         </div>
         <div className="header-item-container">
-          <a href="/Experience">JOURNEY</a>
+          <a href="/mahendrapratapsingh/Experience">JOURNEY</a>
         </div>
         <div className="header-item-container">
-          <a href="/Skills">SKILLS</a>
+          <a href="/mahendrapratapsingh/Skills">SKILLS</a>
         </div>
         <div className="header-item-container">
-          <a href="/Projects">PROJECTS</a>
+          <a href="/mahendrapratapsingh/Projects">PROJECTS</a>
         </div>
       </div>
     </div>

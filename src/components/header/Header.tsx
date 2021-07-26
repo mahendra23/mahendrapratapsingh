@@ -1,26 +1,25 @@
-import React, { ReactElement } from 'react'
+import React, { ReactElement, useState } from 'react';
+import {headerdata} from '../../mockdata/headerdata';
 import "./Header.scss";
 
 export default function Header(): ReactElement {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <div id="header" className="header-section">
-      <div className="header-container">
-        <div className="header-item-container">
-          <a href="/mahendrapratapsingh">HOME</a>
-        </div>
-        <div className="header-item-container">
-          <a href="/mahendrapratapsingh/About">ABOUT</a>
-        </div>
-        <div className="header-item-container">
-          <a href="/mahendrapratapsingh/Experience">JOURNEY</a>
-        </div>
-        <div className="header-item-container">
-          <a href="/mahendrapratapsingh/Skills">SKILLS</a>
-        </div>
-        <div className="header-item-container">
-          <a href="/mahendrapratapsingh/Projects">PROJECTS</a>
-        </div>
+    <nav id="header" className="navbar">
+      <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+        <div className="line" />
+        <div className="line" />
+        <div className="line" />
       </div>
-    </div>
+      <ul className={`nav-list ${menuOpen ? 'open' : ''}`}>
+        <div className="list-item-container">
+          {headerdata.header.map((data) => (
+              <li className="nav-list-item" key={data.id}>
+                <a href={data.href}>{data.title}</a>
+              </li>
+          ))}
+        </div>
+      </ul>
+    </nav>
   );
 }

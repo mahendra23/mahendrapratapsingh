@@ -7,7 +7,8 @@
 }
 .navbar{
     height:5vh;
-    background-color: $myLightGray;
+    // background-color: $myLightGray;
+    background-image: linear-gradient(to right, $myBlue, forestgreen);
     z-index: 2;
 }
 .nav-list{
@@ -46,35 +47,36 @@
     .hamburger {
       position: absolute;
       cursor: pointer;
-      right: 5%;
+      right: 1%;
       top: 50%;
-      transform: translate(-5%, -50%);
+      transform: translate(-1%, -50%);
       transition: all 1s ease-out;
       z-index: 2;
     }
     .hamburger.open{
         transform:rotate(90deg);
-        transition: all 1s ease-out;
+        transition: all 1s ease-in;
     }
     .nav-list {
         background: $mylightBlue;
         height: 100vh;
         width: 100%;
-        clip-path: circle(100px at 90% -10%);
-        -webkit-clip-path: circle(100px at 90% -10%);
+        margin-left: 0;
+        clip-path: circle(100px at 90% -15%);
+        -webkit-clip-path: circle(100px at 90% -15%);
         transition: all 1s ease-out;
         pointer-events: none;
     }
     .nav-list.open {
-        clip-path: circle(350px at 90% -10%);
-        -webkit-clip-path: circle(350px at 90% -10%);
+        clip-path: circle(300px at 95% -5%);
+        -webkit-clip-path: circle(280px at 95% -5%);
         pointer-events: all;
     }
     .list-item-container {
         flex-direction: column;
         position: absolute;
-        top: 40px;
-        right: 60px;
+        top: 20px;
+        right: 80px;
     }
     .nav-list-item{
         padding:5px;

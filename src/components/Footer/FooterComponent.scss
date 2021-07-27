@@ -1,14 +1,16 @@
 @import "../../globalColor";
 
 .footersection {
-  height: 50px;
+  height: 100px;
   width: 100%;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  background-image: linear-gradient(to right, $mylightBlue, black);
-  padding: 10px 10px;
-  box-sizing: border-box;
+  justify-content: space-around;
+  background-image: linear-gradient(to right, $myBlue, forestgreen);
+  padding: 20px 10px;
+}
+.footersection p{
   color: $textColorLight;
-  font-size: $mediumFontSize;
+  font-size: $smallFontSize;
   font-weight: bold;
 }

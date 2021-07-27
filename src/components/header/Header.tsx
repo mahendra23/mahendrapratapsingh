@@ -6,7 +6,7 @@ export default function Header(): ReactElement {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <nav id="header" className="navbar">
-      <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+      <div className={`hamburger ${menuOpen ? 'open' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>
         <div className="line" />
         <div className="line" />
         <div className="line" />

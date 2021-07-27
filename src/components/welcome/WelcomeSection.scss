@@ -5,7 +5,6 @@
   min-height: 100vh;
   display: flex;
   color: $textColorLight;
-  margin-top: 70px;
   padding: 10px;
   background-image: linear-gradient(to right, $mylightBlue, black);
   text-align: left;
@@ -14,11 +13,11 @@
 }
 
 .welcomesection-text-container {
-  width: 100%;
-  height: 100%;
+  width: 55%;
+  height: auto;
   position: absolute;
-  left: 5%;
-  top: 15%;
+  left: 3%;
+  top: 10%;
   letter-spacing: 2px;
 }
 
@@ -50,7 +49,6 @@
 }
 
 .welcomesection-image-container {
-  padding: 10px;
   width: 50%;
   position: relative;
 }

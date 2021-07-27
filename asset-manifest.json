@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/mahendrapratapsingh/static/css/main.c0f16bdd.chunk.css",
-    "main.js": "/mahendrapratapsingh/static/js/main.64fd7355.chunk.js",
-    "main.js.map": "/mahendrapratapsingh/static/js/main.64fd7355.chunk.js.map",
+    "main.css": "/mahendrapratapsingh/static/css/main.f361c131.chunk.css",
+    "main.js": "/mahendrapratapsingh/static/js/main.387a8273.chunk.js",
+    "main.js.map": "/mahendrapratapsingh/static/js/main.387a8273.chunk.js.map",
     "runtime-main.js": "/mahendrapratapsingh/static/js/runtime-main.a51c15dc.js",
     "runtime-main.js.map": "/mahendrapratapsingh/static/js/runtime-main.a51c15dc.js.map",
     "static/js/2.df8f61f8.chunk.js": "/mahendrapratapsingh/static/js/2.df8f61f8.chunk.js",
@@ -10,21 +10,21 @@
     "static/js/3.7569d42a.chunk.js": "/mahendrapratapsingh/static/js/3.7569d42a.chunk.js",
     "static/js/3.7569d42a.chunk.js.map": "/mahendrapratapsingh/static/js/3.7569d42a.chunk.js.map",
     "index.html": "/mahendrapratapsingh/index.html",
-    "static/css/main.c0f16bdd.chunk.css.map": "/mahendrapratapsingh/static/css/main.c0f16bdd.chunk.css.map",
+    "static/css/main.f361c131.chunk.css.map": "/mahendrapratapsingh/static/css/main.f361c131.chunk.css.map",
     "static/js/2.df8f61f8.chunk.js.LICENSE.txt": "/mahendrapratapsingh/static/js/2.df8f61f8.chunk.js.LICENSE.txt",
     "static/media/Chai.png": "/mahendrapratapsingh/static/media/Chai.3002f262.png",
     "static/media/Jest.png": "/mahendrapratapsingh/static/media/Jest.2ad06c37.png",
     "static/media/Mahen.dd822d5f.jpg": "/mahendrapratapsingh/static/media/Mahen.dd822d5f.jpg",
     "static/media/React-TS.png": "/mahendrapratapsingh/static/media/React-TS.1e41f584.png",
     "static/media/Typescript.png": "/mahendrapratapsingh/static/media/Typescript.29073194.png",
-    "static/media/home-bg6.59bdff75.jpg": "/mahendrapratapsingh/static/media/home-bg6.59bdff75.jpg",
+    "static/media/WelcomeSection.scss": "/mahendrapratapsingh/static/media/home-bg6.59bdff75.jpg",
     "static/media/logo-no-shadow.5fccb66e.png": "/mahendrapratapsingh/static/media/logo-no-shadow.5fccb66e.png",
     "static/media/playwright-logo.svg": "/mahendrapratapsingh/static/media/playwright-logo.4771f906.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.a51c15dc.js",
     "static/js/2.df8f61f8.chunk.js",
-    "static/css/main.c0f16bdd.chunk.css",
-    "static/js/main.64fd7355.chunk.js"
+    "static/css/main.f361c131.chunk.css",
+    "static/js/main.387a8273.chunk.js"
   ]
 }

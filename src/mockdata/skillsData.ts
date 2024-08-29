@@ -20,7 +20,7 @@ export const skillsData: SkillsDataType = {
             title: "Test Automation Tools",
             toolslist: [
                 {
-                    toolIcon: "xcode.svg",
+                    toolIcon: "Xcode.svg",
                     toolname: "XCUITest",
                 },
                 {
@@ -93,11 +93,14 @@ export const skillsData: SkillsDataType = {
             title: "DevOps & Cloud",
             toolslist: [
                 {
-                    toolIcon: "github.svg",
+                    toolIcon: "GitHub.svg",
+                    toolname: "GitHub",
+                },{
+                    toolIcon: "GitHub-Actions.svg",
                     toolname: "GitHub Actions",
                 },
                 {
-                    toolIcon: "aws.svg",
+                    toolIcon: "AWS.svg",
                     toolname: "AWS",
                 },
                 {
@@ -113,7 +116,7 @@ export const skillsData: SkillsDataType = {
                     toolname: "Linux",
                 },
                 {
-                    toolIcon: "jenkins.svg",
+                    toolIcon: "Jenkins.svg",
                     toolname: "Jenkins",
                 }
             ]
@@ -138,7 +141,7 @@ export const skillsData: SkillsDataType = {
                     toolname: "TestNG",
                 },
                 {
-                    toolIcon: "junit.svg",
+                    toolIcon: "JUnit.svg",
                     toolname: "Junit",
                 },
                 {
@@ -159,7 +162,7 @@ export const skillsData: SkillsDataType = {
                     toolname: "TypeScript",
                 },
                 {
-                    toolIcon: "kotlin.svg",
+                    toolIcon: "Kotlin.svg",
                     toolname: "Kotlin",
                 },
                 {
@@ -171,7 +174,7 @@ export const skillsData: SkillsDataType = {
                     toolname: "C#",
                 },
                 {
-                    toolIcon: "java.svg",
+                    toolIcon: "Java.svg",
                     toolname: "Java",
                 },
                 {
@@ -179,7 +182,7 @@ export const skillsData: SkillsDataType = {
                     toolname: "JavaScript",
                 },
                 {
-                    toolIcon: "swift.svg",
+                    toolIcon: "Swift.svg",
                     toolname: "Swift",
                 },
                 {

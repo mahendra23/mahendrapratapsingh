@@ -1,0 +1,153 @@
+@import "../../common/globalColor.scss";
+
+.cardcontainer {
+    background-color: $myBlueDark;
+    width: 20%;
+    height: 80%;
+    border-radius: 60px;
+    padding: 10px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.imagecontainer {
+    display: flex;
+    justify-content: space-evenly;
+    width: 70%;
+}
+
+.imagecontainer img {
+    width: 35%;
+    padding: 5px;
+}
+
+.cardheading {
+    width: 90%;
+    align-self: center;
+}
+
+.cardheading p {
+    font-size: $smallFontSize;
+    font-weight: bold;
+}
+
+.carddesc {
+    width: 90%;
+    align-self: center;
+}
+
+.carddesc p {
+    font-size: $xsmallFontSize;
+    font-weight: bold;
+}
+
+.link {
+    width: 90%;
+    height: 10%;
+    position: relative;
+    top: 2%;
+    left: 5%;
+}
+
+.link a {
+    position: relative;
+    left: 0%;
+    top: 10%;
+    font-size: $smallFontSize;
+    font-weight: bold;
+    color: $textColorLight;
+    align-self: center;
+}
+
+.techs {
+    width: 90%;
+    position: relative;
+    top: 3%;
+    left: 5%;
+    font-size: $smallFontSize;
+    justify-content: space-around;
+    display: flex;
+}
+
+@media only screen and (max-width: 768px) {
+    .cardcontainer {
+        width: 100%;
+        height: auto;
+        padding: 10px 10px;
+        border-radius: 30px;
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;
+        justify-content: space-between;
+    }
+    
+    .imagecontainer {
+        padding: 10px 10px;
+        display: flex;
+        width: 90%;
+        justify-content: space-around;
+    }
+    
+    .imagecontainer img {
+        width: 40%;
+        height: 100%;
+        position: relative;
+        left: 3%;
+        top: 3%;
+    }
+    
+    .heading {
+        width: 90%;
+        position: relative;
+        top: 0%;
+        left: 5%;
+    }
+    
+    .heading h1 {
+        font-size: $mediumFontSize;
+        font-weight: bold;
+    }
+    
+    .desc {
+        width: 90%;
+        height: 20%;
+        position: relative;
+        top: 1%;
+        left: 5%;
+        font-size: $smallFontSize;
+        letter-spacing: 1px;
+        align-items: left;
+        justify-content: left;
+    }
+    
+    .link {
+        width: 90%;
+        height: 10%;
+        position: relative;
+        top: 2%;
+        left: 5%;
+    }
+    
+    .link a {
+        position: relative;
+        left: 0%;
+        top: 10%;
+        font-size: $smallFontSize;
+        font-weight: bold;
+        color: $textColorLight;
+        align-self: center;
+    }
+    
+    .techs {
+        width: 90%;
+        position: relative;
+        top: 3%;
+        left: 5%;
+        font-size: $smallFontSize;
+        justify-content: space-around;
+        display: flex;
+    }
+}

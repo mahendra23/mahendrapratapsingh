@@ -1,0 +1,19 @@
+@import "../../common/globalColor.scss";
+
+.skillssection {
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    margin: 30px;
+}
+
+.skillssection .heading{
+    margin: 30px;
+}
+
+.skillscontainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}

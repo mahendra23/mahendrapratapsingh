@@ -1,0 +1,70 @@
+@import "../../common/globalColor.scss";
+
+.aboutsection {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: $textColorDark;
+    height: 90vh;
+}
+
+.aboutcontainer {
+    display: flex;
+    flex-direction: row;
+    width: 75%;
+}
+
+.aboutcontainer::before {
+    background-color: $myDarkBackground;
+    content:'';
+    width: 5px;
+    position: relative;
+    left: 27%;
+    // top: -5%;
+}
+
+.aboutimagecontainer {
+    display: block;
+    margin: 10px;
+    padding: 10px;
+}
+
+.aboutimage {
+    border-radius: 50%;
+    height: 50vh;
+    width: 35vh;
+}
+
+.aboutdescriptioncontainer {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: 30px;
+    padding: 20px;
+    // padding-left: 20px;
+}
+.aboutdescriptioncontainer .cbadge {
+    font-size: $smallFontSize;
+    font-weight: bold;
+    background-color: $myBlueDark;
+    margin-bottom: 20px;
+}
+.aboutdescriptioncontainer h1 {
+    font-size: $normalFontSize;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+.aboutdescriptioncontainer p {
+    font-size: $xsmallFontSize;
+}
+
+.aboutdescriptioncontainer span{
+    font-weight: bold;
+    font-style: italic !important;
+}
+
+.aboutdescriptioncontainer a {
+    color: $textColorDark;
+}

@@ -1,0 +1,22 @@
+@import "../../common/globalColor.scss";
+
+.downloadresume-container {
+    display:flex;
+    border-width: 5px;
+    border-color: $myLightBlue;
+}
+
+.downloadresume-container a{
+    color: $textColorLight;
+    font-size: $xsmallFontSize;
+    font-weight: bold;
+    // text-decoration: none;
+}
+
+.downloadresume-container a:hover{
+    color:$myOrange;
+}
+
+.downloadresumeicon{
+    size: "250px";
+}

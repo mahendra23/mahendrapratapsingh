@@ -1,0 +1,85 @@
+@import "../../common/globalColor.scss";
+
+.navbar{
+    position: fixed;
+    height: 5vh;
+    width: 100%;
+    background-image: $myGradient;
+    z-index: 2;
+}
+.nav-list{
+    display: flex;
+    list-style: none;
+    width: 70%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+.nav-list-item-container {
+    display: flex;
+    margin-left: 10%;
+}
+.nav-list-item{
+    padding: 15px;
+}
+.nav-list-item a{
+    text-decoration:none;
+    color:$textColorLight;
+    font-size: $xsmallFontSize;
+    font-weight: bold;
+}
+.nav-list-item a:hover{
+    color:$myOrange;
+}
+@media screen and (max-width: 768px) {
+    .line {
+      width: 30px;
+      height: 3px;
+      background: $textColorLight;
+      margin: 5px;
+    }
+    .navbar{
+      position: relative;
+    }
+    .hamburger {
+      position: absolute;
+      cursor: pointer;
+      right: 1%;
+      top: 50%;
+      transform: translate(-1%, -50%);
+      transition: all 1s ease-out;
+      z-index: 2;
+    }
+    .hamburger.open{
+        transform:rotate(90deg);
+        transition: all 1s ease-in;
+    }
+    .nav-list {
+        background: $myLightBlue;
+        height: 100vh;
+        width: 100%;
+        margin-left: 0;
+        clip-path: circle(100px at 90% -15%);
+        -webkit-clip-path: circle(100px at 90% -15%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+    }
+    .nav-list.open {
+        clip-path: circle(300px at 95% -5%);
+        -webkit-clip-path: circle(280px at 95% -5%);
+        pointer-events: all;
+    }
+    .list-item-container {
+        flex-direction: column;
+        position: absolute;
+        top: 20px;
+        right: 80px;
+    }
+    .nav-list-item{
+        padding:5px;
+    }
+    .nav-list-item a {
+      font-size: $xsmallFontSize;
+        font-weight: bold;
+    }
+  }

@@ -1,0 +1,16 @@
+@import "../../common/globalColor.scss";
+
+.footersection {
+  height: 6vh;
+  background-image: $myGradient;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footersection p{
+  font-size: $xxsmallFontSize;
+  color: $textColorLight;
+  font-family: $fontHomePage;
+  font-weight: bold;
+}

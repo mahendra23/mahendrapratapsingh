@@ -1,0 +1,109 @@
+@import "../../common/globalColor.scss";
+
+.welcomesection {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-image: linear-gradient(to right, $myLightBlue, black);
+  font-family: $fontHomePage;
+}
+
+.welcomedownarrow{
+  color: $textColorLight;
+  position: absolute;
+  bottom: 10%;
+}
+
+.welcomedownarrow a{
+  color: $textColorLight;
+}
+
+.welcomename {
+  font-size: 70px !important;
+  font-style: italic !important;
+  font-weight: bold;
+  letter-spacing: 10px;
+}
+
+.welcomedesc {
+  font-size: $smallFontSize;
+  font-style: italic !important;
+  font-weight: bold;
+  line-height: 2;
+  text-align: center;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  } 
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  } /* Reset for the last half to pause */
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .welcomesection {
+    flex-direction: column;
+    padding: 5px;
+    position: relative;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  
+  .welcomesection-text-container {
+    width: 90%;
+    position: relative;
+    left: 5%;
+    top: 5%;
+  }
+  
+  .welcome {
+    font-size: 35px;
+  }
+  
+  .welcomename {
+    font-size: 35px;
+  }
+  
+  .welcomedesc {
+    font-size: 35px;
+  }
+  
+  .welcomesection-image-container {
+    position: relative;
+    top: -10%;
+    left: 5%;
+    align-self: flex-start;
+    justify-content: flex-start;
+  }
+  
+  .welcomesection-image-container img {
+    height: 40vh;
+    width: 80%;
+    position: relative;
+    left: 0%;
+    top: 10%;
+  }
+}

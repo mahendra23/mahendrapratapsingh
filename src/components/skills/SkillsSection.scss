@@ -4,7 +4,10 @@
     align-items: center;
     flex-direction: column;
     height: auto;
-    margin: 30px;
+    border-bottom: 3px solid $myBlueDark;
+    width: 100%;
+    display: flex;
+    padding: 30px;
 }
 
 .skillssection .heading{
@@ -16,4 +19,18 @@
     flex-direction: row;
     width: 100%;
     justify-content: center;
+}
+
+@media only screen and (max-width: 768px) {
+    .skillssection {
+        height: auto;
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .skillscontainer {
+        flex-direction: column;
+        height: auto;
+        width: 120%;
+    }
 }

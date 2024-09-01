@@ -5,7 +5,7 @@ import { experiencedata } from "../../mockdata/experiencedata";
 
 export const JourneySection = (): JSX.Element => {
     return (
-        <div id={headerdata.header[4].id} className="section journeySection">
+        <div id={headerdata.header[4].id} className="journeySection">
             <Heading headingText={experiencedata.title} />
             <div className="journeycontainer">
                 <ul className="timeline">

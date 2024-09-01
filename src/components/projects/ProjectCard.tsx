@@ -33,11 +33,6 @@ export default function ProjectCard(data: ProjectData): ReactElement {
                     <p>GIT-REPO</p>
                 </a>
             </div>
-            {/* <div className="techs">
-                {data.techs.map((tech) => (
-                    <span>{tech}</span>
-                ))}
-            </div> */}
         </div>
     )
 }

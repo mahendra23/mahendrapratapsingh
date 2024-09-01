@@ -100,6 +100,10 @@ export const skillsData: SkillsDataType = {
                     toolname: "GitHub Actions",
                 },
                 {
+                    toolIcon: "Azure-Devops.svg",
+                    toolname: "Azure DevOps",
+                },
+                {
                     toolIcon: "AWS.svg",
                     toolname: "AWS",
                 },

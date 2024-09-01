@@ -4,8 +4,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: $textColorDark;
     height: auto;
+    margin: 30px;
+    width: 100%;
+    display: flex;
+    padding: 20px;
 }
 .journeySection .heading{
     position: relative;
@@ -14,12 +17,20 @@
 .journeycontainer {
     display: flex;
     flex-direction: row;
-    // background-color: $myBlueGray;
     position: relative;
     left: 10%;
     width: 30%;
 }
-
+@media only screen and (max-width: 768px) {
+    .journeySection{
+        height: auto;
+    }
+    .journeycontainer{
+        width: auto;
+        position: relative;
+        left: -1%;
+    }
+}
 
 .timeline {
     border-left: 3px solid $myBlueDark;
@@ -32,60 +43,51 @@
     padding: 50px;
     list-style: none;
     width: auto;
+    color: $textColorDark;
 }
-
 @media (max-width: 767px) {
     .timeline {
         max-width: 98%;
         padding: 25px;
     }
 }
-
 .timeline h3 {
     font-weight: bold;
     font-size: 1.1rem;
-    // margin-bottom: 10px;
 }
-
 .timeline .event {
     border-bottom: 2px dashed $myBlueDark;
     padding-bottom: 15px;
     margin-bottom: 25px;
     position: relative;
-    // background-color: $myBlueGray;
 }
-
 @media (max-width: 767px) {
     .timeline .event {
         padding-top: 30px;
     }
 }
-
 .timeline .event:last-of-type {
     padding-bottom: 0;
     margin-bottom: 0;
     border: none;
 }
-
 .timeline .event:before,
 .timeline .event:after {
     position: absolute;
     display: block;
     top: 0;
 }
-
 .timeline .event:before {
     content: attr(data-date);
-    // position: relative;
     width: 50%;
     left: -300px;
     text-align: right;
-    // background-color: $myBlueGray;
 }
 
 @media (max-width: 767px) {
     .timeline .event:before {
         left: 0px;
+        width: auto;
         text-align: left;
     }
 }
@@ -104,6 +106,6 @@
 
 @media (max-width: 767px) {
     .timeline .event:after {
-        left: -31.8px;
+        left: -31px;
     }
 }

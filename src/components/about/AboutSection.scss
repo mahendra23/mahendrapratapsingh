@@ -1,11 +1,15 @@
 @import "../../common/globalColor.scss";
 
 .aboutsection {
+    width: 100%;
+    display: flex;
+    padding: 20px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: $textColorDark;
-    height: 90vh;
+    height: 80vh;
+    border-bottom: 3px solid $myBlueDark;
 }
 
 .aboutcontainer {
@@ -14,19 +18,11 @@
     width: 75%;
 }
 
-.aboutcontainer::before {
-    background-color: $myDarkBackground;
-    content:'';
-    width: 5px;
-    position: relative;
-    left: 27%;
-    // top: -5%;
-}
-
 .aboutimagecontainer {
     display: block;
     margin: 10px;
-    padding: 10px;
+    padding: 20px;
+    border-right: 3px solid $myBlueDark;
 }
 
 .aboutimage {
@@ -41,9 +37,8 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    margin-left: 30px;
+    margin-left: 10px;
     padding: 20px;
-    // padding-left: 20px;
 }
 .aboutdescriptioncontainer .cbadge {
     font-size: $smallFontSize;
@@ -68,3 +63,38 @@
 .aboutdescriptioncontainer a {
     color: $textColorDark;
 }
+
+@media only screen and (max-width: 768px) {
+    .aboutsection {
+        height: auto;
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .aboutcontainer {
+        flex-direction: column;
+        height: auto;
+        width: auto;
+    }
+
+    .aboutimagecontainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-right: 0;
+        border-bottom: 3px solid $myBlueDark;
+    }
+    
+    .aboutimage {
+        border-radius: 50%;
+        height: 25vh;
+        width: 17vh;
+    }
+    // .aboutcontainer::before {
+    //     background-color: $myDarkBackground;
+    //     content:'';
+    //     width: 5px;
+    //     position: relative;
+    //     top: 10%;
+    // }
+  }

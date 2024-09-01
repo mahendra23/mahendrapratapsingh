@@ -7,13 +7,13 @@ import { IMAGES_FOLDER } from "../../common/constants";
 
 export const AboutSection = (): JSX.Element => {
     return (
-        <section id={headerdata.header[1].id} className="section aboutsection">
+        <section id={headerdata.header[1].id} className="aboutsection">
+            <Heading headingText="ABOUT ME" />
             <div className="aboutcontainer">
                 <div className="aboutimagecontainer">
                     <img alt="Mahen" src={`${IMAGES_FOLDER}/Mahen.jpg`} className="aboutimage" />
                 </div>
                 <div className="aboutdescriptioncontainer">
-                    <Heading headingText="ABOUT ME" />
                     <p>
                         I am a Software Testing professional with over 
                         <span> 20 years of experience </span> 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import "./heading.scss";
 import { CBadge } from "@coreui/react";
 

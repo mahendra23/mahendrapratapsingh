@@ -1,12 +1,13 @@
 @import "../../common/globalColor.scss";
 
 .projectsection {
-    align-items: center;
     flex-direction: column;
-    background-color: $myDarkBackground;
-    height: 90vh;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    align-items: center;
+    height: 75vh;
+    border-bottom: solid 3px $myBlueDark;
+    width: 100%;
+    display: flex;
+    padding: 50px;
 }
 
 .projectsection .heading{
@@ -14,32 +15,20 @@
 }
 
 .projectcontainer {
-    width: 75%;
-    height: 55vh;
+    width: 100%;
+    height: 50vh;
     display: flex;
     flex-direction: row;
-    background-color: $myBlueGray;
-    border-radius: 30px;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-top: 40px;
 }
 
 @media only screen and (max-width: 768px) {
     .projectsection {
-        width: 100%;
         height: auto;
-        padding: 0;
-        margin: 0;
     }
-    
+
     .projectcontainer {
         flex-direction: column;
-        width: 90%;
-        height: auto;
-        // margin: 0;
-        padding: 10px 10px;
         align-items: center;
-        justify-content: center;
-    }   
+        height: auto;
+    }
 }

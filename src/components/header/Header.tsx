@@ -16,7 +16,7 @@ export const Header = (): JSX.Element => {
         <div className="nav-list-item-container">
           {headerdata.header.map((data) => (
               <li className="nav-list-item" key={data.id}>
-                <a href={data.href}>{data.title}</a>
+                <a href={data.href} onClick={() => setMenuOpen(!menuOpen)}>{data.title}</a>
               </li>
           ))}
           <li className="nav-list-item" key={headerdata.header.length}>

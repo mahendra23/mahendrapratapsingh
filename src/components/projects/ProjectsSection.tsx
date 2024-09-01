@@ -11,7 +11,7 @@ export const ProjectsSection = (): JSX.Element => {
             <Heading headingText={projectdata.title} />
             <div className="projectcontainer">
                 {projectdata.repos.map((repodata) => (
-                    <ProjectCard {...repodata} key={repodata.id} />
+                    <ProjectCard {...repodata} key={repodata.name} />
                 ))}
             </div>
         </section>

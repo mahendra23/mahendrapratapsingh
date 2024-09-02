@@ -6,7 +6,9 @@ export const Footer = (): JSX.Element => {
     return (
         <div className="section footersection">
             <p>Mahendra Pratap Singh © | all rights reserved</p>
-            <ContactDetailsSection />
+            <div className="footercontactdetails">
+                <ContactDetailsSection />
+            </div>
         </div>
     );
 };

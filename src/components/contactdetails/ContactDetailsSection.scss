@@ -1,8 +1,12 @@
 @import "../../common/globalColor.scss";
 
 .contactdetailcontainer {
-    width: auto;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+}
+.iconcontainer{
+    padding: 5px;
+}
+.extrapadding{
+    padding: 10px;
 }

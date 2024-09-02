@@ -48,9 +48,13 @@
   }
   
   .welcomename {
-    font-size: $headingFontSize;
+    font-size: $normalFontSize;
     font-style: italic !important;
     font-weight: bold;
     letter-spacing: 10px;
+  }
+
+  .welcomedownarrow{
+    pointer-events: all;
   }
 }

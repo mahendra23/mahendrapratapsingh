@@ -5,7 +5,9 @@
     height: 5vh;
     width: 100%;
     background-image: $myGradient;
-    z-index: 2;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
 }
 .nav-list{
     display: flex;
@@ -17,7 +19,8 @@
 }
 .nav-list-item-container {
     display: flex;
-    margin-left: 10%;
+    position: relative;
+    right: -18%;
 }
 .nav-list-item{
     padding: 15px;
@@ -30,6 +33,11 @@
 }
 .nav-list-item a:hover{
     color: $myOrange;
+}
+.navbar .headercontactdetails{
+    width: 0;
+    height: 0;
+    opacity: 0;
 }
 @media screen and (max-width: 768px) {
     .line {
@@ -70,9 +78,15 @@
     .nav-list-item-container {
         display: flex;
         flex-direction: column;
-        margin-left: 10%;
+        align-items: left;
+        position: relative;
+        left: -7%;
     }
     .nav-list-item{
         padding: 20px;
+    }
+    .navbar .headercontactdetails {
+        width: auto;
+        opacity: 1;
     }
   }

@@ -1,11 +1,12 @@
 @import "../../common/globalColor.scss";
 
 .footersection {
-  height: 6vh;
+  height: 7vh;
   background-image: $myGradient;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 20px;
 }
 
 .footersection p{
@@ -13,4 +14,18 @@
   color: $textColorLight;
   font-family: $fontHomePage;
   font-weight: bold;
+  letter-spacing: 2px;
+}
+
+@media only screen and (max-width: 768px) {
+  .footercontactdetails {
+    width: 0;
+    opacity: 0;
+  }
+  .footersection {
+    height: 5vh;
+    align-items: center;
+    justify-content: space-around;;
+    padding: 15px;
+  }
 }

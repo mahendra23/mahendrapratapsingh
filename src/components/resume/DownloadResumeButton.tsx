@@ -18,8 +18,8 @@ export const DownloadResumeButton = (props: {buttonTitle: string, showIcon: bool
 
 const DownloadIcon = (): JSX.Element => {
     return (
-    <IconContext.Provider value={{ size: "20px"}}>
-        <FaDownload />
-    </IconContext.Provider>
+        <IconContext.Provider value={{ size: "20px"}}>
+            <FaDownload />
+        </IconContext.Provider>
     );
 };

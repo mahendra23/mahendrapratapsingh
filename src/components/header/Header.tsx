@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {headerdata} from "../../mockdata/headerdata";
 import "./Header.scss";
 import {DownloadResumeButton} from "../resume/DownloadResumeButton";
+import { ContactDetailsSection } from "../contactdetails/ContactDetailsSection";
 
 export const Header = (): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -21,6 +22,9 @@ export const Header = (): JSX.Element => {
           ))}
           <li className="nav-list-item" key={headerdata.header.length}>
             <DownloadResumeButton buttonTitle="Download Resume" showIcon={true}/>
+          </li>
+          <li className="nav-list-item headercontactdetails">
+            <ContactDetailsSection />
           </li>
         </div>
       </ul>

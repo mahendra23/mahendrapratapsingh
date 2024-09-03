@@ -4,6 +4,7 @@ import { headerdata } from "../../mockdata/headerdata";
 import { DownloadResumeButton } from "../resume/DownloadResumeButton";
 import { Heading } from "../heading/heading";
 import { IMAGES_FOLDER } from "../../common/constants";
+import { ContactDetailsSection } from "../contactdetails/ContactDetailsSection";
 
 export const AboutSection = (): JSX.Element => {
     return (
@@ -45,6 +46,7 @@ export const AboutSection = (): JSX.Element => {
                         <br/>
                         <DownloadResumeButton buttonTitle="Feel free to download my resume for more information." showIcon={false} />
                     </p>
+                    <ContactDetailsSection />
                 </div>
             </div>
         </section>   

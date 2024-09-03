@@ -6,9 +6,9 @@ import { IconContext } from "react-icons";
 export const DownloadResumeButton = (props: {buttonTitle: string, showIcon: boolean}): JSX.Element => {
     const pdfUrl = "../../assets/Resume_Mahendra_Singh.pdf";
     return (
-        <div className="downloadresume-container">
+        <div className="downloadresumecontainer">
             <a href={pdfUrl} download="Resume_Mahendra_Singh.pdf">
-            &nbsp;{props.buttonTitle}
+                &nbsp;{props.buttonTitle}
                 &nbsp;&nbsp;
                 {props.showIcon && <DownloadIcon />}
             </a>

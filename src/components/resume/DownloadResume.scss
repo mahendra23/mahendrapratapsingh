@@ -1,17 +1,13 @@
 @import "../../common/globalColor.scss";
 
-.downloadresume-container {
+.downloadresumecontainer {
     display:flex;
     border-width: 5px;
     border-color: $myLightBlue;
 }
 
-.downloadresume-container a{
+.downloadresumecontainer a{
     color: $textColorLight;
     font-size: $xsmallFontSize;
     font-weight: bold;
-}
-
-.downloadresume-container a:hover{
-    color:$myOrange;
 }

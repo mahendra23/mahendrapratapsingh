@@ -85,6 +85,9 @@
     .nav-list-item{
         padding: 20px;
     }
+    .nav-list-item a:hover{
+        color: $myOrange;
+    }
     .navbar .headercontactdetails {
         width: auto;
         opacity: 1;

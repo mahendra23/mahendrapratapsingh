@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import "./ContactDetailsSection.scss";
 import { SocialIcon } from 'react-social-icons';
 import { FaPhone } from "react-icons/fa6";
@@ -22,7 +22,6 @@ export const ContactDetailsSection = (): JSX.Element => {
 };
 
 const PhoneIcon = (): JSX.Element => {
-    // const [tooltipOpen, setTooltipOpen] = useState(false);
     return (
         <IconContext.Provider value={{ size: "35px", color: "black"}}>
             <a href="tel:0291276673"><FaPhone /></a>

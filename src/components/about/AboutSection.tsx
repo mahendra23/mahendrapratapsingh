@@ -31,7 +31,7 @@ export const AboutSection = (): JSX.Element => {
                         <br/>
                         With Strong background in Agile methodologies and
                         <span> SAFe Agile, </span>
-                        I have over 6 years of rich experience in
+                        I have over 10 years of rich experience in
                         <span> managing Agile and Waterfall </span>
                         projects, fostering client relationships, driving strategic 
                         initiatives, and

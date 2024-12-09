@@ -10,7 +10,7 @@
   justify-content: center;
   flex-direction: column;
   background-image: linear-gradient(to right, $myLightBlue, black);
-  font-family: $fontHomePage;
+  // font-family: $fontHomePage;
 }
 
 .welcomedownarrow{
@@ -27,7 +27,7 @@
   font-size: 70px !important;
   font-style: italic !important;
   font-weight: bold;
-  letter-spacing: 10px;
+  letter-spacing: 5px;
 }
 
 .welcomedesc {
@@ -44,7 +44,7 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    font-family: $fontHomePage;
+    // font-family: $fontHomePage;
   }
   
   .welcomename {

@@ -13,6 +13,7 @@
     "@types/node": "^16.18.106",
     "@types/react": "^18.3.4",
     "@types/react-dom": "^18.3.0",
+    "clsx": "^2.1.1",
     "firebase": "^10.13.0",
     "firebase-tools": "^13.16.0",
     "react": "^18.3.1",

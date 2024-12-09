@@ -56,10 +56,12 @@
     font-size: 1.1rem;
 }
 .timeline .event {
-    border-bottom: 2px dashed $myBlueDark;
     padding-bottom: 15px;
     margin-bottom: 25px;
     position: relative;
+}
+.timeline .eventborderbottom{
+    border-bottom: 2px dashed $myBlueDark;
 }
 @media (max-width: 767px) {
     .timeline .event {

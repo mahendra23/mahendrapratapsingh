@@ -4,7 +4,7 @@ export const headerdata = {
             id: "homesection",
             title: "HOME",
             href: "#homesection",
-            display: true,
+            display: false,
         },
         {
             id: "aboutsection",

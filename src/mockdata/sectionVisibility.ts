@@ -1,5 +1,5 @@
 export const sectionVisibility = {
-    welcomeSection: true,
+    welcomeSection: false,
     aboutSection: true,
     skillsSection: true,
     projectSection: false,

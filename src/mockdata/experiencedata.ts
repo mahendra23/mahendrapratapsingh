@@ -85,8 +85,8 @@ export const experiencedata: ExperienceDataType = {
         },
         {
             company: "UnitedHealth Group",
-            date: "May 2008 - June 2014",
-            title: "IT Quality Consultant",
+            date: "May 2010 - June 2014",
+            title: "IT Quality Consultant (Project Lead)",
             area: "Gurgaon, India",
             desc: ""
         },

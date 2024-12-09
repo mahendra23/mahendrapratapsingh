@@ -80,6 +80,10 @@ export const skillsData: SkillsDataType = {
                     toolname: "SuperTest",
                 },
                 {
+                    toolIcon: "Karate-Labs.svg",
+                    toolname: "Karate",
+                },
+                {
                     toolIcon: "soapui.jpeg",
                     toolname: "SoapUI",
                 },
@@ -149,12 +153,16 @@ export const skillsData: SkillsDataType = {
                     toolname: "Junit",
                 },
                 {
-                    toolIcon: "",
-                    toolname: "Concordian",
+                    toolIcon: "pytest.svg",
+                    toolname: "PyTest",
                 },
                 {
                     toolIcon: "Chai.png",
                     toolname: "Chai",
+                },
+                {
+                    toolIcon: "",
+                    toolname: "Concordian",
                 },
             ],
         },
@@ -170,14 +178,6 @@ export const skillsData: SkillsDataType = {
                     toolname: "Kotlin",
                 },
                 {
-                    toolIcon: "VBScript.png",
-                    toolname: "VBScript",
-                },
-                {
-                    toolIcon: "CSharp.svg",
-                    toolname: "C#",
-                },
-                {
                     toolIcon: "Java.svg",
                     toolname: "Java",
                 },
@@ -188,6 +188,22 @@ export const skillsData: SkillsDataType = {
                 {
                     toolIcon: "Swift.svg",
                     toolname: "Swift",
+                },
+                {
+                    toolIcon: "Java.svg",
+                    toolname: "Java",
+                },
+                {
+                    toolIcon: "Python.svg",
+                    toolname: "Python",
+                },
+                {
+                    toolIcon: "VBScript.png",
+                    toolname: "VBScript",
+                },
+                {
+                    toolIcon: "CSharp.svg",
+                    toolname: "C#",
                 },
                 {
                     toolIcon: "vbnet.png",

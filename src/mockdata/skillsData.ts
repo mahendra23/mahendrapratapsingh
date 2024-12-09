@@ -76,10 +76,6 @@ export const skillsData: SkillsDataType = {
                     toolname: "Spring Boot",
                 },
                 {
-                    toolIcon: "",
-                    toolname: "SuperTest",
-                },
-                {
                     toolIcon: "Karate-Labs.svg",
                     toolname: "Karate",
                 },
@@ -90,6 +86,10 @@ export const skillsData: SkillsDataType = {
                 {
                     toolIcon: "readyapi.png",
                     toolname: "ReadyAPI",
+                },
+                {
+                    toolIcon: "",
+                    toolname: "SuperTest",
                 },
             ],
         },
@@ -208,6 +208,23 @@ export const skillsData: SkillsDataType = {
                 {
                     toolIcon: "vbnet.png",
                     toolname: "VB.NET",
+                },
+            ]
+        },
+        {
+            title: "Database",
+            toolslist: [
+                {
+                    toolIcon: "aws-dynamodb-icon.png",
+                    toolname: "AWS Dynamo DB",
+                },
+                {
+                    toolIcon: "postgres.png",
+                    toolname: "Postgre",
+                },
+                {
+                    toolIcon: "oracle.svg",
+                    toolname: "Oracle",
                 },
             ]
         },

@@ -7,9 +7,10 @@ import { IMAGES_FOLDER } from "../../common/constants";
 import { ContactDetailsSection } from "../contactdetails/ContactDetailsSection";
 
 export const AboutSection = (): JSX.Element => {
+    const isHomeDisplayed = headerdata.header[0].display;
     return (
         <section id={headerdata.header[1].id} className="aboutsection">
-            <Heading headingText="ABOUT ME" />
+            {isHomeDisplayed && <Heading headingText="ABOUT ME" />}
             <div className="aboutcontainer">
                 <div className="aboutimagecontainer">
                     <img alt="Mahen" src={`${IMAGES_FOLDER}/Mahen.jpg`} className="aboutimage" />
@@ -17,31 +18,19 @@ export const AboutSection = (): JSX.Element => {
                 <div className="aboutdescriptioncontainer">
                     <p>
                         I am a Software Testing professional with over 
-                        <span> 20 years of experience </span> 
-                        in
-                        <span> Test Automation, and Application Development, 
-                        Program Management, Client & Stakeholder Management</span>.
+                        <span>20 years of expertise in Test Automation, Application Development, Program Management, and Client & Stakeholder Engagement.</span> 
                         <br/>
-                        With over 16 years of demonstrated expertise in
-                        <span> test automation strategy, design & implementation of 
-                            automation frameworks (for Web & Mobile Applications and API testing)
-                        </span>
-                        , and leadership of the
-                        <span> Automation Centre of Excellence Teams</span>.
+                        With over 16 years of demonstrated excellence in 
+                        <span>developing test automation strategies, designing and implementing automation frameworks (spanning Web, Mobile Applications, and API testing)</span>
+                        , and leading Automation Centres of Excellence, I have been instrumental in driving quality-focused initiatives across organizations.
                         <br/>
-                        With Strong background in Agile methodologies and
-                        <span> SAFe Agile, </span>
-                        I have over 10 years of rich experience in
-                        <span> managing Agile and Waterfall </span>
-                        projects, fostering client relationships, driving strategic 
-                        initiatives, and
-                        <span> leading high-performing teams</span>.
+                        Backed by a strong foundation in 
+                        <span> Agile methodologies and SAFe Agile, </span>I bring over a decade of rich experience in managing both Agile and Waterfall projects,
+                        <span> cultivating client relationships, and leading high-performing teams. </span>
                         <br/>
-                        Over the past two decades I have worked in
-                        <span> multiple domains </span>like 
-                        <span> Banking (Digital Technology, Web & Mobile Apps, Payments & Cards, 
-                        Retail Tools), Land information Management, Health Insurance, and Telecom.
-                        </span>
+                        My career spans multiple domains, including
+                        <span> Banking (Digital Technology, Web & Mobile Apps, Payments & Cards, Retail Tools), Land Information Management, Health Insurance, and Telecom, </span>
+                        reflecting my versatility and adaptability in complex and dynamic environments.
                         <br/>
                         <br/>
                         <DownloadResumeButton buttonTitle="Feel free to download my resume for more information." showIcon={false} />

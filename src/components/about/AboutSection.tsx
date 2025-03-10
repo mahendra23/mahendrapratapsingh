@@ -17,12 +17,14 @@ export const AboutSection = (): JSX.Element => {
                 </div>
                 <div className="aboutdescriptioncontainer">
                     <p>
-                        I am a Software Testing professional with over 
-                        <span>20 years of expertise in Test Automation, Application Development, Program Management, and Client & Stakeholder Engagement.</span> 
+                        Hey there! I'm 
+                        <span> Mahendra Pratap Singh </span>
+                        - a seasoned Software Testing professional with over
+                        <span> 20 years of expertise in Test Automation, Application Development, Program Management, and Client & Stakeholder Engagement.</span> 
                         <br/>
-                        With over 16 years of demonstrated excellence in 
-                        <span>developing test automation strategies, designing and implementing automation frameworks (spanning Web, Mobile Applications, and API testing)</span>
-                        , and leading Automation Centres of Excellence, I have been instrumental in driving quality-focused initiatives across organizations.
+                        With demonstrated excellence in
+                        <span> developing test automation strategies, designing and implementing automation frameworks (spanning Web, Mobile Applications, and API testing)</span>
+                        , and leading Automation Centres of Excellence, I have been instrumental in driving quality-focused initiatives across organizations. By integrating <span>DevOps practices and leveraging AI in test automation</span>, I ensure faster, smarter, and more efficient testing solutions that align with modern software delivery pipelines.
                         <br/>
                         Backed by a strong foundation in 
                         <span> Agile methodologies and SAFe Agile, </span>I bring over a decade of rich experience in managing both Agile and Waterfall projects,

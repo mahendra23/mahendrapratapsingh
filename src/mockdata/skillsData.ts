@@ -94,12 +94,17 @@ export const skillsData: SkillsDataType = {
             ],
         },
         {
-            title: "DevOps & Cloud",
+            title: "AI, DevOps & Cloud",
             toolslist: [
+                {
+                    toolIcon: "BrowserUse.svg",
+                    toolname: "Browser Use AI Agent",
+                },
                 {
                     toolIcon: "GitHub.svg",
                     toolname: "GitHub",
-                },{
+                },
+                {
                     toolIcon: "GitHub-Actions.svg",
                     toolname: "GitHub Actions",
                 },
@@ -170,40 +175,44 @@ export const skillsData: SkillsDataType = {
             title: "Coding",
             toolslist: [
                 {
-                    toolIcon: "TypeScript.svg",
-                    toolname: "TypeScript",
+                    toolIcon: "Swagger.svg",
+                    toolname: "Swagger",
                 },
                 {
-                    toolIcon: "Kotlin.svg",
-                    toolname: "Kotlin",
+                    toolIcon: "OpenAPI.svg",
+                    toolname: "OpenAPI",
                 },
                 {
                     toolIcon: "Java.svg",
                     toolname: "Java",
+                },
+                {
+                    toolIcon: "TypeScript.svg",
+                    toolname: "TypeScript",
                 },
                 {
                     toolIcon: "JavaScript.svg",
                     toolname: "JavaScript",
                 },
                 {
-                    toolIcon: "Swift.svg",
-                    toolname: "Swift",
+                    toolIcon: "Kotlin.svg",
+                    toolname: "Kotlin",
                 },
                 {
-                    toolIcon: "Java.svg",
-                    toolname: "Java",
+                    toolIcon: "Swift.svg",
+                    toolname: "Swift",
                 },
                 {
                     toolIcon: "Python.svg",
                     toolname: "Python",
                 },
                 {
-                    toolIcon: "VBScript.png",
-                    toolname: "VBScript",
-                },
-                {
                     toolIcon: "CSharp.svg",
                     toolname: "C#",
+                },
+                {
+                    toolIcon: "VBScript.png",
+                    toolname: "VBScript",
                 },
                 {
                     toolIcon: "vbnet.png",

@@ -10,6 +10,7 @@ import { Footer } from "./components/Footer/FooterComponent";
 import { WelcomeSection } from "./components/welcome/WelcomeSection";
 import { JourneySection } from "./components/journey/JourneySection";
 import { sectionVisibility } from "./mockdata/sectionVisibility";
+import { UtilsSection } from "./components/utils/UtilsSection";
 
 function App() {
   
@@ -29,8 +30,9 @@ function App() {
         {sectionVisibility.welcomeSection && <WelcomeSection />}
         {sectionVisibility.aboutSection && <AboutSection />}
         {sectionVisibility.skillsSection && <SkillsSection />}
-        {sectionVisibility.projectSection && <ProjectsSection />}
         {sectionVisibility.journeySection && <JourneySection />}
+        {sectionVisibility.projectSection && <ProjectsSection />}
+        {sectionVisibility.journeySection && <UtilsSection />}
         <Footer />
       </div>
     </>

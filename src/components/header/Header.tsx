@@ -3,11 +3,15 @@ import {headerdata} from "../../mockdata/headerdata";
 import "./Header.scss";
 import {DownloadResumeButton} from "../resume/DownloadResumeButton";
 import { ContactDetailsSection } from "../contactdetails/ContactDetailsSection";
+import { IMAGES_FOLDER } from "../../common/constants";
 
 export const Header = (): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <nav id="header" className="navbar">
+      <div className="headerimagecontainer">
+          <img alt="Logo" src={`${IMAGES_FOLDER}/logo.png`} className="headerimage"/>
+      </div>
       <div className={`hamburger ${menuOpen ? 'open' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>
         <div className="line" />
         <div className="line" />

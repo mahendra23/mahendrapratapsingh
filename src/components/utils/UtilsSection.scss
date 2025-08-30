@@ -1,6 +1,6 @@
 @import "../../common/globalColor.scss";
 
-.projectsection {
+.utilssection {
     flex-direction: column;
     align-items: center;
     height: 75vh;
@@ -10,23 +10,23 @@
     padding: 50px;
 }
 
-.projectsection .heading{
+.utilssection .heading{
     color: $textColorLight;
 }
 
-.projectcontainer {
+.utilscontainer {
     width: 100%;
-    height: 70vh;
+    height: 50vh;
     display: flex;
     flex-direction: row;
 }
 
 @media only screen and (max-width: 768px) {
-    .projectsection {
+    .utilssection {
         height: auto;
     }
 
-    .projectcontainer {
+    .utilscontainer {
         flex-direction: column;
         align-items: center;
         height: auto;

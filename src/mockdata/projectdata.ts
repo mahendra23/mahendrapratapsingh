@@ -9,7 +9,7 @@ export const projectdata = {
         },
         {
             name: "Azure Pipeline",
-            desc: "Azure Devops pipeline to build and deploy my portfolio on firebase",
+            desc: "Azure Devops pipeline to deploy on firebase",
             link: "",
             images: ["Azure-Devops.svg"],
         },

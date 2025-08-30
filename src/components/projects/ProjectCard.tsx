@@ -6,25 +6,24 @@ interface ProjectData {
     name: string,
     desc: string,
     link: string,
-    techs: string[],
     images: string[],
 }
 
 export default function ProjectCard(data: ProjectData): ReactElement {
     return (
-        <div className="cardcontainer">
-            <div className="imagecontainer">
+        <div className="projectcardcontainer">
+            <div className="projectimagecontainer">
                 {data.images.map((image) => (
                     <img src={`${ICONS_FOLDER}/${image}`} alt="tool-image" />
                 ))}
             </div>
-            <div className="cardheading">
+            <div className="projectcardheading">
                 <p>{data.name}</p>
             </div>
-            <div className="carddesc">
+            <div className="projectcarddesc">
                 <p>{data.desc}</p>
             </div>
-            <div className="link">
+            <div className="projectcardlink">
                 <a
                     href={data.link}
                     target="_blank" rel="noreferrer"

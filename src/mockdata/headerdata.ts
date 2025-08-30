@@ -30,5 +30,11 @@ export const headerdata = {
             href: "#journeysection",
             display: true,
         },
+        {
+            id: "utilssection",
+            title: "UTILITIES",
+            href: "#utilssection",
+            display: true,
+        },
     ]
 }

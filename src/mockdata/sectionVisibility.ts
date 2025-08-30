@@ -4,4 +4,5 @@ export const sectionVisibility = {
     skillsSection: true,
     projectSection: false,
     journeySection: true,
+    utilsSection: true,
 }

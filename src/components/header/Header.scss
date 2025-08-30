@@ -2,7 +2,7 @@
 
 .navbar{
     position: fixed;
-    height: 5vh;
+    height: 7vh;
     width: 100%;
     background-image: $myGradient;
     z-index: 1;
@@ -38,6 +38,16 @@
     width: 0;
     height: 0;
     opacity: 0;
+}
+.headerimage {
+    border-radius: 50%;
+    height: 4vh;
+    width: 4vh;
+}
+.headerimagecontainer{
+    display: flex;
+    position: relative;
+    left: 1%;
 }
 @media screen and (max-width: 768px) {
     .line {

@@ -11,6 +11,7 @@ import { WelcomeSection } from "./components/welcome/WelcomeSection";
 import { JourneySection } from "./components/journey/JourneySection";
 import { sectionVisibility } from "./mockdata/sectionVisibility";
 import { UtilitiesSection } from "./components/utils/UtilitiesSection";
+import { WelcomeSectionNew } from "./components/welcome/WelcomeSectionNew";
 
 function App() {
   
@@ -27,6 +28,7 @@ function App() {
       <Preloader load={load} />
       <div className="App">
         <Header />
+        {sectionVisibility.welcomeSectionNew && <WelcomeSectionNew />}
         {sectionVisibility.welcomeSection && <WelcomeSection />}
         {sectionVisibility.aboutSection && <AboutSection />}
         {sectionVisibility.skillsSection && <SkillsSection />}

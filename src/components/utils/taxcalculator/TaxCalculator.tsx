@@ -3,7 +3,7 @@ import "./TaxCalculator.scss";
 import { UtilButton } from "../utilbutton/UtilButton";
 
 export const TaxCalculator = (): JSX.Element => {
-    const [annualIncome, setAnnualIncome] = useState<number>(0);
+    const [annualIncome, setAnnualIncome] = useState<string>("");
     const [tax, setTax] = useState<number>(0);
     const [netIncome, setNetIncome] = useState<number>(0);
 
@@ -14,15 +14,15 @@ export const TaxCalculator = (): JSX.Element => {
 
     // NZ income tax brackets 2025/26
     const nzTaxBrackets: TaxBracket[] = [
-        { threshold: 0, rate: 0.105 },       // 10.5% for income up to $14,000
-        { threshold: 15600, rate: 0.175 },  // 17.5% for $14,001 – $48,000
-        { threshold: 53500, rate: 0.30 },   // 30% for $48,001 – $70,000
-        { threshold: 78100, rate: 0.33 },   // 33% for $70,001 – $180,000
+        { threshold: 0, rate: 0.105 },       // 10.5% for income up to $15,600
+        { threshold: 15600, rate: 0.175 },  // 17.5% for $16,601 – $53,500
+        { threshold: 53500, rate: 0.30 },   // 30% for $53,501 – $78,100
+        { threshold: 78100, rate: 0.33 },   // 33% for $78,101 – $180,000
         { threshold: 180000, rate: 0.39 },  // 39% for $180,001+
     ];
 
     function calculateNZTax(): void {
-        let income = annualIncome;
+        let income = parseFloat(annualIncome) || 0;
         if (income <= 0) setTax(0);
         let tax = 0;
         for (let i = nzTaxBrackets.length - 1; i >= 0; i--) {
@@ -33,28 +33,52 @@ export const TaxCalculator = (): JSX.Element => {
             }
         }
         setTax(parseFloat(tax.toFixed(2)));
-        setNetIncome(annualIncome - tax);
+        setNetIncome((parseFloat(annualIncome) || 0) - tax);
     }
 
     return (
         <div className="taxcalculator">
             <div className="taxcalculatorcontrols">
                 <label>
-                    Annual income: &nbsp;
+                    Income: &nbsp;
                     <input
                         id="annualincomeinput"
                         type="text"
                         value={annualIncome}
-                        onChange={(e) => {setTax(0);setAnnualIncome(e.target.value === "" ? 0 : Number(e.target.value))}}
+                        onChange={(e) => {
+                            const val = e.target.value;
+                            // ✅ Allow only digits and at most one decimal point
+                            if (/^\d*\.?\d*$/.test(val)) {
+                                setTax(0);
+                                setNetIncome(0);
+                                setAnnualIncome(val);
+                            }
+                        }}
+                        size={annualIncome.toString().length || 1}
                         placeholder="Enter annual income"
+                        className="taxcalculatorcontrols-annualincomeinput"
                     />
                 </label>
                 <UtilButton onClick={calculateNZTax} title="Calculate Tax" />
             </div>
             <div className="taxcalculatoroutput">
                 <div className="taxcalculatoroutputresultdisplay">
-                    <input type="text" value={`Annual Tax: ${tax}`} readOnly />
-                    <input type="text" value={`Net Income: ${netIncome}`} readOnly />
+                    <input
+                        id="annualtaxoutput" 
+                        type="text" 
+                        value={`Annual Tax: ${tax}`} 
+                        size={"Annual Tax: ".length + (tax.toString().length || 1)}
+                        className="taxcalculatoroutput-annualtaxoutput"
+                        readOnly 
+                    />
+                    <input
+                        id="netincomeoutput" 
+                        type="text" 
+                        value={`Net Income: ${netIncome}`} 
+                        size={"Net Income: ".length + (netIncome.toString().length || 1)}
+                        className="taxcalculatoroutput-annualtaxoutput"
+                        readOnly 
+                    />
                 </div>
             </div>
         </div>

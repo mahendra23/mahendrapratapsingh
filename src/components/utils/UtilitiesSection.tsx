@@ -5,6 +5,7 @@ import { Heading } from "../heading/heading";
 import { PasswordGenerator } from "./passwordgenerator/PasswordGenerator";
 import { headerdata } from "../../mockdata/headerdata";
 import { DateCalculator } from "./datecalculator/DateCalculator";
+import { TaxCalculator } from "./taxcalculator/TaxCalculator";
 
 type UtilityCardProps = {
   title: string;
@@ -37,6 +38,13 @@ export const UtilitiesSection = (): JSX.Element => {
           icon={<FaKey />}
         >
           <PasswordGenerator />
+        </UtilityCard>
+        <UtilityCard
+          title="NZ Income Tax Calculator"
+          description="Annual income tax calculator for New Zealand."
+          icon={<FaCalendarAlt />}
+        >
+          <TaxCalculator />
         </UtilityCard>
         <UtilityCard
           title="Date Calculator"

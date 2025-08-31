@@ -37,6 +37,7 @@ export const PasswordGenerator =(): JSX.Element => {
       <div className="passwordgeneratorcontrols">
         <label>Length: &nbsp;
           <input
+            id="passwordlength"
             type="number"
             value={length}
             onChange={(e) => setLength(Number(e.target.value))}
@@ -46,7 +47,7 @@ export const PasswordGenerator =(): JSX.Element => {
       </div>
       <div className="passwordgeneratoroutput">
         <div className="passworddisplay">
-          <input type="text" value={password} readOnly />
+          <input id="generatedpassword" type="text" value={password} readOnly />
           <button title="copyToClipboard" onClick={copyToClipboard}><FaRegCopy /></button>
         </div>
         <div className="expirynote">* This password will disappear after 30 seconds ⏳</div>

@@ -11,3 +11,11 @@
     font-size: $xsmallFontSize;
     font-weight: bold;
 }
+.downloadicon {
+    size: $smallFontSize;
+}
+@media screen and (max-width: 768px) {
+    .downloadresumecontainer a{
+        font-size: $xxsmallFontSize;
+    }
+}

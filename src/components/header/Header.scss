@@ -1,105 +1,123 @@
 @import "../../common/globalColor.scss";
 
-.navbar{
-    position: fixed;
-    height: 7vh;
-    width: 100%;
-    background-image: $myGradient;
-    z-index: 1;
-    display: flex;
-    flex-direction: row;
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 7vh;
+  width: 100%;
+  background-image: $myGradient;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
 }
-.nav-list{
-    display: flex;
-    list-style: none;
-    width: 70%;
-    height: 100%;
-    justify-content: space-around;
-    align-items: center;
+
+/* --- Nav List (Desktop) --- */
+.nav-list {
+  display: flex;
+  list-style: none;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+  transition: all 0.5s ease;
 }
+
 .nav-list-item-container {
-    display: flex;
-    position: relative;
-    right: -25%;
+  display: flex;
+  gap: 1rem;
 }
-.nav-list-item{
-    padding: 15px;
+
+.nav-list-item {
+  padding: 0.5rem 1rem;
 }
-.nav-list-item a{
-    text-decoration: none;
-    color: $textColorLight;
-    font-size: $xsmallFontSize;
-    font-weight: bold;
+
+.nav-list-item a {
+  text-decoration: none;
+  color: $textColorLight;
+  font-size: $xsmallFontSize;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
-.nav-list-item a:hover{
-    color: $myOrange;
+
+.nav-list-item a:hover {
+  color: $myOrange;
 }
-.navbar .headercontactdetails{
-    width: 0;
-    height: 0;
-    opacity: 0;
-}
+
+/* --- Header Image --- */
 .headerimage {
-    border-radius: 50%;
-    height: 4vh;
-    width: 4vh;
+  border-radius: 50%;
+  height: 4vh;
+  width: 4vh;
 }
-.headerimagecontainer{
-    display: flex;
-    position: relative;
-    left: 1%;
+
+.headerimagecontainer {
+  display: flex;
+  align-items: center;
 }
+
+/* --- Mobile Drawer --- */
 @media screen and (max-width: 768px) {
-    .line {
-      width: 25px;
-      height: 3px;
-      background: $textColorLight;
-      margin: 5px;
-    }
-    .hamburger {
-      position: absolute;
-      cursor: pointer;
-      right: 1%;
-      top: 50%;
-      transform: translate(-1%, -50%);
-      transition: all 0.5s ease-out;
-      z-index: 2;
-    }
-    .hamburger.open{
-        transform: rotate(90deg);
-        transition: all 0.5s ease-in;
-    }
-    .navbar {
-        cursor: pointer;
-    }
-    .nav-list{
-        background-image: $myGradient;
-        display: flex;
-        height: 100vh;
-        width: 100%;
-        flex-direction: column;
-        pointer-events: all;
-        opacity: 0;
-    }
-    .nav-list.open{
-        opacity: 1;
-        transition: all 0.5s ease-in;
-    }
-    .nav-list-item-container {
-        display: flex;
-        flex-direction: column;
-        align-items: left;
-        position: relative;
-        left: -7%;
-    }
-    .nav-list-item{
-        padding: 20px;
-    }
-    .nav-list-item a:hover{
-        color: $myOrange;
-    }
-    .navbar .headercontactdetails {
-        width: auto;
-        opacity: 1;
-    }
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 1100;
   }
+
+  .line {
+    width: 100%;
+    height: 3px;
+    background: $textColorLight;
+    transition: all 0.4s ease;
+  }
+
+  /* Animate hamburger when open */
+  .hamburger.open .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburger.open .line:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.open .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  /* Drawer menu */
+  .nav-list {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: fixed;
+    top: 7vh;                       /* below navbar */
+    left: -70%;                     /* hidden off-screen */
+    height: 100vh;                  /* full height */
+    width: 70%;                     /* drawer width */
+    background-image: $myGradient;
+    padding: 1rem;
+    transition: left 0.3s ease-in-out;
+    z-index: 100;
+  }
+
+  .nav-list.open {
+    left: 0;                        /* slide into view */
+  }
+
+  .nav-list-item-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-list-item {
+    padding: 1rem 0;
+    width: 100%;
+  }
+
+  .nav-list-item a {
+    font-size: $xxsmallFontSize;
+  }
+}

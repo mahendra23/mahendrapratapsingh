@@ -31,9 +31,9 @@ export const headerdata = {
             display: true,
         },
         {
-            id: "utilssection",
+            id: "utilitiessection",
             title: "UTILITIES",
-            href: "#utilssection",
+            href: "#utilitiessection",
             display: true,
         },
     ]

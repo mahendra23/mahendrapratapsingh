@@ -15,7 +15,7 @@ export const ContactDetailsSection = (): JSX.Element => {
                 <SocialIcon fgColor="whitesmoke" url="mailto: mpratap.singh@gmail.com" />
             </div>
             <div className="iconcontainer">
-            <SocialIcon bgColor="black" fgColor="whitesmoke" url="https://github.com/mahendra23" />
+                <SocialIcon bgColor="black" fgColor="whitesmoke" url="https://github.com/mahendra23" />
             </div>
         </div> 
     );

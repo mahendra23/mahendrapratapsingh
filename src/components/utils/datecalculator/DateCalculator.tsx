@@ -28,6 +28,7 @@ export const DateCalculator = (): JSX.Element => {
                 <label>
                     Start Date: &nbsp;
                     <input
+                        id="startDate"
                         type="date"
                         value={startDate ? startDate.toISOString().split("T")[0] : ""}
                         onChange={(e) => setStartDate(e.target.value ? new Date(e.target.value) : null)}
@@ -36,6 +37,7 @@ export const DateCalculator = (): JSX.Element => {
                 <label>
                     End Date: &nbsp;
                     <input
+                        id="endDate"
                         type="date"
                         value={endDate ? endDate.toISOString().split("T")[0] : ""}
                         onChange={(e) => setEndDate(e.target.value ? new Date(e.target.value) : null)}
@@ -44,7 +46,7 @@ export const DateCalculator = (): JSX.Element => {
             </div>
             <div className="datecalculatoroutput">
                 <div className="datecalculatoroutputresultdisplay">
-                    <input type="text" value={`Difference: ${difference} days`} readOnly />
+                    <input id="datedifference" type="text" value={`Difference: ${difference} days`} readOnly />
                 </div>
             </div>
         </div>

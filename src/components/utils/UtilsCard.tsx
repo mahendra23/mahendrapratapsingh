@@ -1,17 +1,17 @@
-import React, { ReactElement, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./UtilsCard.scss";
 import { FaForward } from "react-icons/fa6";
-import { generatePassword } from "./GeneratePassword";
+import { generateSecurePassword } from "./GeneratePassword";
 
 interface UtilsData {
     name: string,
     desc: string
 }
 
-export default function UtilsCard({name, desc}: UtilsData): ReactElement {
+export const UtilsCard = (props: {data: UtilsData}): JSX.Element => {
     const [visible, setVisible] = useState(false);
     function TimedMessage() {
-        const password=generatePassword();
+        const password=generateSecurePassword(20);
         useEffect(() => {
             const timer = setTimeout(() => {
                 setVisible(false);
@@ -32,10 +32,10 @@ export default function UtilsCard({name, desc}: UtilsData): ReactElement {
     return (
         <div className="utilscardcontainer">
             <div className="utilscardheading">
-                <p>{name}</p>
+                <p>{props.data.name}</p>
             </div>
             <div className="utilscarddesc">
-                <p>{desc}&nbsp;&nbsp; <FaForward onClick={() => setVisible(true)}/></p>
+                <p>{props.data.desc}&nbsp;&nbsp; <FaForward onClick={() => setVisible(true)}/></p>
                 <TimedMessage />
             </div>
         </div>

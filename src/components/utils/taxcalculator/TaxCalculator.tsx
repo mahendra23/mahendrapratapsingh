@@ -5,6 +5,7 @@ import { UtilButton } from "../utilbutton/UtilButton";
 export const TaxCalculator = (): JSX.Element => {
     const [annualIncome, setAnnualIncome] = useState<number>(0);
     const [tax, setTax] = useState<number>(0);
+    const [netIncome, setNetIncome] = useState<number>(0);
 
     interface TaxBracket {
         threshold: number; // lower bound of bracket
@@ -32,6 +33,7 @@ export const TaxCalculator = (): JSX.Element => {
             }
         }
         setTax(parseFloat(tax.toFixed(2)));
+        setNetIncome(annualIncome - tax);
     }
 
     return (
@@ -51,7 +53,8 @@ export const TaxCalculator = (): JSX.Element => {
             </div>
             <div className="taxcalculatoroutput">
                 <div className="taxcalculatoroutputresultdisplay">
-                    <input type="text" value={`Annual Tax is: ${tax}`} readOnly />
+                    <input type="text" value={`Annual Tax: ${tax}`} readOnly />
+                    <input type="text" value={`Net Income: ${netIncome}`} readOnly />
                 </div>
             </div>
         </div>

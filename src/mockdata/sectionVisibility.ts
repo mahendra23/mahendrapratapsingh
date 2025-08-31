@@ -5,4 +5,5 @@ export const sectionVisibility = {
     projectSection: false,
     journeySection: true,
     utilsSection: true,
+    dashboardSection: true,
 }

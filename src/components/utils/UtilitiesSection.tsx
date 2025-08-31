@@ -4,6 +4,7 @@ import "./UtilitiesSection.scss";
 import { Heading } from "../heading/heading";
 import { PasswordGenerator } from "./passwordgenerator/PasswordGenerator";
 import { headerdata } from "../../mockdata/headerdata";
+import { DateCalculator } from "./datecalculator/DateCalculator";
 
 type UtilityCardProps = {
   title: string;
@@ -42,14 +43,7 @@ export const UtilitiesSection = (): JSX.Element => {
           description="Find age or countdown to an event."
           icon={<FaCalendarAlt />}
         >
-          {/* 📆 Date calculator component */}
-        </UtilityCard>
-        <UtilityCard
-          title="Text Tools"
-          description="Convert case, count words, and clean text."
-          icon={<FaFont />}
-        >
-          {/* 📝 Text tools */}
+          <DateCalculator />
         </UtilityCard>
         <UtilityCard
           title="Converter"
@@ -64,6 +58,13 @@ export const UtilitiesSection = (): JSX.Element => {
           icon={<FaQrcode />}
         >
           {/* 🔲 QR Code generator */}
+        </UtilityCard>
+        <UtilityCard
+          title="Text Tools"
+          description="Convert case, count words, and clean text."
+          icon={<FaFont />}
+        >
+          {/* 📝 Text tools */}
         </UtilityCard>
       </div>
     </section>

@@ -1,25 +1,55 @@
+import { useState, useEffect } from "react";
 import "./JourneySection.scss";
-import { headerdata } from "../../mockdata/headerdata";
+import { timelineData } from "../../mockdata/experiencedata";
 import { Heading } from "../heading/heading";
-import { experiencedata } from "../../mockdata/experiencedata";
-import clsx from "clsx";
 
-export const JourneySection = (): JSX.Element => {
-    return (
-        <div id={headerdata.header[4].id} className="journeySection">
-            <Heading headingText={experiencedata.title} />
-            <div className="journeycontainer">
-                <ul className="timeline">
-                    {experiencedata.workexp.map((data) => (
-                        <li className={clsx("event", (data.desc.length > 0) && "eventborderbottom")} data-date={data.date}>
-                            <h3>{data.title}</h3>
-                            <p>{data.company}</p>
-                            <p>{data.area}</p>
-                            <p className="multiline-text">{data.desc}</p>
-                        </li>
-                    ))}
-                </ul>
-            </div>
-        </div>
+export default function JourneySection() {
+  const [visibleCount, setVisibleCount] = useState(4); // for <900px
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 900);
+      if (window.innerWidth >= 900) {
+        setVisibleCount(timelineData.length); // show all on desktop
+      } else {
+        setVisibleCount(4); // initial collapsed
+      }
+    };
+
+    handleResize(); // initial check
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const showMore = () => {
+    setVisibleCount((prev) =>
+      prev + 4 > timelineData.length ? timelineData.length : prev + 4
     );
-};
+  };
+
+  return (
+    <section id="journeysection" className="timeline">
+      <Heading headingText="Professional Journey" />
+      <div className="timeline-container">
+        {timelineData.slice(0, visibleCount).map((exp, index) => (
+          <div className="timeline-item slide-down" key={index}>
+            <span className="year">{exp.period}</span>
+            <h6>{exp.role}</h6>
+            <h6>{exp.company}</h6>
+            <p>{exp.highlight}</p>
+          </div>
+        ))}
+      </div>
+
+      {isMobile && visibleCount < timelineData.length && (
+        <div className="timeline-actions">
+          <button className="btn load-more" onClick={showMore}>
+            Load More
+          </button>
+        </div>
+      )}
+    </section>
+  );
+}

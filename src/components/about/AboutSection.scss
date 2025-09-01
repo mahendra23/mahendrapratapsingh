@@ -1,93 +1,80 @@
 @import "../../common/globalColor.scss";
 
-.aboutsection {
-    width: 100%;
+.about {
     display: flex;
-    padding: 20px;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    color: $textColorDark;
-    height: 95vh;
-    border-bottom: 3px solid $myBlueDark;
-}
-
-.aboutcontainer {
-    display: flex;
-    flex-direction: row;
-    width: 80%;
+    justify-content: space-between;
+    padding: 4rem 8%;
+    height: 100vh;
     gap: 2rem;
-}
 
-.aboutimagecontainer {
-    display: block;
-    margin: 10px;
-    padding: 20px;
-    border-right: 3px solid $myBlueDark;
-}
-
-.aboutimage {
-    border-radius: 50%;
-    height: 50vh;
-    width: 35vh;
-}
-
-.aboutdescriptioncontainer {
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    margin-left: 10px;
-    padding: 20px 20px;
-}
-
-.aboutdescriptioncontainer h1 {
-    font-size: $normalFontSize;
-    font-weight: bold;
-    padding-bottom: 20px;
-}
-.aboutdescriptioncontainer p {
-    font-size: $xsmallFontSize;
-}
-
-.aboutdescriptioncontainer span{
-    font-weight: bold;
-    font-style: italic !important;
-}
-
-.aboutdescriptioncontainer a {
-    color: $textColorDark;
-}
-
-.aboutdescriptioncontainer a:hover{
-    color: $myOrange;
-}
-
-@media only screen and (max-width: 768px) {
-    .aboutsection {
-        height: auto;
-        flex-direction: column;
-        padding: 30px;
-    }
-
-    .aboutcontainer {
-        flex-direction: column;
-        height: auto;
-        width: auto;
-    }
-
-    .aboutimagecontainer {
+    .about-left {
+      flex: 1;
+      h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+        .highlight {
+          color: $myHighlightColor;
+        }
+      }
+      p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        max-width: 600px;
+      }
+      .about-actions {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        border-right: 0;
-        border-bottom: 3px solid $myBlueDark;
+        gap: 1rem;
+        .btn {
+          padding: 0.8rem 1.6rem;
+          border-radius: 8px;
+          text-decoration: none;
+          font-weight: 600;
+          transition: 0.3s ease;
+          &.primary {
+            background: $myHighlightColor;
+            color: #000;
+            &:hover {
+              background: $myHighlightColorDark;
+            }
+          }
+          &.secondary {
+            border: 2px solid $myHighlightColor;
+            color: $myHighlightColor;
+            &:hover {
+              background: $myHighlightColor;
+              color: #000;
+            }
+          }
+        }
+      }
     }
-    
-    .aboutimage {
-        border-radius: 50%;
-        height: 25vh;
-        width: 17vh;
+
+    .about-right {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      img {
+        max-width: 90%;
+        border-radius: 20px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+      }
+    }
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .about {
+      flex-direction: column;
+      text-align: center;
+      min-height: unset;
+      margin-bottom: 2.5rem;
+      .about-left {
+        .about-actions {
+          justify-content: center;
+        }
+      }
     }
   }

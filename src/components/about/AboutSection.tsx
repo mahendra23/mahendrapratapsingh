@@ -1,45 +1,25 @@
-import React from 'react'
+import React from "react";
 import "./AboutSection.scss";
-import { headerdata } from "../../mockdata/headerdata";
-import { DownloadResumeButton } from "../resume/DownloadResumeButton";
-import { Heading } from "../heading/heading";
-import { IMAGES_FOLDER } from "../../common/constants";
-import { ContactDetailsSection } from "../contactdetails/ContactDetailsSection";
+import { IMAGES_FOLDER, RESUME_PDF } from "../../common/constants";
 
-export const AboutSection = (): JSX.Element => {
-    const isHomeDisplayed = headerdata.header[0].display;
-    return (
-        <section id={headerdata.header[1].id} className="aboutsection">
-            {isHomeDisplayed && <Heading headingText="ABOUT ME" />}
-            <div className="aboutcontainer">
-                <div className="aboutimagecontainer">
-                    <img alt="Mahen" src={`${IMAGES_FOLDER}/Mahen.jpg`} className="aboutimage" />
-                </div>
-                <div className="aboutdescriptioncontainer">
-                    <p>
-                        Hey there! I'm 
-                        <span> Mahendra Pratap Singh </span>
-                        - a seasoned Software Testing professional with over
-                        <span> 20 years of expertise in Test Automation, Application Development, Program Management, and Client & Stakeholder Engagement.</span> 
-                        <br/>
-                        With demonstrated excellence in
-                        <span> developing test automation strategies, designing and implementing automation frameworks (spanning Web, Mobile Applications, and API testing)</span>
-                        , and leading Automation Centres of Excellence, I have been instrumental in driving quality-focused initiatives across organizations. By integrating <span>DevOps practices and leveraging AI in test automation</span>, I ensure faster, smarter, and more efficient testing solutions that align with modern software delivery pipelines.
-                        <br/>
-                        Backed by a strong foundation in 
-                        <span> Agile methodologies and SAFe Agile, </span>I bring over a decade of rich experience in managing both Agile and Waterfall projects,
-                        <span> cultivating client relationships, and leading high-performing teams. </span>
-                        <br/>
-                        My career spans multiple domains, including
-                        <span> Banking (Digital Technology, Web & Mobile Apps, Payments & Cards, Retail Tools), Land Information Management, Health Insurance, and Telecom, </span>
-                        reflecting my versatility and adaptability in complex and dynamic environments.
-                        <br/>
-                        <br/>
-                        <DownloadResumeButton buttonTitle="Feel free to download my resume for more information." showIcon={false} />
-                    </p>
-                    <ContactDetailsSection />
-                </div>
-            </div>
-        </section>   
-    );
-};
+export default function AboutSection() {
+    return <section className="about">
+      <div className="about-left">
+        <h1>
+          <span className="highlight">22+ Years</span> Engineering Quality Excellence
+        </h1>
+        <p>
+          Test Automation Leader | QA Strategist | Mentor
+          Driving scalable automation, cross-functional team leadership,
+          and quality-first delivery across global industries.
+        </p>
+        <div className="about-actions">
+          <a href={RESUME_PDF} className="btn primary" download="Resume_Mahendra_Singh.pdf">Download Resume</a>
+          <a href={"#journeysection"} className="btn secondary">View My Journey</a>
+        </div>
+      </div>
+      <div className="about-right">
+        <img src={`${IMAGES_FOLDER}/Mahen.jpg`} alt="Me" />
+      </div>
+    </section>;
+  }

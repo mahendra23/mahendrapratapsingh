@@ -1,36 +1,112 @@
 @import "../../common/globalColor.scss";
 
-.skillssection {
-    align-items: center;
-    flex-direction: column;
-    height: auto;
-    border-bottom: 3px solid $myBlueDark;
-    width: 100%;
-    display: flex;
-    padding: 30px;
-}
+.skills {
+  padding: 6rem 8%;
+  text-align: center;
+  height: 100vh;
 
-.skillssection .heading{
-    margin: 30px;
-}
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // exactly 3 per row
+    grid-auto-rows: auto;
+    gap: 2rem;
+    justify-items: stretch;
+  }
 
-.skillscontainer {
-    display: flex;
-    flex-direction: row;
-    width: 90%;
-    justify-content: center;
-}
+  .skill-card {
+    background: $myCardBackground;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-@media only screen and (max-width: 768px) {
-    .skillssection {
-        height: auto;
-        flex-direction: column;
-        padding: 30px 10px;
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
     }
 
-    .skillscontainer {
-        flex-direction: column;
-        height: auto;
-        width: 100%;
+    h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: $myHighlightColor;
     }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        font-size: 0.95rem;
+        color: #ccc;
+        margin: 0.4rem 0;
+        position: relative;
+        padding-left: 1.2rem;
+        line-height: 1.5;
+
+        &::before {
+          content: "•";
+          color: $myHighlightColor;
+          position: absolute;
+          left: 0;
+        }
+      }
+    }
+
+    ul.two-columns {
+      column-count: 2;
+      column-gap: 2rem;
+    }
+  }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  .skills {
+    padding: 4rem 5%;
+    height: unset;
+    margin-top: 2.5rem;
+
+    .skills-grid {
+      grid-template-columns: repeat(2, 1fr); // 2 columns
+      justify-items: stretch;
+      align-items: stretch;
+      gap: 2rem;
+    }
+
+    .skill-card {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .skill-card ul.two-columns {
+      column-count: 2; // collapse columns for readability
+    }
+  }
+}
+@media (max-width: 900px) {
+  .skills {
+    padding: 4rem 5%;
+    height: unset;
+    margin-top: 2.5rem;
+
+    .skills-grid {
+      grid-template-columns: 1fr; // vertical stack
+      justify-items: center;
+      align-items: stretch;
+      gap: 2rem;
+    }
+
+    .skill-card {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .skill-card ul.two-columns {
+      column-count: 1; // collapse columns for readability
+    }
+  }
 }

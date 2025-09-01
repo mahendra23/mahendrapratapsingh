@@ -168,4 +168,92 @@ export const experiencedata: ExperienceDataType = {
             area: "Uttar Pradesh, India"
         },
     ]
+};
+
+
+interface TimelineItem {
+  role: string;
+  company: string;
+  period: string;
+  highlight: string;
 }
+
+export const timelineData: TimelineItem[] = [
+  {
+    role: "Senior Test Automation Engineer (Contract)",
+    company: "Reserve Bank of New Zealand (RBNZ)",
+    period: "Apr 2025 – Present",
+    highlight:
+      "Leading API automation framework design, integrated into Azure DevOps CI/CD."
+  },
+  {
+    role: "Senior Test Automation Engineer (Contract)",
+    company: "Land Information New Zealand (LINZ)",
+    period: "Nov 2022 – Mar 2025",
+    highlight:
+      "Built scalable test solutions with React, Spring Boot, and Playwright."
+  },
+  {
+    role: "Senior Test Automation Engineer (Contract)",
+    company: "New Zealand Customs Service",
+    period: "Jul 2022 – Nov 2022",
+    highlight:
+      "Cut API data creation effort by 60% with a custom Java automation tool."
+  },
+  {
+    role: "Senior Test Automation Engineer (Contract)",
+    company: "Bank of New Zealand",
+    period: "Dec 2021 – Jul 2022",
+    highlight:
+      "Delivered API automation using TypeScript, Jest, AWS SDK, and Kafka."
+  },
+  {
+    role: "Senior Test Automation Engineer (Contract)",
+    company: "LINZ",
+    period: "Apr 2021 – Dec 2021",
+    highlight:
+      "Developed React front-end and backend Kotlin API test automation."
+  },
+  {
+    role: "Senior Test Automation Engineer (Contract)",
+    company: "Bank of New Zealand",
+    period: "Aug 2019 – Apr 2021",
+    highlight:
+      "Led automation for mobile, web, and APIs, integrated with CI/CD pipelines."
+  },
+  {
+    role: "Senior Test Automation Engineer (Contract)",
+    company: "Westpac New Zealand",
+    period: "Oct 2017 – Aug 2019",
+    highlight:
+      "Built test frameworks for mobile, web, and APIs with Appium and Selenium."
+  },
+  {
+    role: "Manager",
+    company: "Capgemini Australia (Client: ANZ Bank)",
+    period: "Jun 2015 – Oct 2017",
+    highlight:
+      "Directed large-scale testing across Agile & Waterfall, managing 20+ staff."
+  },
+  {
+    role: "Project Manager",
+    company: "Tech Mahindra",
+    period: "Jun 2014 – Jun 2015",
+    highlight:
+      "Established Mobile Test Automation Competency; cut test time by 50%."
+  },
+  {
+    role: "IT Quality Consultant (Project Lead)",
+    company: "United Health Group, India",
+    period: "2010 – 2014",
+    highlight:
+      "Saved $0.5M by developing HIPAA EDI automation utilities."
+  },
+  {
+    role: "Senior Associate QA",
+    company: "Sapient Corporation, India",
+    period: "2005 – 2010",
+    highlight:
+      "Created keyword-driven frameworks; automated reporting (75% effort saved)."
+  }
+];

@@ -8,6 +8,10 @@ on:
       branch:
         description: 'Branch to deploy'
         required: true
+        type: choice
+        options:
+          - master
+          - new-design
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest

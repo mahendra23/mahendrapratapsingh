@@ -54,7 +54,7 @@ export const TaxCalculator = (): JSX.Element => {
                                 setAnnualIncome(val);
                             }
                         }}
-                        size={annualIncome.toString().length || 1}
+                        size={annualIncome.toString().length || "Enter annual income".length}
                         placeholder="Enter annual income"
                         className="taxcalculatorcontrols-annualincomeinput"
                     />

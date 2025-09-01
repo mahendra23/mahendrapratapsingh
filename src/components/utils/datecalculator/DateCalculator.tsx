@@ -35,7 +35,7 @@ export const DateCalculator = (): JSX.Element => {
                     />
                 </label>
                 <label>
-                    End Date: &nbsp;
+                    End Date: &nbsp;&nbsp;
                     <input
                         id="endDate"
                         type="date"

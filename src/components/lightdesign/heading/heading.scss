@@ -1,0 +1,16 @@
+@import "../../../common/globalColor.scss";
+
+.heading{
+    background-image: $myGradient;
+    font-size: $smallFontSize;
+    font-style: italic !important;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+    .heading{
+        display: flex;
+        flex-direction: column;
+    }
+}

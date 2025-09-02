@@ -1,0 +1,34 @@
+@import "../../../common/globalColor.scss";
+
+.projectsection {
+    flex-direction: column;
+    align-items: center;
+    height: 75vh;
+    border-bottom: solid 3px $myBlueDark;
+    width: 100%;
+    display: flex;
+    padding: 50px;
+}
+
+.projectsection .heading{
+    color: $textColorLight;
+}
+
+.projectcontainer {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: row;
+}
+
+@media only screen and (max-width: 768px) {
+    .projectsection {
+        height: auto;
+    }
+
+    .projectcontainer {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+}

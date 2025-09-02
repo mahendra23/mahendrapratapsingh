@@ -1,0 +1,170 @@
+@import "../../../common/globalColor.scss";
+
+/* Timeline Section */
+.timeline {
+  padding: 4rem 5%;
+  text-align: center;
+  height: auto;
+  margin-bottom: 2rem;
+  background: $myDarkDesignBackground;
+
+  .timeline-container {
+    display: flex;
+    flex-direction: row; /* horizontal layout for desktop */
+    gap: 2rem;
+    overflow-x: auto; /* horizontal scroll */
+    padding-bottom: 2rem;
+    position: relative;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+      height: 8px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $myHighlightColor;
+      border-radius: 4px;
+    }
+
+    /* Horizontal timeline line */
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: $myHighlightColor;
+      transform: translateY(-50%);
+    }
+
+    .timeline-item {
+      flex: 0 0 auto;
+      min-width: 250px;
+      padding: 1rem 2rem;
+      background: #21262d;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      text-align: left;
+      position: relative;
+      scroll-snap-align: start;
+
+      .year {
+        font-weight: 700;
+        color: $myHighlightColor;
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      h6 {
+        margin: 0.2rem 0;
+        font-weight: 600;
+      }
+
+      p {
+        margin-top: 0.5rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        max-width: 300px;
+      }
+
+      /* Animation for newly revealed items */
+      &.slide-down {
+        animation: slideDown 0.5s ease forwards;
+      }
+    }
+  }
+
+  /* Responsive: tablet/mobile */
+  @media (max-width: 900px) {
+    padding: 2rem 3%;
+    margin-bottom: 1.5rem;
+
+    .timeline-container {
+      flex-direction: column; /* vertical layout */
+      overflow-x: hidden;
+      overflow-y: auto;
+      height: auto;
+      padding: 0;
+
+      &::before {
+        width: 4px;
+        height: 100%;
+        left: 20px;
+        top: 0;
+        bottom: 0;
+        transform: none;
+      }
+
+      .timeline-item {
+        flex: 1;
+        margin-left: 3rem;
+        margin-bottom: 2rem;
+        max-width: 100%;
+        text-align: left;
+
+        /* Timeline dot */
+        &::before {
+          content: "";
+          position: absolute;
+          top: 1rem;
+          left: -32px;
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+          background: $myHighlightColor;
+        }
+
+        p {
+          font-size: 0.95rem;
+        }
+      }
+    }
+  }
+
+  /* Small mobile adjustments */
+  @media (max-width: 600px) {
+    padding: 2rem 2%;
+
+    .timeline-container .timeline-item {
+      padding: 1rem 1.2rem;
+      p {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  /* Load More Button */
+  .timeline-actions {
+    text-align: center;
+    margin-top: 2rem;
+
+    .btn.load-more {
+      padding: 0.6rem 1.2rem;
+      background: $myHighlightColor;
+      color: #000;
+      font-weight: 600;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s ease;
+
+      &:hover {
+        background: darken($myHighlightColor, 10%);
+      }
+    }
+  }
+}
+
+/* Slide-down animation */
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

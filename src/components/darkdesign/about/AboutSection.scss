@@ -1,0 +1,80 @@
+@import "../../../common/globalColor.scss";
+
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 8%;
+    height: 100vh;
+    gap: 2rem;
+
+    .about-left {
+      flex: 1;
+      h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+        .highlight {
+          color: $myHighlightColor;
+        }
+      }
+      p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        max-width: 600px;
+      }
+      .about-actions {
+        display: flex;
+        gap: 1rem;
+        .btn {
+          padding: 0.8rem 1.6rem;
+          border-radius: 8px;
+          text-decoration: none;
+          font-weight: 600;
+          transition: 0.3s ease;
+          &.primary {
+            background: $myHighlightColor;
+            color: #000;
+            &:hover {
+              background: $myHighlightColorDark;
+            }
+          }
+          &.secondary {
+            border: 2px solid $myHighlightColor;
+            color: $myHighlightColor;
+            &:hover {
+              background: $myHighlightColor;
+              color: #000;
+            }
+          }
+        }
+      }
+    }
+
+    .about-right {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      img {
+        max-width: 90%;
+        border-radius: 20px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+      }
+    }
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .about {
+      flex-direction: column;
+      text-align: center;
+      min-height: unset;
+      margin-bottom: 2.5rem;
+      .about-left {
+        .about-actions {
+          justify-content: center;
+        }
+      }
+    }
+  }

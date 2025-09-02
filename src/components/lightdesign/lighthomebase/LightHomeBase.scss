@@ -1,0 +1,8 @@
+@import "../../../common/globalColor.scss";
+
+.lighthomebase {
+  background-color: $myLightBackground;
+  color: $textColorLight;
+  overflow: hidden;
+  font-family: sans-serif;
+}

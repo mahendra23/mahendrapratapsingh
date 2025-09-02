@@ -1,0 +1,63 @@
+@import "../../../common/globalColor.scss";
+
+.projectcardcontainer {
+    background-color: $myBlueDark;
+    width: 20%;
+    border-radius: 40px;
+    padding: 10px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.projectimagecontainer {
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+}
+
+.projectimagecontainer img {
+    width: 30%;
+    padding: 5px;
+}
+
+.projectcardheading {
+    width: 90%;
+    align-self: center;
+}
+
+.projectcardheading p {
+    font-size: $smallFontSize;
+    font-weight: bold;
+}
+
+.projectcarddesc {
+    width: 90%;
+    align-self: center;
+}
+
+.projectcarddesc p {
+    font-size: $xsmallFontSize;
+    font-weight: bold;
+}
+
+.projectcardlink a {
+    font-size: $smallFontSize;
+    font-weight: bold;
+    color: $textColorLight;
+    align-self: center;
+}
+@media only screen and (max-width: 768px) {
+    .projectcardcontainer {
+        width: 70%;
+        margin: 10px;
+    }
+    .projectimagecontainer {
+        margin: 10px;
+    }
+    .projectcardheading {
+        margin: 10px;
+    }
+}

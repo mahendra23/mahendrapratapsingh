@@ -1,0 +1,20 @@
+@import "../../../common/globalColor.scss";
+
+.downloadresumecontainer {
+    display:flex;
+    border-width: 5px;
+    border-color: $myLightBlue;
+}
+
+.downloadresumecontainer a{
+    font-size: $xsmallFontSize;
+    font-weight: bold;
+}
+.downloadicon {
+    size: $smallFontSize;
+}
+@media screen and (max-width: 768px) {
+    .downloadresumecontainer a{
+        font-size: $xxsmallFontSize;
+    }
+}

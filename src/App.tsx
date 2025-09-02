@@ -2,15 +2,10 @@ import { useState, useEffect } from "react";
 import "./common/App.scss";
 import "@coreui/coreui/dist/css/coreui.min.css";
 import { Preloader } from "./components/preloader/Preloader";
+import LightHomeBase from "./components/lightdesign/lighthomebase/LightHomeBase";
+import DarkHomeBase from "./components/darkdesign/darkhomebase/DarkHomeBase";
 import { Header } from "./components/header/Header";
-import { AboutSection } from "./components/about/AboutSection";
-import { SkillsSection } from "./components/skills/SkillsSection";
-import { ProjectsSection } from "./components/projects/ProjectsSection";
-import { Footer } from "./components/Footer/FooterComponent";
-import { WelcomeSection } from "./components/welcome/WelcomeSection";
-import { JourneySection } from "./components/journey/JourneySection";
-import { sectionVisibility } from "./mockdata/sectionVisibility";
-import { UtilitiesSection } from "./components/utils/UtilitiesSection";
+import { useTheme } from "./components/themecontext/ThemeContext";
 
 function App() {
   
@@ -22,18 +17,14 @@ function App() {
     }, 100);
   }, []);
 
+  const { isDark } = useTheme();
+  
   return (
     <>
       <Preloader load={load} />
       <div className="App">
         <Header />
-        {sectionVisibility.welcomeSection && <WelcomeSection />}
-        {sectionVisibility.aboutSection && <AboutSection />}
-        {sectionVisibility.skillsSection && <SkillsSection />}
-        {sectionVisibility.journeySection && <JourneySection />}
-        {sectionVisibility.projectSection && <ProjectsSection />}
-        {sectionVisibility.dashboardSection && <UtilitiesSection />}
-        <Footer />
+        {isDark ? <DarkHomeBase /> : <LightHomeBase />}
       </div>
     </>
   );

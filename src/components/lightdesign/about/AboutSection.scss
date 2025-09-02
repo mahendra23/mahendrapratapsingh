@@ -1,0 +1,93 @@
+@import "../../../common/globalColor.scss";
+
+.aboutsection {
+    width: 100%;
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: $textColorDark;
+    height: 100vh;
+    border-bottom: 3px solid $myBlueDark;
+}
+
+.aboutcontainer {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    gap: 2rem;
+}
+
+.aboutimagecontainer {
+    display: block;
+    margin: 10px;
+    padding: 20px;
+    border-right: 3px solid $myBlueDark;
+}
+
+.aboutimage {
+    border-radius: 50%;
+    height: 50vh;
+    width: 35vh;
+}
+
+.aboutdescriptioncontainer {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: 10px;
+    padding: 20px 20px;
+}
+
+.aboutdescriptioncontainer h1 {
+    font-size: $normalFontSize;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+.aboutdescriptioncontainer p {
+    font-size: $xsmallFontSize;
+}
+
+.aboutdescriptioncontainer span{
+    font-weight: bold;
+    font-style: italic !important;
+}
+
+.aboutdescriptioncontainer a {
+    color: $textColorDark;
+}
+
+.aboutdescriptioncontainer a:hover{
+    color: $myOrange;
+}
+
+@media only screen and (max-width: 768px) {
+    .aboutsection {
+        height: auto;
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .aboutcontainer {
+        flex-direction: column;
+        height: auto;
+        width: auto;
+    }
+
+    .aboutimagecontainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-right: 0;
+        border-bottom: 3px solid $myBlueDark;
+    }
+    
+    .aboutimage {
+        border-radius: 50%;
+        height: 25vh;
+        width: 17vh;
+    }
+  }

@@ -41,7 +41,6 @@ export const PublicHolidays = (): JSX.Element => {
               resetAll();
               setCountryCode(e.target.value as CountryCodeEnum);
             }}
-            className="publicholidayscontrols-countryselect"
             >
             {Object.values(CountryCodeEnum).map((code) => (
               <option key={code} value={code}>
@@ -67,13 +66,17 @@ export const PublicHolidays = (): JSX.Element => {
           <p>
             Public Holidays in {CountryNamesEnum[countryCode as CountryCodeEnum]} for year {year}:
           </p>
-          <ul>
-            {holidays.map((holiday) => (
-              <li key={holiday.date.toString()}>
-                {formatDate(holiday.date)}: {holiday.name} {holiday.types}
-              </li>
-            ))}
-          </ul>
+          <table>
+              <tbody>
+                {holidays.map((holiday, index) => (
+                  <tr key={`${holiday.date}-${index}`}>
+                    <td>{holiday.date}</td>
+                    <td>{holiday.localName}</td>
+                    <td>{holiday.types}</td>
+                  </tr>
+                ))}
+              </tbody>
+          </table>
         </div>
       )}
     </div>

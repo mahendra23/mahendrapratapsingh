@@ -25,15 +25,15 @@ const getPublicHolidays = async (countryCode: string): Promise<Holiday[]> => {
     if (!response.ok) throw new Error("Failed to fetch holidays");
     const data = await response.json();
 
-    const mapped = (data || []).map((h: any) => ({
-        date: h.date, 
+    const mapped: Holiday[] = (data || []).map((h: any) => ({
+        date: formatDate(h.date), 
         localName: h.name,
         name: h.name,
         countryCode: h.country,
         fixed: h.fixed,
         global: h.global,
         counties: h.counties,
-        types: h.type,
+        types: h.type.trim(),
     }));
     return mapped;
 }
@@ -41,8 +41,8 @@ const getPublicHolidays = async (countryCode: string): Promise<Holiday[]> => {
 export const getSortedPublicHolidays = async (countryCode: string): Promise<Holiday[]> => {
     const holidaysData = await getPublicHolidays(countryCode);
     if (!holidaysData) return [];
-    const nationalHolidays = (countryCode === CountryCodeEnum.NZ) ? holidaysData.filter((holidayData) => holidayData.types === 'NATIONAL_HOLIDAY') : holidaysData;
-    return nationalHolidays.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+    // const nationalHolidays = (countryCode === CountryCodeEnum.NZ) ? holidaysData.filter((holidayData) => holidayData.types === 'NATIONAL_HOLIDAY') : holidaysData;
+    return holidaysData.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
 }
 
 export enum DateFormat {

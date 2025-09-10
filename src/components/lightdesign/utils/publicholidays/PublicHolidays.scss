@@ -7,6 +7,8 @@
   width: 100%;
   max-width: 600px;
   gap: 1rem;
+  font-size: $xsmallFontSize;
+  font-weight: bold;
 }
 
 .publicholidayscontrols {
@@ -14,21 +16,7 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 0.5rem;
-  font-size: $xsmallFontSize;
-  font-weight: bold;
   width: 100%;
-}
-
-.publicholidayscontrols-countryselect{
-  border-radius: 6px;
-  border: 1px solid $myLightBackground;
-  font-size: $xsmallFontSize;
-  font-weight: bold;
-  background: $myLightBackground;
-  padding: 0.25rem 0.5rem;
-  width: auto;
-  min-width: 80px;
-  max-width: 140px;
 }
 
 .publicholidaysoutputError {
@@ -40,8 +28,6 @@
   padding: 0.75rem;
   border-radius: 6px;
   overflow-x: auto;
-  font-size: $xsmallFontSize;
-  font-weight: bold;
 }
 
 .publicholidaysoutput {
@@ -53,21 +39,18 @@
   padding: 0.75rem;
   border-radius: 6px;
   overflow-x: auto;
+}
 
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.publicholidaysoutput table {
+  width: auto;
+  border-collapse: collapse;
+  border: 3px solid $myLightBackground;
+}
 
-    li {
-      padding: 0.25rem 0;
-      border-bottom: 1px solid $myLightBackground;
-
-      &:last-child {
-        border-bottom: none;
-      }
-    }
-  }
+.publicholidaysoutput td {
+  padding: 8px 10px;
+  border-bottom: 3px solid $myLightBackground;
+  border-right: 3px solid $myLightBackground;
 }
 
 /* ------------------------- */

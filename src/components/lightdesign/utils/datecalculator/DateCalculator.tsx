@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import "./DateCalculator.scss";
-import { UtilInput } from "../UtilCardControls/UtilCardControls";
+import { UtilInputField } from "../UtilCardControls/UtilCardControls";
 
 export const DateCalculator = (): JSX.Element => {
     const calculateDateDifference = (date1: Date, date2: Date): number => {
@@ -26,31 +26,29 @@ export const DateCalculator = (): JSX.Element => {
     return (
         <div className="datecalculator">
             <div className="datecalculatorcontrols">
-                <label>
-                    Start Date: &nbsp;
-                    <UtilInput
-                        id="startDate"
-                        type="date"
-                        value={startDate ? startDate.toISOString().split("T")[0] : ""}
-                        onChange={(e) => setStartDate(e.target.value ? new Date(e.target.value) : null)}
-                    />
-                </label>
-                <label>
-                    End Date: &nbsp;&nbsp;
-                    <UtilInput
-                        id="endDate"
-                        type="date"
-                        value={endDate ? endDate.toISOString().split("T")[0] : ""}
-                        onChange={(e) => setEndDate(e.target.value ? new Date(e.target.value) : null)}
-                    />
-                </label>
+                <UtilInputField
+                    id="startDate"
+                    type="date"
+                    label="Start Date:"
+                    value={startDate ? startDate.toISOString().split("T")[0] : ""}
+                    onChange={(e) => setStartDate(e.target.value ? new Date(e.target.value) : null)}
+                    required={true}
+                />
+                <UtilInputField
+                    id="endDate"
+                    type="date"
+                    label="End Date:"
+                    value={endDate ? endDate.toISOString().split("T")[0] : ""}
+                    onChange={(e) => setEndDate(e.target.value ? new Date(e.target.value) : null)}
+                    required={true}
+                />
             </div>
             <div className="datecalculatoroutput">
-                <UtilInput 
+                <UtilInputField 
                     id="datedifference" 
-                    type="text"
+                    label="Difference:"
                     value={`Difference: ${difference} days`}
-                    isReadOnly={true}
+                    readOnly={true}
                 />
             </div>
         </div>

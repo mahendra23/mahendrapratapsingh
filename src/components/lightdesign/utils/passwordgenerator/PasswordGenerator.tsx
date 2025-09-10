@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./PasswordGenerator.scss";
-import { UtilCopyButton, UtilInput, UtilRunButton } from "../UtilCardControls/UtilCardControls";
+import { UtilCopyButton, UtilInputField, UtilRunButton } from "../UtilCardControls/UtilCardControls";
 
 export const PasswordGenerator =(): JSX.Element => {
   const [length, setLength] = useState(16);
@@ -34,25 +34,25 @@ export const PasswordGenerator =(): JSX.Element => {
   return (
     <div className="passwordgenerator">
       <div className="passwordgeneratorcontrols">
-        <label>
-          Length: &nbsp;
-          <UtilInput
-            id="passwordlength"
-            type="number"
-            value={length}
-            onChange={(e) => setLength(Number(e.target.value))}
-            isReadOnly={false}
-          />
-        </label>
+        <UtilInputField
+          id="passwordlength"
+          type="number"
+          label="Length:"
+          value={length}
+          onChange={(e) => setLength(Number(e.target.value))}
+          required={true}
+        />
         <UtilRunButton onClick={generatePassword} title="Generate Password" />
       </div>
-      <div className="passwordgeneratoroutput">
-        <div className="passworddisplay">
-          <UtilInput id="generatedpassword" type="text" value={password} isReadOnly={true} />
-          <UtilCopyButton title="Copy to Clipboard" onClick={copyToClipboard} />
+      {password && (
+        <div className="passwordgeneratoroutput">
+          <div className="passworddisplay">
+            <UtilInputField id="generatedpassword" value={password} readOnly={true} label="Password:" />
+            <UtilCopyButton title="Copy to Clipboard" onClick={copyToClipboard} />
+          </div>
+          <div className="expirynote">* This password will disappear after 30 seconds ⏳</div>
         </div>
-        {password && <div className="expirynote">* This password will disappear after 30 seconds ⏳</div>}
-      </div>
+      )}
     </div>
   );
 }

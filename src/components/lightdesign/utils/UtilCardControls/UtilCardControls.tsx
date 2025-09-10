@@ -25,22 +25,88 @@ export const UtilCopyButton = ({title,  onClick }: UtilButtonProps) => (
   </button>
 );
 
-type UtilInputProps ={
+type UtilInputFieldProps ={
   id: string;
-  type: string;
+  label: string;
+  type?: string;
   value: string | number;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
-  isReadOnly?: boolean;
+  readOnly?: boolean;
+  required?: boolean;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
-export const UtilInput = ({ id, type, value, onChange, placeholder, isReadOnly }: UtilInputProps) => (
-  <input
-    id={id}
-    type={type}
-    value={value}
-    onChange={onChange}
-    placeholder={placeholder}
-    className="utilinput"
-    readOnly={isReadOnly || false}
-  />
-);
+export const UtilInputField: React.FC<UtilInputFieldProps> = ({
+  id,
+  label,
+  type = "text",
+  value,
+  placeholder,
+  readOnly = false,
+  required = false,
+  onChange,
+}) => {
+  return (
+    <div className="utilnputfield">
+      <label htmlFor={id} className="utilnputfield-label">
+        {label}&nbsp;{required && <span className="utilnputfield-label-required">*</span>}
+      </label>
+      <input
+        id={id}
+        type={type}
+        value={value}
+        placeholder={placeholder}
+        readOnly={readOnly}
+        required={required}
+        onChange={onChange}
+        className="utilnputfield-input"
+      />
+    </div>
+  );
+};
+
+export type UtilSelectFieldOption = {
+  value: string | number;
+  label: string;
+};
+
+type UtilSelectFieldProps = {
+  id: string;
+  label: string;
+  value: string | number;
+  options: UtilSelectFieldOption[];
+  required?: boolean;
+  disabled?: boolean;
+  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+};
+
+export const UtilSelectField: React.FC<UtilSelectFieldProps> = ({
+  id,
+  label,
+  value,
+  options,
+  required = false,
+  disabled = false,
+  onChange,
+}) => {
+  return (
+    <div className="utilselectfield">
+      <label htmlFor={id} className="utilselectfield-label">
+        {label} {required && <span className="utilselectfield-required">*</span>}
+      </label>
+      <select
+        id={id}
+        value={value}
+        required={required}
+        disabled={disabled}
+        onChange={onChange}
+        className="utilselectfield-select"
+      >
+        {options.map((opt) => (
+          <option key={opt.value} value={opt.value}>
+            {opt.label}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+};

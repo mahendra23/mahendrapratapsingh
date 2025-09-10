@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./TaxCalculator.scss";
-import { UtilClearButton, UtilInput, UtilRunButton } from "../UtilCardControls/UtilCardControls";
+import { UtilClearButton, UtilInputField, UtilRunButton } from "../UtilCardControls/UtilCardControls";
 import { calculateNZTaxAndNetIncome, TaxDetails } from "../../../../service/TaxUtilFunctions";
 import { ErrorMessages } from "../../../errors/ErrorMessages";
 
@@ -34,24 +34,22 @@ export const TaxCalculator = (): JSX.Element => {
     return (
         <div className="taxcalculator">
             <div className="taxcalculatorcontrols">
-                <label>
-                    Income: &nbsp;
-                    <UtilInput
-                        id="annualincomeinput"
-                        type="number"
-                        value={annualIncome}
-                        onChange={(e) => {
-                            resetAll()
-                            const val = e.target.value;
-                            // ✅ Allow only digits and at most one decimal point
-                            if (/^\d*\.?\d*$/.test(val)) {
-                                setAnnualIncome(val);
-                            }
-                        }}
-                        placeholder="Enter annual income"
-                        isReadOnly={false}
-                    />
-                </label>
+                <UtilInputField
+                    id="annualincomeinput"
+                    type="number"
+                    label="Income: &nbsp;"
+                    value={annualIncome}
+                    onChange={(e) => {
+                        resetAll()
+                        const val = e.target.value;
+                        // ✅ Allow only digits and at most one decimal point
+                        if (/^\d*\.?\d*$/.test(val)) {
+                            setAnnualIncome(val);
+                        }
+                    }}
+                    placeholder="Enter annual income"
+                    required={true}
+                />
                 <UtilRunButton onClick={calculateTax} title="Calculate Tax" />
                 <UtilClearButton onClick={resetAll} title="Clear Earnings" />
             </div>
@@ -62,11 +60,11 @@ export const TaxCalculator = (): JSX.Element => {
                         <tbody>
                             <tr>
                                 <td><strong>Tax</strong></td>
-                                <td>{taxData?.tax}</td>
+                                <td>{taxData.tax}</td>
                             </tr>
                             <tr>
                                 <td><strong>Net Income</strong></td>
-                                <td>{taxData?.netIncome}</td>
+                                <td>{taxData.netIncome}</td>
                             </tr>
                         </tbody>
                     </table>

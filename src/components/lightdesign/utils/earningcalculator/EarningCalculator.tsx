@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./EarningCalculator.scss";
-import { UtilClearButton, UtilInput, UtilRunButton } from "../UtilCardControls/UtilCardControls";
+import { UtilClearButton, UtilInputField, UtilRunButton, UtilSelectField, UtilSelectFieldOption } from "../UtilCardControls/UtilCardControls";
 import { calculateEarnings, EarningsDetail } from "../../../../service/EarningsDetailsUtilFunctions";
 import { FinancialYearsEnum } from "../../../../service/AppEnums";
 import { ErrorMessages } from "../../../errors/ErrorMessages";
@@ -39,48 +39,46 @@ export const EarningCalculator = (): JSX.Element => {
     setEarningsData(calculateEarnings(hourlyRate, year));
   };
 
+  const finyearSelectOptions: UtilSelectFieldOption[] = Object.values(FinancialYearsEnum).map((val) => ({
+    value: val,
+    label: String(val),
+  }));
+
+
   return (
     <div id="earningcalculator" className="earningcalculator">
       <div className="earningcalculatorcontrols">
-        <label>
-          Hourly Rate: &nbsp;
-          <UtilInput
-            id="hourlyRate"
-            type="text"
-            value={hourlyRate}
+        <UtilInputField 
+          id="hourlyRate"
+          label="Hourly Rate:"
+          value={hourlyRate}
+          onChange={(e) => {
+            setErrors(null);
+            const val = e.target.value;
+            // ✅ Allow only digits and at most one decimal point
+            if (/^\d*\.?\d*$/.test(val)) {
+              setHourlyRate(val);
+            }
+          }}
+          placeholder="Enter hourly rate"
+          required={true}
+        />
+        <div className="earningcalculatorcontrols-rowtwo">
+          <UtilSelectField
+            id="finyearselect"
+            label="Financial Year:"
+            value={year}
             onChange={(e) => {
               setErrors(null);
-              const val = e.target.value;
-              // ✅ Allow only digits and at most one decimal point
-              if (/^\d*\.?\d*$/.test(val)) {
-                setHourlyRate(val);
-              }
+              setYear(e.target.value);
             }}
-            placeholder="Enter hourly rate"
-            isReadOnly={false}
+            options={finyearSelectOptions}
+            required={true}
           />
-        </label>
-        <div className="earningcalculatorcontrolsrow">
-          <label>
-            Financial Year: &nbsp;
-            <select
-              id="finyearselect"
-              value={year}
-              onChange={(e) => {
-                setErrors(null);
-                setYear(e.target.value);
-              }}
-              className="earningcalculatorcontrols-finyearselect"
-            >
-              {Object.values(FinancialYearsEnum).map((finYear) => (
-                <option key={finYear} value={finYear}>
-                  {finYear}
-                </option>
-              ))}
-            </select>
-          </label>
-          <UtilRunButton onClick={calculate} title="Calculate Earnings" />
-          <UtilClearButton onClick={resetAll} title="Clear Earnings" />
+          <div className="earningcalculatorcontrolsbutton">
+            <UtilRunButton onClick={calculate} title="Calculate Earnings" />
+            <UtilClearButton onClick={resetAll} title="Clear Earnings" />
+          </div>
         </div>
       </div>
       {errors && <ErrorMessages errorMessages={errors} />}

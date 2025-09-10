@@ -1,6 +1,6 @@
 export enum CountryCodeEnum {
-    IN = "IN",
     NZ = "NZ",
+    IN = "IN",
     AU = "AU",
     US = "US",
     GB = "GB",
@@ -8,8 +8,8 @@ export enum CountryCodeEnum {
 }
 
 export const CountryNamesEnum: Record<CountryCodeEnum, string> = {
-    [CountryCodeEnum.IN]: "India (IN)",
     [CountryCodeEnum.NZ]: "New Zealand (NZ)",
+    [CountryCodeEnum.IN]: "India (IN)",
     [CountryCodeEnum.AU]: "Australia (AU)",
     [CountryCodeEnum.US]: "United States (US)",
     [CountryCodeEnum.GB]: "United Kingdom (GB)",

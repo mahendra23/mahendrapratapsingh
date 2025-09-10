@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, ReactNode } from "react";
+import { DEFAULT_THEME_IS_DARK } from "../../common/constants";
 
 interface ThemeContextType {
   isDark: boolean;
@@ -8,7 +9,7 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(DEFAULT_THEME_IS_DARK);
 
   const toggleTheme = () => setIsDark(prev => !prev);
 

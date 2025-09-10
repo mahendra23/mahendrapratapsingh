@@ -9,9 +9,9 @@ export const JourneySection = (): JSX.Element => {
         <div id={headerdata.header[4].id} className="journeySection">
             <Heading headingText={experiencedata.title} />
             <div className="journeysectioncontainer">
-                <ul className="journetsectiontimeline">
-                    {experiencedata.workexp.map((data) => (
-                        <li className={clsx("event", (data.desc.length > 0) && "eventborderbottom")} data-date={data.date}>
+                <ul key="journetsectiontimeline" className="journetsectiontimeline">
+                    {experiencedata.workexp.map((data, index) => (
+                        <li key={"jorneyItem-" + index} className={clsx("event", (data.desc.length > 0) && "eventborderbottom")} data-date={data.date}>
                             <h3>{data.title}</h3>
                             <p>{data.company}</p>
                             <p>{data.area}</p>

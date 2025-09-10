@@ -1,17 +1,19 @@
 @import "../../../common/globalColor.scss";
 
 .skillcard {
-    width: 20%;
     display: flex;
     flex-direction: column;
     color: $textColorDark;
 }
 
-.skill-card-header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.skillcard .headingcontainer {
+    width: 100%;
+}
+
+.skillcard .headingcontainer p {
+    font-size: $xsmallFontSize;
+    letter-spacing: 2px;
+    font-weight: bold;
 }
 
 .toollist {

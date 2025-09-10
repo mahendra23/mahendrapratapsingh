@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./PasswordGenerator.scss";
-import { FaRegCopy } from "react-icons/fa6";
-import { UtilButton } from "../utilbutton/UtilButton";
+import { UtilCopyButton, UtilInput, UtilRunButton } from "../UtilCardControls/UtilCardControls";
 
 export const PasswordGenerator =(): JSX.Element => {
   const [length, setLength] = useState(16);
@@ -35,22 +34,24 @@ export const PasswordGenerator =(): JSX.Element => {
   return (
     <div className="passwordgenerator">
       <div className="passwordgeneratorcontrols">
-        <label>Length: &nbsp;
-          <input
+        <label>
+          Length: &nbsp;
+          <UtilInput
             id="passwordlength"
             type="number"
             value={length}
             onChange={(e) => setLength(Number(e.target.value))}
+            isReadOnly={false}
           />
         </label>
-        <UtilButton onClick={generatePassword} title="Generate Password" />
+        <UtilRunButton onClick={generatePassword} title="Generate Password" />
       </div>
       <div className="passwordgeneratoroutput">
         <div className="passworddisplay">
-          <input id="generatedpassword" type="text" value={password} readOnly />
-          <button title="copyToClipboard" onClick={copyToClipboard}><FaRegCopy /></button>
+          <UtilInput id="generatedpassword" type="text" value={password} isReadOnly={true} />
+          <UtilCopyButton title="Copy to Clipboard" onClick={copyToClipboard} />
         </div>
-        <div className="expirynote">* This password will disappear after 30 seconds ⏳</div>
+        {password && <div className="expirynote">* This password will disappear after 30 seconds ⏳</div>}
       </div>
     </div>
   );

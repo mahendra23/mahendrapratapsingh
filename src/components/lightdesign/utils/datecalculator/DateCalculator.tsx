@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from "react";
 import "./DateCalculator.scss";
+import { UtilInput } from "../UtilCardControls/UtilCardControls";
 
 export const DateCalculator = (): JSX.Element => {
     const calculateDateDifference = (date1: Date, date2: Date): number => {
@@ -27,7 +28,7 @@ export const DateCalculator = (): JSX.Element => {
             <div className="datecalculatorcontrols">
                 <label>
                     Start Date: &nbsp;
-                    <input
+                    <UtilInput
                         id="startDate"
                         type="date"
                         value={startDate ? startDate.toISOString().split("T")[0] : ""}
@@ -36,7 +37,7 @@ export const DateCalculator = (): JSX.Element => {
                 </label>
                 <label>
                     End Date: &nbsp;&nbsp;
-                    <input
+                    <UtilInput
                         id="endDate"
                         type="date"
                         value={endDate ? endDate.toISOString().split("T")[0] : ""}
@@ -45,9 +46,12 @@ export const DateCalculator = (): JSX.Element => {
                 </label>
             </div>
             <div className="datecalculatoroutput">
-                <div className="datecalculatoroutputresultdisplay">
-                    <input id="datedifference" type="text" value={`Difference: ${difference} days`} readOnly />
-                </div>
+                <UtilInput 
+                    id="datedifference" 
+                    type="text"
+                    value={`Difference: ${difference} days`}
+                    isReadOnly={true}
+                />
             </div>
         </div>
     );

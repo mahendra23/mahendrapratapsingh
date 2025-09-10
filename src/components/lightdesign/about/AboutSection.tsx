@@ -38,8 +38,8 @@ export const AboutSection = (): JSX.Element => {
                         <DownloadResumeButton buttonTitle="Feel free to download my resume for more information." showIcon={false} />
                     </p> */}
                     <p>
-                        Hey there! I'm <span>Mahendra Pratap Singh</span> — a seasoned Software Testing professional with over 
-                        <span>21 years of expertise in Test Automation, Application Development, Program Management, and Client & Stakeholder Engagement.</span>
+                        Hey there! I'm <span>Mahendra Pratap Singh</span> — a seasoned Software Testing professional with over
+                        <span> 21 years of expertise in Test Automation, Application Development, Program Management, and Client & Stakeholder Engagement.</span>
                         <br />
                         I excel at <span>developing test automation strategies, designing frameworks (Web, Mobile, API)</span>, and leading Automation Centres of Excellence. By integrating <span>DevOps practices and AI in test automation</span>, I deliver faster, smarter, and efficient testing solutions.
                         <br />

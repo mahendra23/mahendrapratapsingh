@@ -15,7 +15,7 @@ export default function AboutSection() {
         </p>
         <div className="about-actions">
           <a href={RESUME_PDF} className="btn primary" download="Resume_Mahendra_Singh.pdf">Download Resume</a>
-          <a href={"#journeysection"} className="btn secondary">View My Journey</a>
+          <a href={"#timelinesection"} className="btn secondary">View My Journey</a>
         </div>
       </div>
       <div className="about-right">

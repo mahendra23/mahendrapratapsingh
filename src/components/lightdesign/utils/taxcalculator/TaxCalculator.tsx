@@ -1,39 +1,34 @@
 import { useState } from "react";
 import "./TaxCalculator.scss";
-import { UtilButton } from "../utilbutton/UtilButton";
+import { UtilClearButton, UtilInput, UtilRunButton } from "../UtilCardControls/UtilCardControls";
+import { calculateNZTaxAndNetIncome, TaxDetails } from "../../../../service/TaxUtilFunctions";
+import { ErrorMessages } from "../../../errors/ErrorMessages";
 
 export const TaxCalculator = (): JSX.Element => {
     const [annualIncome, setAnnualIncome] = useState<string>("");
-    const [tax, setTax] = useState<number>(0);
-    const [netIncome, setNetIncome] = useState<number>(0);
+    const [taxData, setTaxData] = useState<TaxDetails | null>(null);
+    const [errors, setErrors] = useState<string[] | null>(null);
 
-    interface TaxBracket {
-        threshold: number; // lower bound of bracket
-        rate: number; // tax rate in decimal
+    function resetAll(): void {
+        setErrors(null);
+        setAnnualIncome("")
+        setTaxData(null);
     }
-
-    // NZ income tax brackets 2025/26
-    const nzTaxBrackets: TaxBracket[] = [
-        { threshold: 0, rate: 0.105 },       // 10.5% for income up to $15,600
-        { threshold: 15600, rate: 0.175 },  // 17.5% for $16,601 – $53,500
-        { threshold: 53500, rate: 0.30 },   // 30% for $53,501 – $78,100
-        { threshold: 78100, rate: 0.33 },   // 33% for $78,101 – $180,000
-        { threshold: 180000, rate: 0.39 },  // 39% for $180,001+
-    ];
-
-    function calculateNZTax(): void {
-        let income = parseFloat(annualIncome) || 0;
-        if (income <= 0) setTax(0);
-        let tax = 0;
-        for (let i = nzTaxBrackets.length - 1; i >= 0; i--) {
-            const bracket = nzTaxBrackets[i];
-            if (income > bracket.threshold) {
-                tax += (income - bracket.threshold) * bracket.rate;
-                income = bracket.threshold;
-            }
+    function calculateTax(): void {
+        const validationErrors: string[] = [];
+    
+        if (!annualIncome) {
+            validationErrors.push("Missing Annual Income.");
         }
-        setTax(parseFloat(tax.toFixed(2)));
-        setNetIncome((parseFloat(annualIncome) || 0) - tax);
+    
+        if (validationErrors.length > 0) {
+            setErrors(validationErrors);
+            setTaxData(null);
+            return;
+        }
+    
+        setErrors(null);
+        setTaxData(calculateNZTaxAndNetIncome(annualIncome));
     }
 
     return (
@@ -41,46 +36,42 @@ export const TaxCalculator = (): JSX.Element => {
             <div className="taxcalculatorcontrols">
                 <label>
                     Income: &nbsp;
-                    <input
+                    <UtilInput
                         id="annualincomeinput"
-                        type="text"
+                        type="number"
                         value={annualIncome}
                         onChange={(e) => {
+                            resetAll()
                             const val = e.target.value;
                             // ✅ Allow only digits and at most one decimal point
                             if (/^\d*\.?\d*$/.test(val)) {
-                                setTax(0);
-                                setNetIncome(0);
                                 setAnnualIncome(val);
                             }
                         }}
-                        size={annualIncome.toString().length || "Enter annual income".length}
                         placeholder="Enter annual income"
-                        className="taxcalculatorcontrols-annualincomeinput"
+                        isReadOnly={false}
                     />
                 </label>
-                <UtilButton onClick={calculateNZTax} title="Calculate Tax" />
+                <UtilRunButton onClick={calculateTax} title="Calculate Tax" />
+                <UtilClearButton onClick={resetAll} title="Clear Earnings" />
             </div>
-            <div className="taxcalculatoroutput">
-                <div className="taxcalculatoroutputresultdisplay">
-                    <input
-                        id="annualtaxoutput" 
-                        type="text" 
-                        value={`Annual Tax: ${tax}`} 
-                        size={"Annual Tax: ".length + (tax.toString().length || 1)}
-                        className="taxcalculatoroutput-annualtaxoutput"
-                        readOnly 
-                    />
-                    <input
-                        id="netincomeoutput" 
-                        type="text" 
-                        value={`Net Income: ${netIncome}`} 
-                        size={"Net Income: ".length + (netIncome.toString().length || 1)}
-                        className="taxcalculatoroutput-annualtaxoutput"
-                        readOnly 
-                    />
+            {errors && <ErrorMessages errorMessages={errors} />}
+            {taxData && (
+                <div className="taxcalculatoroutput">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><strong>Tax</strong></td>
+                                <td>{taxData?.tax}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Net Income</strong></td>
+                                <td>{taxData?.netIncome}</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-            </div>
+            )}
         </div>
     );
 }

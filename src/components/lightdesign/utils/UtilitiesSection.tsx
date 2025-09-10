@@ -1,17 +1,20 @@
 import React from "react";
-import { FaKey, FaCalendarAlt, FaFont, FaExchangeAlt, FaQrcode } from "react-icons/fa";
+import { FaKey, FaCalendarAlt, FaFont, FaExchangeAlt, FaQrcode, FaDollarSign } from "react-icons/fa";
 import "./UtilitiesSection.scss";
 import { Heading } from "../heading/heading";
 import { PasswordGenerator } from "./passwordgenerator/PasswordGenerator";
 import { headerdata } from "../../../mockdata/lightdesign/headerdata";
 import { DateCalculator } from "./datecalculator/DateCalculator";
 import { TaxCalculator } from "./taxcalculator/TaxCalculator";
+import { PublicHolidays } from "./publicholidays/PublicHolidays";
+import { EarningCalculator } from "./earningcalculator/EarningCalculator";
 
 type UtilityCardProps = {
+  id: string;
   title: string;
   description: string;
   icon: React.ReactNode;
-  children?: React.ReactNode; // actual tool UI
+  children?: React.ReactNode;
 };
 
 function UtilityCard({ title, description, icon, children }: UtilityCardProps) {
@@ -33,6 +36,7 @@ export const UtilitiesSection = (): JSX.Element => {
       <Heading headingText={headerdata.header[5].title} />
       <div className="utilitiescontainer">
         <UtilityCard
+          id="passwordgenerator"
           title="Secure Password Generator"
           description="Generate strong and random passwords safely."
           icon={<FaKey />}
@@ -40,13 +44,23 @@ export const UtilitiesSection = (): JSX.Element => {
           <PasswordGenerator />
         </UtilityCard>
         <UtilityCard
+          id="earningcalculator"
+          title="NZ Contractor Earnings Calculator"
+          description="Annual Earnings for an hourly rate contractor."
+          icon={<FaDollarSign />}
+        >
+          <EarningCalculator />
+        </UtilityCard>
+        <UtilityCard
+          id="taxcalculator"
           title="NZ Income Tax Calculator"
-          description="Annual income tax calculator for New Zealand."
-          icon={<FaCalendarAlt />}
+          description="Annual Income tax calculator for New Zealand."
+          icon={<FaDollarSign />}
         >
           <TaxCalculator />
         </UtilityCard>
         <UtilityCard
+          id="datecalculator"
           title="Date Calculator"
           description="Find age or countdown to an event."
           icon={<FaCalendarAlt />}
@@ -54,6 +68,15 @@ export const UtilitiesSection = (): JSX.Element => {
           <DateCalculator />
         </UtilityCard>
         <UtilityCard
+          id="publicholidays"
+          title="Public Holidays (NZ)"
+          description="Lists public holidays in a year."
+          icon={<FaCalendarAlt />}
+        >
+          <PublicHolidays />
+        </UtilityCard>
+        <UtilityCard
+          id="converter"
           title="Converter"
           description="Convert units and currency."
           icon={<FaExchangeAlt />}
@@ -61,6 +84,7 @@ export const UtilitiesSection = (): JSX.Element => {
           {/* 📦 Converter */}
         </UtilityCard>
         <UtilityCard
+          id="qrcodegenerator"
           title="QR Code Generator"
           description="Generate QR codes for links and text."
           icon={<FaQrcode />}
@@ -68,6 +92,7 @@ export const UtilitiesSection = (): JSX.Element => {
           {/* 🔲 QR Code generator */}
         </UtilityCard>
         <UtilityCard
+          id="texttools"
           title="Text Tools"
           description="Convert case, count words, and clean text."
           icon={<FaFont />}

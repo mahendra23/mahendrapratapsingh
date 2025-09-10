@@ -1,0 +1,91 @@
+@import "../../../../common/globalColor.scss";
+
+.earningcalculator {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 600px;
+  gap: 1rem;
+}
+
+.earningcalculatorcontrols {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 1rem;
+  font-size: $xsmallFontSize;
+  font-weight: bold;
+  width: 100%;
+}
+
+.earningcalculatorcontrolsrow{
+  display: flex;
+  gap: 0.5rem;
+}
+
+.earningcalculatorcontrols-finyearselect{
+  border-radius: 6px;
+  border: 1px solid $myLightBackground;
+  font-size: $xsmallFontSize;
+  font-weight: bold;
+  background: $myLightBackground;
+  padding: 0.25rem 0.5rem;
+  width: auto;
+  min-width: 80px;
+  max-width: 140px;
+}
+
+.earningcalculatoroutput {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+.earningcalculatoroutput table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid $myLightBackground;
+}
+
+.earningcalculatoroutput td {
+  padding: 8px 12px;
+  border-bottom: 3px solid $myLightBackground;
+  border-right: px solid $myLightBackground;
+}
+
+.earningcalculatoroutput td:first-child {
+  font-weight: bold;
+  width: 50%;
+}
+
+/* ------------------------- */
+/* 📱 Mobile Responsiveness */
+/* ------------------------- */
+@media (max-width: 600px) {
+  .earningcalculator {
+    padding: 0 0.5rem;
+  }
+
+  .earningcalculatorcontrols {
+    flex-direction: column;
+    gap: 0.5rem;
+
+    label {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.25rem;
+    }
+  }
+
+  .earningcalculatoroutput {
+    font-size: $xxsmallFontSize;
+    padding: 0.5rem;
+  }
+}

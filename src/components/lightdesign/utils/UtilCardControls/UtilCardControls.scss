@@ -17,3 +17,22 @@
 .utilbutton:hover {
   color: darken($myOrange, 10%);
 }
+
+.utilinput::-webkit-outer-spin-button,
+.utilinput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.utilinput[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+.utilinput {
+  flex: 1;
+  border-radius: 5px;
+  font-size: $xsmallFontSize;
+  font-weight: bold;
+  background: $myLightBackground;
+  width: auto;
+}

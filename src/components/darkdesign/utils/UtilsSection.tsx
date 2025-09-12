@@ -55,7 +55,7 @@
 
 import React from "react";
 import "../../darkdesign/utils/UtilsSection.scss";
-import { Heading } from "../heading/Heading";
+import Heading from "../heading/Heading";
 import UtilsContainer from "../../utilcomponents/utilscontainer/UtilsContainer";
 
 export default function UtilsSection() {

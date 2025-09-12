@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "../../darkdesign/timeline/TimelineSection.scss";
 import { timelineData } from "../../../mockdata/darkdesign/experiencedata";
-import { Heading } from "../../darkdesign/heading/Heading";
+import Heading from "../../darkdesign/heading/Heading";
 
 export default function TimelineSection() {
   const [visibleCount, setVisibleCount] = useState(4); // for <900px

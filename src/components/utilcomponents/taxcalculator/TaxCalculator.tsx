@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./TaxCalculator.scss";
-import { UtilClearButton, UtilInputField, UtilRunButton } from "../UtilCardControls/UtilCardControls";
-import { calculateNZTaxAndNetIncome, TaxDetails } from "../../../../service/TaxUtilFunctions";
-import { ErrorMessages } from "../../../errors/ErrorMessages";
+import { UtilClearButton, UtilInputField, UtilRunButton, UtilsCardControlsButtons } from "../UtilCardControls/UtilCardControls";
+import { calculateNZTaxAndNetIncome, TaxDetails } from "../../../service/TaxUtilFunctions";
+import { ErrorMessages } from "../../errors/ErrorMessages";
 
 export const TaxCalculator = (): JSX.Element => {
     const [annualIncome, setAnnualIncome] = useState<string>("");
@@ -36,8 +36,7 @@ export const TaxCalculator = (): JSX.Element => {
             <div className="taxcalculatorcontrols">
                 <UtilInputField
                     id="annualincomeinput"
-                    type="number"
-                    label="Income: &nbsp;"
+                    label="Income:"
                     value={annualIncome}
                     onChange={(e) => {
                         resetAll()
@@ -50,8 +49,7 @@ export const TaxCalculator = (): JSX.Element => {
                     placeholder="Enter annual income"
                     required={true}
                 />
-                <UtilRunButton onClick={calculateTax} title="Calculate Tax" />
-                <UtilClearButton onClick={resetAll} title="Clear Earnings" />
+                <UtilsCardControlsButtons onCalculate={calculateTax} onClear={resetAll} />
             </div>
             {errors && <ErrorMessages errorMessages={errors} />}
             {taxData && (

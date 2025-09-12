@@ -11,88 +11,8 @@
   box-sizing: border-box;
 }
 
-.utilitiescontainer {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 2rem 1rem;
-  align-items: start;
-}
-
-.card {
-  background-color: $myBlueDark;
-  color: $textColorLight;
-  border-radius: 12px;
-  padding: 1rem;
-  gap: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  transition: all 0.2s ease;
-  align-items: start;
-}
-
-.card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.cardheader {
-  display: flex;
-  gap: 2rem;
-  margin-bottom: 1rem;
-}
-
-.cardheader h3 {
-  color: $textColorLight;
-  font-size: $smallFontSize;
-  font-weight: bold;
-}
-
-.icon {
-  font-size: $mediumFontSize;
-  color: $textColorLight;
-}
-
-.card p {
-  color: $textColorLight;
-  font-size: $xsmallFontSize;
-  font-weight: bold;
-}
-
-@media (max-width: 1024px) {
-  .utilitiescontainer {
-    gap: 1.5rem;
-  }
-
-  .utilitiescontainer {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 2fr)); 
-  }
-}
-
 @media (max-width: 768px) {
   .utilitiessection {
     padding: 30px 15px;
-  }
-
-  .utilitiescontainer {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
-  }
-}
-
-@media (max-width: 480px) {
-  .utilitiescontainer {
-    grid-template-columns: 1fr; 
-    gap: 1rem;
-  }
-
-  .card {
-    padding: 1rem;
-  }
-
-  .cardheader h3 {
-    font-size: $xsmallFontSize;
   }
 }

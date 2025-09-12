@@ -3,7 +3,7 @@ import "./AboutSection.scss";
 import { headerdata } from "../../../mockdata/lightdesign/headerdata";
 import { DownloadResumeButton } from "../resume/DownloadResumeButton";
 import { Heading } from "../heading/heading";
-import { IMAGES_FOLDER } from "../../../common/constants";
+import { MY_IMAGE } from "../../../common/constants";
 import { ContactDetailsSection } from "../contactdetails/ContactDetailsSection";
 
 export const AboutSection = (): JSX.Element => {
@@ -13,7 +13,7 @@ export const AboutSection = (): JSX.Element => {
             {isHomeDisplayed && <Heading headingText="ABOUT ME" />}
             <div className="aboutcontainer">
                 <div className="aboutimagecontainer">
-                    <img alt="Mahen" src={`${IMAGES_FOLDER}/Mahen.jpg`} className="aboutimage" />
+                    <img alt="Mahen" src={MY_IMAGE} className="aboutimage" />
                 </div>
                 <div className="aboutdescriptioncontainer">
                     {/* <p>

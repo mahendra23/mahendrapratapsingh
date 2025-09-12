@@ -35,12 +35,12 @@ export default function SkillsSection() {
                   style={{ cursor: "pointer", userSelect: "none" }}
                 >
                   <h3>{skill.category}</h3>
-                  <span className="collapse-icon">{isOpen ? "-" : "+"}</span>
+                  &nbsp;&nbsp;
+                  <span>{isOpen ? "x" : "+"}</span>
                 </div>
               ) : (
                 <h3>{skill.category}</h3>
               )}
-
               {isOpen && (
                 <ul className={skill.items.length > 5 ? "two-columns" : ""}>
                   {skill.items.map((item, i) => (

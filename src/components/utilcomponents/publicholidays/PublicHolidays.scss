@@ -1,22 +1,16 @@
-@import "../../../../common/globalColor.scss";
+@import "../../../common/globalColor.scss";
 
 .publicholidays {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
-  max-width: 600px;
-  gap: 1rem;
-  font-size: $xsmallFontSize;
-  font-weight: bold;
+  gap: 0.5rem;
 }
 
 .publicholidayscontrols {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
   gap: 0.5rem;
-  width: 100%;
 }
 
 .publicholidaysoutputError {
@@ -56,24 +50,16 @@
 /* ------------------------- */
 /* 📱 Mobile Responsiveness */
 /* ------------------------- */
-@media (max-width: 600px) {
-  .publicholidays {
-    padding: 0 0.5rem;
-  }
-
-  .publicholidayscontrols {
-    flex-direction: column;
-    gap: 0.5rem;
-
-    label {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.25rem;
-    }
-  }
-
+@media (max-width: 900px) {
   .publicholidaysoutput {
     font-size: $xxsmallFontSize;
     padding: 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .publicholidayscontrols {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

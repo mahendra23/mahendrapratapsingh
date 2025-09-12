@@ -1,4 +1,4 @@
-@import "../../../../common/globalColor.scss";
+@import "../../../common/globalColor.scss";
 
 .taxcalculator {
   display: flex;
@@ -6,7 +6,7 @@
   align-items: flex-start;
   width: 100%;
   max-width: 600px;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 .taxcalculatorcontrols {
@@ -14,8 +14,6 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 0.5rem;
-  font-size: $xsmallFontSize;
-  font-weight: bold;
   width: 100%;
 }
 

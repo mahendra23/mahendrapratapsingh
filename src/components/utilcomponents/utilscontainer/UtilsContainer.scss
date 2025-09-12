@@ -1,0 +1,53 @@
+@import "../../../common/globalColor.scss";
+
+.utils-container {
+  display: grid;
+  gap: 2rem;
+  padding: 2rem 0;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: stretch; // ✅ equal height rows
+
+  .utils-item {
+    display: flex;
+    flex-direction: column;
+    background: $myCardBackground;
+    border-radius: 20px;
+    padding: 1.5rem;
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    min-height: 240px;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 10px $myHighlightColor;
+    }
+
+    .title {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .titledarkmode {
+      color: $myHighlightColor;
+    }
+
+    h6 {
+      margin: 0.2rem 0 0.5rem;
+      font-weight: 600;
+      flex-grow: 1; // ✅ equalize space
+    }
+  }
+}
+
+/* Responsive grid */
+@media (min-width: 601px) and (max-width: 1500px) {
+  .utils-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .utils-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

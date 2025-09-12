@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./EarningCalculator.scss";
-import { UtilClearButton, UtilInputField, UtilRunButton, UtilSelectField, UtilSelectFieldOption } from "../UtilCardControls/UtilCardControls";
-import { calculateEarnings, EarningsDetail } from "../../../../service/EarningsDetailsUtilFunctions";
-import { FinancialYearsEnum } from "../../../../service/AppEnums";
-import { ErrorMessages } from "../../../errors/ErrorMessages";
+import { UtilInputField, UtilsCardControlsButtons, UtilSelectField, UtilSelectFieldOption } from "../UtilCardControls/UtilCardControls";
+import { calculateEarnings, EarningsDetail } from "../../../service/EarningsDetailsUtilFunctions";
+import { FinancialYearsEnum } from "../../../service/AppEnums";
+import { ErrorMessages } from "../../errors/ErrorMessages";
 
 export const EarningCalculator = (): JSX.Element => {
   const [year, setYear] = useState<string>("");
@@ -44,7 +44,6 @@ export const EarningCalculator = (): JSX.Element => {
     label: String(val),
   }));
 
-
   return (
     <div id="earningcalculator" className="earningcalculator">
       <div className="earningcalculatorcontrols">
@@ -75,10 +74,7 @@ export const EarningCalculator = (): JSX.Element => {
             options={finyearSelectOptions}
             required={true}
           />
-          <div className="earningcalculatorcontrolsbutton">
-            <UtilRunButton onClick={calculate} title="Calculate Earnings" />
-            <UtilClearButton onClick={resetAll} title="Clear Earnings" />
-          </div>
+          <UtilsCardControlsButtons onCalculate={calculate} onClear={resetAll} />
         </div>
       </div>
       {errors && <ErrorMessages errorMessages={errors} />}

@@ -1,6 +1,6 @@
 import React from "react";
 import "./AboutSection.scss";
-import { IMAGES_FOLDER, RESUME_PDF } from "../../../common/constants";
+import { MY_IMAGE, RESUME_PDF } from "../../../common/constants";
 
 export default function AboutSection() {
     return <section className="about">
@@ -19,7 +19,7 @@ export default function AboutSection() {
         </div>
       </div>
       <div className="about-right">
-        <img src={`${IMAGES_FOLDER}/Mahen.jpg`} alt="Me" />
+        <img src={MY_IMAGE} alt="Me" />
       </div>
     </section>;
   }

@@ -21,13 +21,13 @@
 
 .aboutimagecontainer {
     display: block;
-    margin: 10px;
+    margin: 1.5rem;
     padding: 20px;
     border-right: 3px solid $myBlueDark;
 }
 
 .aboutimage {
-    border-radius: 50%;
+    border-radius: 20px;
     height: 50vh;
     width: 35vh;
 }
@@ -86,7 +86,7 @@
     }
     
     .aboutimage {
-        border-radius: 50%;
+        border-radius: 5px;
         height: 25vh;
         width: 17vh;
     }

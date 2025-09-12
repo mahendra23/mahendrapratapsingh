@@ -43,12 +43,16 @@
       flex: 0 0 auto;
       min-width: 250px;
       padding: 1rem 2rem;
-      background: #21262d;
+      background: $myCardBackground;
       border-radius: 20px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
       text-align: left;
       position: relative;
       scroll-snap-align: start;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 10px $myHighlightColor;
+      }
 
       .year {
         font-weight: 700;
@@ -64,7 +68,7 @@
 
       p {
         margin-top: 0.5rem;
-        font-size: 1rem;
+        font-size: $xxsmallFontSize;
         line-height: 1.5;
         max-width: 300px;
       }
@@ -82,7 +86,7 @@
     margin-bottom: 1.5rem;
 
     .timeline-container {
-      flex-direction: column; /* vertical layout */
+      flex-direction: column;
       overflow-x: hidden;
       overflow-y: auto;
       height: auto;
@@ -115,23 +119,16 @@
           border-radius: 50%;
           background: $myHighlightColor;
         }
-
-        p {
-          font-size: 0.95rem;
-        }
       }
     }
   }
 
   /* Small mobile adjustments */
   @media (max-width: 600px) {
-    padding: 2rem 2%;
+    padding: 2rem 1rem;
 
     .timeline-container .timeline-item {
       padding: 1rem 1.2rem;
-      p {
-        font-size: 0.9rem;
-      }
     }
   }
 

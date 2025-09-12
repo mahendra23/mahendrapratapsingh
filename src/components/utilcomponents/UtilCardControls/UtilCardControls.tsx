@@ -1,29 +1,39 @@
 import React from "react";
 import "./UtilCardControls.scss";
 import { FaForward, FaTrash, FaRegCopy} from "react-icons/fa6";
+import { useTheme } from "../../themecontext/ThemeContext";
 
 type UtilButtonProps = {
   title: string;
   onClick: () => void;
 };
 
-export const UtilRunButton = ({title,  onClick }: UtilButtonProps) => (
-  <button className="utilbutton" title={title} onClick={onClick}>
-    <FaForward />
-  </button>
-);
+export const UtilRunButton = ({title,  onClick }: UtilButtonProps): JSX.Element => {
+  const { isDark } = useTheme();
+  return (
+    <button className={(isDark ? "utilbuttondarkmode" : "utilbuttonlightmode") + " utilbutton"} title={title} onClick={onClick}>
+      <FaForward />
+    </button>
+  );
+};
 
-export const UtilClearButton = ({title,  onClick }: UtilButtonProps) => (
-  <button className="utilbutton" title={title} onClick={onClick}>
-    <FaTrash />
-  </button>
-);
+export const UtilClearButton = ({title,  onClick }: UtilButtonProps): JSX.Element => {
+  const { isDark } = useTheme();
+  return (
+    <button className={(isDark ? "utilbuttondarkmode" : "utilbuttonlightmode") + " utilbutton"} title={title} onClick={onClick}>
+      <FaTrash />
+    </button>
+  );
+};
 
-export const UtilCopyButton = ({title,  onClick }: UtilButtonProps) => (
-  <button className="utilbutton" title={title} onClick={onClick}>
-    <FaRegCopy />
-  </button>
-);
+export const UtilCopyButton = ({title,  onClick }: UtilButtonProps): JSX.Element => {
+  const { isDark } = useTheme();
+  return (
+    <button className={(isDark ? "utilbuttondarkmode" : "utilbuttonlightmode") + " utilbutton"} title={title} onClick={onClick}>
+      <FaRegCopy />
+    </button>
+  );
+};
 
 type UtilInputFieldProps ={
   id: string;
@@ -46,9 +56,9 @@ export const UtilInputField: React.FC<UtilInputFieldProps> = ({
   onChange,
 }) => {
   return (
-    <div className="utilnputfield">
-      <label htmlFor={id} className="utilnputfield-label">
-        {label}&nbsp;{required && <span className="utilnputfield-label-required">*</span>}
+    <div className="utilinputfield">
+      <label htmlFor={id} className="utilinputfield-label">
+        {label}&nbsp;{required && <span className="utilinputfield-label-required">*</span>}
       </label>
       <input
         id={id}
@@ -58,7 +68,7 @@ export const UtilInputField: React.FC<UtilInputFieldProps> = ({
         readOnly={readOnly}
         required={required}
         onChange={onChange}
-        className="utilnputfield-input"
+        className="utilinputfield-input"
       />
     </div>
   );
@@ -107,6 +117,23 @@ export const UtilSelectField: React.FC<UtilSelectFieldProps> = ({
           </option>
         ))}
       </select>
+    </div>
+  );
+};
+
+type TaxCalculatorControlsProps = {
+  onCalculate: () => void;
+  onClear: () => void;
+};
+
+export const UtilsCardControlsButtons: React.FC<TaxCalculatorControlsProps> = ({
+  onCalculate,
+  onClear,
+}) => {
+  return (
+    <div className="utilcardcontrolsbutton">
+      <UtilRunButton onClick={onCalculate} title="Run Button" />
+      <UtilClearButton onClick={onClear} title="Clear Button" />
     </div>
   );
 };

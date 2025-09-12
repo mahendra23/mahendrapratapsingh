@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./PublicHolidays.scss";
-import { UtilClearButton, UtilRunButton } from "../UtilCardControls/UtilCardControls";
-import { formatDate, getSortedPublicHolidays, Holiday } from "../../../../service/HolidaysAndDateUtilFunctions";
-import { CountryCodeEnum, CountryNamesEnum } from "../../../../service/AppEnums";
+import { UtilsCardControlsButtons, UtilSelectField, UtilSelectFieldOption } from "../UtilCardControls/UtilCardControls";
+import { getSortedPublicHolidays, Holiday } from "../../../service/HolidaysAndDateUtilFunctions";
+import { CountryCodeEnum, CountryNamesEnum } from "../../../service/AppEnums";
 
 export const PublicHolidays = (): JSX.Element => {
   const year = `${new Date().getFullYear()}`;
@@ -29,30 +29,28 @@ export const PublicHolidays = (): JSX.Element => {
     }
   };
 
+  const countryCodeSelectOptions: UtilSelectFieldOption[] = Object.values(CountryCodeEnum).map((val) => ({
+      value: val,
+      label: CountryNamesEnum[val],
+    }));
+
   return (
     <div id="publicholidays" className="publicholidays">
       <div className="publicholidayscontrols">
-        <label>
-          Country Code: &nbsp;
-          <select
-            id="countryselect"
-            value={countryCode}
-            onChange={(e) => {
-              resetAll();
-              setCountryCode(e.target.value as CountryCodeEnum);
-            }}
-            >
-            {Object.values(CountryCodeEnum).map((code) => (
-              <option key={code} value={code}>
-                {CountryNamesEnum[code]}
-              </option>
-            ))}
-          </select>
-        </label>
-        <UtilRunButton onClick={() => fetchHolidays(countryCode)} title="Fetch Holidays" />
-        <UtilClearButton onClick={resetAll} title="Clear Holidays" />
+        <UtilSelectField
+          id="countryselect"
+          label="Country Code:"
+          value={countryCode}
+          onChange={(e) => {
+            resetAll();
+            setCountryCode(e.target.value as CountryCodeEnum);
+          }}
+          options={countryCodeSelectOptions}
+          required={true}
+        />
+        <UtilsCardControlsButtons onCalculate={() => fetchHolidays(countryCode)} onClear={resetAll} />
       </div>
-      {(loading || error || !holidays) &&
+      {(loading || error) &&
         <div className="publicholidaysoutputError">
           {loading && <div>Loading public holidays...</div>}
           {error && <div>Error: {error}</div>}

@@ -13,13 +13,12 @@ export default function LightHomeBase() {
 
   return (
     <div className="lighthomebase">
-      {sectionVisibility.utilsSection && <UtilitiesSection />}
       {sectionVisibility.welcomeSection && <WelcomeSection />}
       {sectionVisibility.aboutSection && <AboutSection />}
       {sectionVisibility.skillsSection && <SkillsSection />}
       {sectionVisibility.journeySection && <JourneySection />}
       {sectionVisibility.projectSection && <ProjectsSection />}
-      {/* {sectionVisibility.utilsSection && <UtilitiesSection />} */}
+      {sectionVisibility.utilsSection && <UtilitiesSection />}
       <Footer />
     </div>
   );

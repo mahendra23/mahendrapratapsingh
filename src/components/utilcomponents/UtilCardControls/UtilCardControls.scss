@@ -33,7 +33,6 @@
 
 .utilinputfield-label {
   margin-bottom: 0.4rem;
-  // max-width: 100%;
 }
 
 .utilinputfield-label-required {
@@ -46,7 +45,6 @@
   border-radius: 5px;
   border: 1px solid $myLightBackground;
   background: $myLightBackground;
-  min-width: 80px;
 }
 
 .utilselectfield {
@@ -75,6 +73,7 @@
   border: 1px solid $myLightBackground;
   background: $myLightBackground;
   cursor: pointer;
+  min-width: 100px;
 
   &:focus {
     border-color: $myHighlightColor;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../../darkdesign/skills/SkillsSection.scss";
 import { skills } from "../../../mockdata/darkdesign/skillsData";
-import { Heading } from "../../darkdesign/heading/heading";
+import { Heading } from "../heading/Heading";
 
 export default function SkillsSection() {
   const [openIndexes, setOpenIndexes] = useState<number[]>([]);

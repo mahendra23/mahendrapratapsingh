@@ -1,5 +1,5 @@
 import React from "react";
-import "../../darkdesign/heading/heading.scss";
+import "./Heading.scss";
 
 export const Heading = (props: {headingText: string}): JSX.Element => {
     return (

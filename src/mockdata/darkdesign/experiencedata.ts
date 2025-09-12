@@ -245,14 +245,14 @@ export const timelineData: TimelineItem[] = [
   {
     role: "IT Quality Consultant (Project Lead)",
     company: "United Health Group, India",
-    period: "2010 – 2014",
+    period: "May 2008 – June 2014",
     highlight:
       "Saved $0.5M by developing HIPAA EDI automation utilities."
   },
   {
     role: "Senior Associate QA",
     company: "Sapient Corporation, India",
-    period: "2005 – 2010",
+    period: "June 2005 – April 2008",
     highlight:
       "Created keyword-driven frameworks; automated reporting (75% effort saved)."
   }

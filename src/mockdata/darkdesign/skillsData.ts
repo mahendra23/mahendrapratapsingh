@@ -12,7 +12,7 @@ export const skills = [
     items: ["Spring Boot", "React", "SwiftUI", "TestNG / JUnit", "Jest / Mocha", "PyTest", "Cucumber"],
   },
   {
-    category: "AI, DevOps & Cloud",
+    category: "DevOps & Cloud, AI",
     items: ["AWS", "Azure DevOps", "Browser Use AI Agent", "Docker", "Firebase", "GitHub Actions", "Jenkins", "Linux"],
   },
   {

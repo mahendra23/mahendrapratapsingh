@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import "./DateCalculator.scss";
-import { UtilInputField, UtilsCardControlsButtons } from "../UtilCardControls/UtilCardControls";
+import { UtilInputField, UtilsCardControlsButtons } from "../utilcardcontrols/UtilCardControls";
 
 export default function DateCalculator() {
     const [startDate, setStartDate] = useState<Date | null>(new Date());
@@ -47,7 +47,7 @@ export default function DateCalculator() {
                     <UtilsCardControlsButtons onCalculate={calculateDateDifference} onClear={resetAll} />
                 </div>
             </div>
-            {difference && (
+            {difference !== null && (
                 <div className="datecalculatoroutput">
                     <UtilInputField 
                         id="datedifference" 

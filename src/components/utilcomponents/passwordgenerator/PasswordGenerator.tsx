@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./PasswordGenerator.scss";
-import { UtilCopyButton, UtilInputField, UtilsCardControlsButtons } from "../UtilCardControls/UtilCardControls";
+import { UtilCopyButton, UtilInputField, UtilsCardControlsButtons } from "../utilcardcontrols/UtilCardControls";
 
 export const PasswordGenerator =(): JSX.Element => {
   const [length, setLength] = useState(16);

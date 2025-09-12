@@ -1,0 +1,65 @@
+@import "../../../common/globalColor.scss";
+
+.publicholidays {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.publicholidayscontrols {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.publicholidaysoutputError {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+.publicholidaysoutput {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+.publicholidaysoutput table {
+  width: auto;
+  border-collapse: collapse;
+  border: 3px solid $myLightBackground;
+}
+
+.publicholidaysoutput td {
+  padding: 8px 10px;
+  border-bottom: 3px solid $myLightBackground;
+  border-right: 3px solid $myLightBackground;
+}
+
+/* ------------------------- */
+/* 📱 Mobile Responsiveness */
+/* ------------------------- */
+@media (max-width: 900px) {
+  .publicholidaysoutput {
+    font-size: $xxsmallFontSize;
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .publicholidayscontrols {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

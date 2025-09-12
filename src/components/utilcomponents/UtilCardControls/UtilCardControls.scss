@@ -1,0 +1,94 @@
+@import "../../../common/globalColor.scss";
+
+.utilbutton {
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $textColorLight;
+  &:hover {
+    color: darken($myOrange, 5%);
+  }
+}
+
+.utilbuttonlightmode {
+  background: $myGradient;
+}
+
+.utilbuttondarkmode {
+  background: $myHighlightColorDark;
+}
+
+.utilinputfield {
+  display: flex;
+  color: $textColorLight;
+  border-radius: 5px;
+  max-height: 25px;
+  gap: 0.5rem;
+}
+
+.utilinputfield-label {
+  margin-bottom: 0.4rem;
+  // max-width: 100%;
+}
+
+.utilinputfield-label-required {
+  color: red;
+  margin-left: 4px;
+}
+
+.utilinputfield-input {
+  transition: border-color 0.2s ease;
+  border-radius: 5px;
+  border: 1px solid $myLightBackground;
+  background: $myLightBackground;
+  min-width: 80px;
+}
+
+.utilselectfield {
+  display: flex;
+  color: $textColorLight;
+  border-radius: 5px;
+  max-height: 25px;
+  gap: 0.5rem;
+}
+
+.utilselectfield-label {
+  margin-bottom: 0.4rem;
+}
+
+.utilselectfield-required {
+  color: red;
+  margin-left: 4px;
+}
+
+.utilselectfield-select {
+  appearance: none; // normalize
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  border-radius: 6px;
+  border: 1px solid $myLightBackground;
+  background: $myLightBackground;
+  cursor: pointer;
+
+  &:focus {
+    border-color: $myHighlightColor;
+    outline: none;
+  }
+}
+
+.utilselectfield-select option {
+  background: $myLightBackground;
+  color: $textColorDark;
+  padding: 0.5rem;
+}
+
+.utilcardcontrolsbutton {
+  display: flex;
+  gap: 0.5rem;
+}

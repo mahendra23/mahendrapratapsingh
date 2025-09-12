@@ -1,0 +1,9 @@
+@import "../../common/globalColor.scss";
+
+.errorMessages {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: 100%;
+  border-radius: 6px;
+}

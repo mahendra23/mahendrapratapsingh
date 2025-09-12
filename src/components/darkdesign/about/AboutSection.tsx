@@ -1,6 +1,6 @@
 import React from "react";
 import "./AboutSection.scss";
-import { IMAGES_FOLDER, RESUME_PDF } from "../../../common/constants";
+import { MY_IMAGE, RESUME_PDF } from "../../../common/constants";
 
 export default function AboutSection() {
     return <section className="about">
@@ -15,11 +15,11 @@ export default function AboutSection() {
         </p>
         <div className="about-actions">
           <a href={RESUME_PDF} className="btn primary" download="Resume_Mahendra_Singh.pdf">Download Resume</a>
-          <a href={"#journeysection"} className="btn secondary">View My Journey</a>
+          <a href={"#timelinesection"} className="btn secondary">View My Journey</a>
         </div>
       </div>
       <div className="about-right">
-        <img src={`${IMAGES_FOLDER}/Mahen.jpg`} alt="Me" />
+        <img src={MY_IMAGE} alt="Me" />
       </div>
     </section>;
   }

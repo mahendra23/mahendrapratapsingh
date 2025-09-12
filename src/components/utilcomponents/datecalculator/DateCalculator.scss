@@ -1,0 +1,33 @@
+@import "../../../common/globalColor.scss";
+
+.datecalculator {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  gap: 0.5rem
+}
+
+.datecalculatorcontrols {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  gap: 1rem;
+}
+
+.datecalculatorcontrols-rowtwo {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.datecalculatoroutput {
+  display: flex;
+}
+
+@media (max-width: 900px) {
+  .datecalculatorcontrols {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

@@ -12,8 +12,8 @@ export const SkillCard = (props: {data: SkillSetDataType, isLast: boolean}): JSX
             </div>
             {props.data.toolslist && 
                 <div className="toollist">
-                    {props.data.toolslist.map((tool: SkillSetDataToolType) => (
-                            <div className="tooldata">
+                    {props.data.toolslist.map((tool: SkillSetDataToolType, index) => (
+                            <div key={"tool-"+index} className="tooldata">
                                 <div className="toolimage">
                                     {tool.toolIcon && <img alt={tool.toolname} src={`${ICONS_FOLDER}/${tool.toolIcon}`} />}
                                     {!tool.toolIcon && <GoDotFill />}

@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./PasswordGenerator.scss";
-import { FaRegCopy } from "react-icons/fa6";
-import { UtilButton } from "../utilbutton/UtilButton";
+import { UtilCopyButton, UtilInputField, UtilsCardControlsButtons } from "../UtilCardControls/UtilCardControls";
 
 export const PasswordGenerator =(): JSX.Element => {
   const [length, setLength] = useState(16);
   const [password, setPassword] = useState("");
 
   const generatePassword = () => {
-    const charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{}|;:,.<>?";
+    const charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
     const randomValues = new Uint32Array(length);
     crypto.getRandomValues(randomValues); // 🔒 Secure randomness
     const newPassword = Array.from(randomValues, val => charset[val % charset.length]).join("");
@@ -35,23 +34,25 @@ export const PasswordGenerator =(): JSX.Element => {
   return (
     <div className="passwordgenerator">
       <div className="passwordgeneratorcontrols">
-        <label>Length: &nbsp;
-          <input
-            id="passwordlength"
-            type="number"
-            value={length}
-            onChange={(e) => setLength(Number(e.target.value))}
-          />
-        </label>
-        <UtilButton onClick={generatePassword} title="Generate Password" />
+        <UtilInputField
+          id="passwordlength"
+          type="number"
+          label="Length:"
+          value={length}
+          onChange={(e) => setLength(Number(e.target.value))}
+          required={true}
+        />
+        <UtilsCardControlsButtons onCalculate={generatePassword} onClear={() => {setPassword("")}} />
       </div>
-      <div className="passwordgeneratoroutput">
-        <div className="passworddisplay">
-          <input id="generatedpassword" type="text" value={password} readOnly />
-          <button title="copyToClipboard" onClick={copyToClipboard}><FaRegCopy /></button>
+      {password && (
+        <div className="passwordgeneratoroutput">
+          <div className="passworddisplay">
+            <UtilInputField id="generatedpassword" value={password} readOnly={true} label="Password:" />
+            <UtilCopyButton title="Copy to Clipboard" onClick={copyToClipboard} />
+          </div>
+          <div className="expirynote">* This password will disappear after 30 seconds ⏳</div>
         </div>
-        <div className="expirynote">* This password will disappear after 30 seconds ⏳</div>
-      </div>
+      )}
     </div>
   );
 }

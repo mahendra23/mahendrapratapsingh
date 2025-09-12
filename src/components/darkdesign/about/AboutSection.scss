@@ -35,7 +35,7 @@
           transition: 0.3s ease;
           &.primary {
             background: $myHighlightColor;
-            color: #000;
+            color: $myDarkDesignBackground;
             &:hover {
               background: $myHighlightColorDark;
             }
@@ -45,7 +45,7 @@
             color: $myHighlightColor;
             &:hover {
               background: $myHighlightColor;
-              color: #000;
+              color: $myDarkDesignBackground;
             }
           }
         }
@@ -60,6 +60,7 @@
         max-width: 90%;
         border-radius: 20px;
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+        height: 50vh;
       }
     }
   }
@@ -76,5 +77,13 @@
           justify-content: center;
         }
       }
+      .about-right {
+        justify-content: space-evenly;
+        img {
+          border-radius: 5px;
+          height: 20vh;
+        }
+      }
     }
+
   }

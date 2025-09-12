@@ -2,7 +2,7 @@ import React from 'react'
 import "./AboutSection.scss";
 import { headerdata } from "../../../mockdata/lightdesign/headerdata";
 import { DownloadResumeButton } from "../resume/DownloadResumeButton";
-import { Heading } from "../heading/heading";
+import LightHeading from "../heading/heading";
 import { MY_IMAGE } from "../../../common/constants";
 import { ContactDetailsSection } from "../contactdetails/ContactDetailsSection";
 
@@ -10,7 +10,7 @@ export const AboutSection = (): JSX.Element => {
     const isHomeDisplayed = headerdata.header[0].display;
     return (
         <section id={headerdata.header[1].id} className="aboutsection">
-            {isHomeDisplayed && <Heading headingText="ABOUT ME" />}
+            {isHomeDisplayed && <LightHeading headingText="ABOUT ME" />}
             <div className="aboutcontainer">
                 <div className="aboutimagecontainer">
                     <img alt="Mahen" src={MY_IMAGE} className="aboutimage" />

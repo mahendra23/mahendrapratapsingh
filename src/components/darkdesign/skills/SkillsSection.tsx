@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../../darkdesign/skills/SkillsSection.scss";
+import "./SkillsSection.scss";
 import { skills } from "../../../mockdata/darkdesign/skillsData";
 import Heading from "../../darkdesign/heading/Heading";
 

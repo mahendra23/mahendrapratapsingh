@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./TaxCalculator.scss";
-import { UtilClearButton, UtilInputField, UtilRunButton, UtilsCardControlsButtons } from "../UtilCardControls/UtilCardControls";
+import { UtilInputField, UtilsCardControlsButtons } from "../UtilCardControls/UtilCardControls";
 import { calculateNZTaxAndNetIncome, TaxDetails } from "../../../service/TaxUtilFunctions";
 import { ErrorMessages } from "../../errors/ErrorMessages";
 

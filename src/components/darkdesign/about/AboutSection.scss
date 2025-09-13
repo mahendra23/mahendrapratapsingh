@@ -36,18 +36,18 @@
           &.primary {
             background: $myHighlightColor;
             color: $myDarkDesignBackground;
-            &:hover {
-              background: $myHighlightColorDark;
-            }
           }
           &.secondary {
             border: 2px solid $myHighlightColor;
             color: $myHighlightColor;
             &:hover {
-              background: $myHighlightColor;
+              // background: $myHighlightColor;
               color: $myDarkDesignBackground;
             }
           }
+          &:hover {
+              background: darken($myHighlightColor, 10%);//$myHighlightColorDark;
+            }
         }
       }
     }

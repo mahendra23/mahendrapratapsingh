@@ -1,5 +1,5 @@
 import React from "react";
-import "./Heading.scss";
+import "./heading.scss";
 
 export const Heading = (props: {headingText: string}): JSX.Element => {
     return (

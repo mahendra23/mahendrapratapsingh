@@ -1,0 +1,28 @@
+@import "../../../common/globalColor.scss";
+
+.footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: $xxsmallFontSize;
+  color: $myDarkDesignTextColor;
+  background: $myDarkDesignBackground;
+  border-top: 1px solid $myHighlightColor;
+  display: flex;
+  a {
+    color: $myHighlightColor;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .footer {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

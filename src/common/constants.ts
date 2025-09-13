@@ -8,6 +8,10 @@ export const RESUME_PDF = `${DOCS_FOLDER}/Resume_Mahendra_Singh.pdf`;
 
 export const MY_IMAGE = `${IMAGES_FOLDER}/Mahendra_Singh.jpeg`;
 
+export const MY_LOGO = `${IMAGES_FOLDER}/MP-Logo.png`;
+
+export const MY_LINKEDIN = "https://www.linkedin.com/in/mahendrapsingh23/";
+
 export const DEFAULT_THEME_IS_DARK = true;
 
 export const DISPLAY_THEME_TOGGLE = false;

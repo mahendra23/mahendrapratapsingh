@@ -5,7 +5,7 @@ import { calculateEarnings, EarningsDetail } from "../../../service/EarningsDeta
 import { FinancialYearsEnum } from "../../../service/AppEnums";
 import { ErrorMessages } from "../../errors/ErrorMessages";
 
-export const EarningCalculator = (): JSX.Element => {
+export const EarningCalculator = () => {
   const [year, setYear] = useState<string>("");
   const [hourlyRate, setHourlyRate] = useState<string>("");
   const [earningsData, setEarningsData] = useState<EarningsDetail | null>(null);

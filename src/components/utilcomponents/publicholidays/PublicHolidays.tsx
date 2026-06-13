@@ -4,7 +4,7 @@ import { UtilsCardControlsButtons, UtilSelectField, UtilSelectFieldOption } from
 import { getSortedPublicHolidays, Holiday } from "../../../service/HolidaysAndDateUtilFunctions";
 import { CountryCodeEnum, CountryNamesEnum } from "../../../service/AppEnums";
 
-export const PublicHolidays = (): JSX.Element => {
+export const PublicHolidays = () => {
   const year = `${new Date().getFullYear()}`;
   const [countryCode, setCountryCode] = useState<string>("NZ");
   const [holidays, setHolidays] = useState<Holiday[] | null>(null);

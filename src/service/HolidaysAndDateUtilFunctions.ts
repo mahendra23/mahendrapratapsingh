@@ -17,14 +17,29 @@ export interface Holiday {
 }
 
 const getPublicHolidays = async (countryCode: string): Promise<Holiday[]> => {
-    const API_KEY = process.env.API_NINJAS_KEY || "U02nExdoOHWdXFj/4zVbEQ==Y8f0FMm2vSV23dLr";
+    const API_KEY = process.env.REACT_APP_API_NINJAS_KEY;
+    
+    if (!API_KEY) {
+        throw new Error("API_NINJAS_KEY is not configured. Please set REACT_APP_API_NINJAS_KEY in your .env file.");
+    }
+    
     const apiBaseUrl = `https://api.api-ninjas.com/v1/holidays?country=${countryCode}`;
-    const response = await fetch(apiBaseUrl,{headers: {"X-Api-Key": API_KEY,},});
+    const response = await fetch(apiBaseUrl, { headers: { "X-Api-Key": API_KEY } });
 
     if (!response.ok) throw new Error("Failed to fetch holidays");
     const data = await response.json();
 
-    const mapped: Holiday[] = (data || []).map((h: any) => ({
+    interface HolidayData {
+        date: string;
+        name: string;
+        type: string;
+        country: string;
+        fixed: boolean;
+        global: boolean;
+        counties: string[] | null;
+    }
+    
+    const mapped: Holiday[] = (data || []).map((h: HolidayData) => ({
         date: formatDate(h.date), 
         localName: h.name,
         name: h.name,

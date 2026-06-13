@@ -181,8 +181,15 @@ interface TimelineItem {
 export const timelineData: TimelineItem[] = [
   {
     role: "Senior Test Automation Engineer (Contract)",
+    company: "Bank of New Zealand (BNZ)",
+    period: "July 2025 – Present",
+    highlight:
+      "Leveraged GenAI-powered Playwright agents to automate testing, improving test coverage, execution efficiency, and defect detection."
+  },
+  {
+    role: "Senior Test Automation Engineer (Contract)",
     company: "Reserve Bank of New Zealand (RBNZ)",
-    period: "Apr 2025 – Present",
+    period: "Apr 2025 – June 2025",
     highlight:
       "Leading API automation framework design, integrated into Azure DevOps CI/CD."
   },

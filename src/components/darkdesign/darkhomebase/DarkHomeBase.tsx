@@ -11,8 +11,8 @@ export default function DarkHomeBase() {
     <div className="darkhomebase" id="darkhomebase">
       <UtilsToggleWrapper />
       <AboutSection />
-      <TimelineSection />
       <SkillsSection />
+      <TimelineSection />
       <Footer />
     </div>
   );

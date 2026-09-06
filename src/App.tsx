@@ -1,6 +1,5 @@
 import "./common/App.scss";
-import "@coreui/coreui/dist/css/coreui.min.css";
-import { Preloader } from "./components/preloader/Preloader";
+import "@coreui/coreui/dist/css/coreui.min.css";\
 import LightHomeBase from "./components/lightdesign/lighthomebase/LightHomeBase";
 import DarkHomeBase from "./components/darkdesign/darkhomebase/DarkHomeBase";
 import { Header } from "./components/header/Header";

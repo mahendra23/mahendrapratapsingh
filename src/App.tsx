@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import "./common/App.scss";
 import "@coreui/coreui/dist/css/coreui.min.css";
 import { Preloader } from "./components/preloader/Preloader";
@@ -10,19 +9,12 @@ import { ErrorBoundary } from "./components/errorboundary/ErrorBoundary";
 import { DISPLAY_THEME_TOGGLE } from "./common/constants";
 
 function App() {
-  const [load, setLoad] = useState(false);
-  
-  useEffect(() => {
-    // Preloader is now immediately hidden for better performance
-    // Remove this useEffect if preloader is not needed
-  }, []);
 
   const { isDark } = useTheme();
   
   return (
     <ErrorBoundary>
       <>
-        <Preloader load={load} />
         <div className="App">
           {DISPLAY_THEME_TOGGLE && <Header />}
           {isDark ? <DarkHomeBase /> : <LightHomeBase />}

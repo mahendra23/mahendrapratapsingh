@@ -1,6 +1,6 @@
 import React from "react";
 import "./Preloader.scss";
-import logo from "../../images/logo-no-shadow.png";
+import { MY_LOGO } from "../../common/constants";
 
 interface PreloaderProps {
   load: boolean;
@@ -12,7 +12,7 @@ export const Preloader = ({ load }: PreloaderProps) => {
       className={load ? "Preloader" : "Preloader-none"} 
       id={load ? "preloader" : "preloader-none"}
     >
-      <img className="Preloader-img" src={logo} alt="Loading..." />
+      <img className="Preloader-img" src={MY_LOGO} alt="Loading..." />
     </div>
   );
 };

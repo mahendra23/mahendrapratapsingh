@@ -48,6 +48,9 @@
       text-align: left;
       position: relative;
       scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
 
       &:hover {
         transform: translateY(-5px);
@@ -64,6 +67,32 @@
       h6 {
         margin: 0.2rem 0;
         font-weight: 600;
+      }
+
+      .role {
+        color: $myDarkDesignTextColor;
+      }
+
+      .company-row {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        margin-top: 0.15rem;
+      }
+
+      .timeline-logo {
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        object-fit: contain;
+        padding: 2px;
+        background: rgba($myHighlightColor, 0.12);
+        flex-shrink: 0;
+      }
+
+      .company {
+        margin: 0;
+        line-height: 1.3;
       }
 
       p {
@@ -118,6 +147,11 @@
           height: 16px;
           border-radius: 50%;
           background: $myHighlightColor;
+        }
+
+        .timeline-logo {
+          width: 32px;
+          height: 32px;
         }
       }
     }

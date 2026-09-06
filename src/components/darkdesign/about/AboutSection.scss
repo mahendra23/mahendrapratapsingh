@@ -25,7 +25,7 @@
       font-size: 1.2rem;
       line-height: 1.6;
       margin-bottom: 2rem;
-      max-width: 600px;
+      max-width: 900px;
     }
 
     .about-actions {
@@ -87,7 +87,7 @@
     .about-left {
       .about-actions {
         flex-direction: column;
-        justify-content: center;   /* ✅ center column buttons too */
+        justify-content: center;
         align-items: center;
         
         .btn {

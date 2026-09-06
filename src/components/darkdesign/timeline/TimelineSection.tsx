@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import "../../darkdesign/timeline/TimelineSection.scss";
 import { timelineData } from "../../../mockdata/darkdesign/experiencedata";
 import { Heading } from "../heading/heading";
+import { ICONS_FOLDER, IMAGES_FOLDER } from "../../../common/constants";
 
 export default function TimelineSection() {
   const [visibleCount, setVisibleCount] = useState(4); // for <900px
   const [isMobile, setIsMobile] = useState(false);
+  const fallbackLogo = `${IMAGES_FOLDER}/logo.png`;
 
   useEffect(() => {
     const handleResize = () => {
@@ -36,8 +38,23 @@ export default function TimelineSection() {
         {timelineData.slice(0, visibleCount).map((exp, index) => (
           <div className="timeline-item slide-down" key={index}>
             <span className="year">{exp.period}</span>
-            <h6>{exp.role}</h6>
-            <h6>{exp.company}</h6>
+            <h6 className="role">{exp.role}</h6>
+            <div className="company-row">
+              {exp.logo && (
+                <img
+                  className="timeline-logo"
+                  alt={`${exp.company} logo`}
+                  src={`${ICONS_FOLDER}/${exp.logo}`}
+                  loading="lazy"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    target.onerror = null;
+                    target.src = fallbackLogo;
+                  }}
+                />
+              )}
+              <h6 className="company">{exp.company}</h6>
+            </div>
             <p>{exp.highlight}</p>
           </div>
         ))}

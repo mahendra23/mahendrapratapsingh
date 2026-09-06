@@ -1,0 +1,63 @@
+@import './designSystem.scss';
+
+// ============================================================================
+// THEME VARIABLES - CSS Custom Properties for Runtime Theme Switching
+// ============================================================================
+
+:root {
+  // Color Variables - Light Theme (Default)
+  --color-bg-primary: #{$color-light-bg-primary};
+  --color-bg-secondary: #{$color-light-bg-secondary};
+  --color-bg-tertiary: #{$color-light-bg-tertiary};
+  --color-text-primary: #{$color-light-text-primary};
+  --color-text-secondary: #{$color-light-text-secondary};
+  --color-text-tertiary: #{$color-light-text-tertiary};
+  
+  // Semantic Colors
+  --color-primary: #{$color-primary};
+  --color-primary-light: #{$color-primary-light};
+  --color-primary-dark: #{$color-primary-dark};
+  --color-secondary: #{$color-secondary};
+  --color-accent: #{$color-accent};
+  --color-success: #{$color-success};
+  --color-warning: #{$color-warning};
+  --color-error: #{$color-error};
+  --color-info: #{$color-info};
+  
+  // Transitions
+  --transition-fast: #{$transition-fast};
+  --transition-base: #{$transition-base};
+  --transition-slow: #{$transition-slow};
+  
+  // Shadows
+  --shadow-sm: #{$shadow-sm};
+  --shadow-base: #{$shadow-base};
+  --shadow-md: #{$shadow-md};
+  --shadow-lg: #{$shadow-lg};
+  --shadow-xl: #{$shadow-xl};
+}
+
+// Dark Theme
+:root[data-theme="dark"],
+[data-theme="dark"] {
+  // Color Variables - Dark Theme
+  --color-bg-primary: #{$color-dark-bg-primary};
+  --color-bg-secondary: #{$color-dark-bg-secondary};
+  --color-bg-tertiary: #{$color-dark-bg-tertiary};
+  --color-text-primary: #{$color-dark-text-primary};
+  --color-text-secondary: #{$color-dark-text-secondary};
+  --color-text-tertiary: #{$color-dark-text-tertiary};
+}
+
+// System Preference Fallback
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    // Color Variables - Dark Theme
+    --color-bg-primary: #{$color-dark-bg-primary};
+    --color-bg-secondary: #{$color-dark-bg-secondary};
+    --color-bg-tertiary: #{$color-dark-bg-tertiary};
+    --color-text-primary: #{$color-dark-text-primary};
+    --color-text-secondary: #{$color-dark-text-secondary};
+    --color-text-tertiary: #{$color-dark-text-tertiary};
+  }
+}

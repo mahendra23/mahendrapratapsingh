@@ -1,7 +1,7 @@
 export const skills = [
   {
     category: "Agile & QA Leadership",
-  items: ["Test Management & Agile/SAFe Delivery", "Client & Stakeholder Management", "Quality Assurance & Continuous Improvement", "Team Leadership, Mentorship & Development", "Test Strategy & Planning"],
+    items: ["Test Management & Agile/SAFe Delivery", "Client & Stakeholder Management", "Quality Assurance & Continuous Improvement", "Team Leadership, Mentorship & Development", "Test Strategy & Planning"],
   },
   {
     category: "Test Automation Tools",

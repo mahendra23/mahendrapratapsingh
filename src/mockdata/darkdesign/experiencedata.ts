@@ -173,6 +173,7 @@ export const experiencedata: ExperienceDataType = {
 
 interface TimelineItem {
   role: string;
+  logo: string;
   company: string;
   period: string;
   highlight: string;
@@ -181,99 +182,113 @@ interface TimelineItem {
 export const timelineData: TimelineItem[] = [
   {
     role: "Senior Test Automation Engineer (Contract)",
+    logo: "Bnz.jpg",
     company: "Bank of New Zealand (BNZ)",
     period: "July 2025 – Present",
     highlight:
-      "Leveraged GenAI-powered Playwright agents to automate testing, improving test coverage, execution efficiency, and defect detection."
+      "Used Generative AI, GitHub Copilot, and AI Agents for test planning, RTMs, framework and code generation; built Playwright/TypeScript and REST Assured/Java frameworks and integrated them into CI/CD."
   },
   {
     role: "Senior Test Automation Engineer (Contract)",
+    logo: "Rbnz.jpeg",
     company: "Reserve Bank of New Zealand (RBNZ)",
     period: "Apr 2025 – June 2025",
     highlight:
-      "Leading API automation framework design, integrated into Azure DevOps CI/CD."
+      "Designed scalable API automation for Azure DevOps CI/CD and defined secure, reusable test data provisioning and masking across environments."
   },
   {
     role: "Senior Test Automation Engineer (Contract)",
+    logo: "Linz.png",
     company: "Land Information New Zealand (LINZ)",
     period: "Nov 2022 – Mar 2025",
     highlight:
-      "Built scalable test solutions with React, Spring Boot, and Playwright."
+      "Developed and tested React/TypeScript frontend applications and Spring Boot/Kotlin backend services; used Swagger/OpenAPI for API design and Playwright for E2E automation with GitHub Actions, Docker, and AWS."
   },
   {
     role: "Senior Test Automation Engineer (Contract)",
+    logo: "Nzcs.jpg",
     company: "New Zealand Customs Service",
     period: "Jul 2022 – Nov 2022",
     highlight:
-      "Cut API data creation effort by 60% with a custom Java automation tool."
+      "Built web and API automation with Selenium, Cucumber, and REST Assured; created a Java bulk API data tool that cut effort by 60% and integrated testing with Jenkins and Git."
   },
   {
     role: "Senior Test Automation Engineer (Contract)",
+    logo: "Bnz.jpg",
     company: "Bank of New Zealand",
     period: "Dec 2021 – Jul 2022",
     highlight:
-      "Delivered API automation using TypeScript, Jest, AWS SDK, and Kafka."
+      "Led API automation with TypeScript, Jest, Supertest, AWS SDK, DynamoDB, and Kafka; used Swagger/OpenAPI and Postman, integrating tests with Jenkins and Git."
   },
   {
     role: "Senior Test Automation Engineer (Contract)",
-    company: "LINZ",
+    logo: "Linz.png",
+    company: "Land Information New Zealand (LINZ)",
     period: "Apr 2021 – Dec 2021",
     highlight:
-      "Developed React front-end and backend Kotlin API test automation."
+      "Developed and tested React/TypeScript frontend applications and Spring Boot/Kotlin backend services; used Swagger/OpenAPI for API design and Playwright for E2E automation with GitHub Actions, Docker, and AWS."
   },
   {
     role: "Senior Test Automation Engineer (Contract)",
+    logo: "Bnz.jpg",
     company: "Bank of New Zealand",
     period: "Aug 2019 – Apr 2021",
     highlight:
-      "Led automation for mobile, web, and APIs, integrated with CI/CD pipelines."
+      "Led mobile, web, and API automation using XCUITest, Appium, SeeTest, Selenium, Cypress, Postman, REST Assured, Supertest, and Jest; integrated testing with Jenkins, Git, and Bitbucket."
   },
   {
     role: "Senior Test Automation Engineer (Contract)",
+    logo: "Westpac.png",
     company: "Westpac New Zealand",
     period: "Oct 2017 – Aug 2019",
     highlight:
-      "Built test frameworks for mobile, web, and APIs with Appium and Selenium."
+      "Led mobile, web, and API automation using XCUITest, Appium, SeeTest, Selenium, Cucumber, Cypress, Postman, and REST Assured; integrated testing with Jenkins, Git, and Bitbucket."
   },
   {
     role: "Manager",
+    logo: "Capgemini.jpeg",
     company: "Capgemini Australia (Client: ANZ Bank)",
     period: "Jun 2015 – Oct 2017",
     highlight:
-      "Directed large-scale testing across Agile & Waterfall, managing 20+ staff."
+      "Managed ANZ testing across Agile and Waterfall, including UPI China payments, strategy, integration, performance, and go-live; led 20 staff and cut effort 30% with a data comparison utility."
   },
   {
     role: "Project Manager",
+    logo: "Techm.png",
     company: "Tech Mahindra",
     period: "Jun 2014 – Jun 2015",
     highlight:
-      "Established Mobile Test Automation Competency; cut test time by 50%."
+      "Established a mobile test automation competency, cutting test time 50% and raising coverage 40%; led RFP solutions, feasibility and ROI analysis, recruitment, and a team of 15."
   },
   {
     role: "IT Quality Consultant (Project Lead)",
+    logo: "Uhg.png",
     company: "United Health Group, India",
     period: "May 2008 – June 2014",
     highlight:
-      "Saved $0.5M by developing HIPAA EDI automation utilities."
+      "Saved $0.5M with HIPAA EDI file-to-database utilities; built a three-tier automation framework, led adoption through POCs and demos, and managed teams of 20+ in a matrix environment."
   },
   {
     role: "Senior Associate QA",
+    logo: "Sapient.png",
     company: "Sapient Corporation, India",
     period: "June 2005 – April 2008",
     highlight:
-      "Created keyword-driven frameworks; automated reporting (75% effort saved)."
+      "Reduced report-generation effort 75%; designed and integrated a QTP keyword-driven web automation framework, presented it to clients, and mentored team members."
   },
   {
     role: "Trainee",
+    logo: "gcc",
     company: "Ghaziabad Computer Centre, India",
     period: "August 2004 – May 2005",
     highlight:
-      "Created engaging catalogues, supported sales through customer interactions, and maintained computer hardware stock for smooth operations."
+      "Designed product catalogues, supported sales through phone and in-store customer interactions, and maintained computer hardware for smooth operations."
   },
   {
     role: "Bachelor of Technology",
+    logo: "Uptu.jpeg",
     company: "Dr. A.P.J. Abdul Kalam Technical University",
     period: "August 2004 – May 2005",
-    highlight:"Computer Science & Engineering"
+    highlight: "Bachelor of Technology in Computer Science & Engineering."
   },
 ];

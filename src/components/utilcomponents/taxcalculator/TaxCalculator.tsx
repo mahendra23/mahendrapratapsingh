@@ -3,22 +3,29 @@ import "./TaxCalculator.scss";
 import { UtilInputField, UtilsCardControlsButtons } from "../UtilCardControls/UtilCardControls";
 import { calculateNZTaxAndNetIncome, TaxDetails } from "../../../service/TaxUtilFunctions";
 import { ErrorMessages } from "../../errors/ErrorMessages";
+import { useValidation, validateNumericField } from "../../../hooks/useValidation";
 
-export const TaxCalculator = (): JSX.Element => {
+export const TaxCalculator = () => {
     const [annualIncome, setAnnualIncome] = useState<string>("");
     const [taxData, setTaxData] = useState<TaxDetails | null>(null);
-    const [errors, setErrors] = useState<string[] | null>(null);
+    const { errors, setErrors, clearErrors } = useValidation();
 
-    function resetAll(): void {
-        setErrors(null);
-        setAnnualIncome("")
+    const resetAll = (): void => {
+        clearErrors();
+        setAnnualIncome("");
         setTaxData(null);
-    }
-    function calculateTax(): void {
+    };
+
+    const calculateTax = (): void => {
         const validationErrors: string[] = [];
-    
-        if (!annualIncome) {
-            validationErrors.push("Missing Annual Income.");
+        
+        const incomeError = validateNumericField(annualIncome, "Annual Income", {
+            required: true,
+            min: 0,
+        });
+        
+        if (incomeError) {
+            validationErrors.push(incomeError);
         }
     
         if (validationErrors.length > 0) {
@@ -27,9 +34,9 @@ export const TaxCalculator = (): JSX.Element => {
             return;
         }
     
-        setErrors(null);
+        clearErrors();
         setTaxData(calculateNZTaxAndNetIncome(annualIncome));
-    }
+    };
 
     return (
         <div className="taxcalculator">

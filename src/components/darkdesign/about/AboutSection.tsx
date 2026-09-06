@@ -7,12 +7,15 @@ export default function AboutSection() {
     return <section className="about" id="aboutsection">
       <div className="about-left">
         <h1>
-          <span className="highlight">21+ Years</span> Engineering Quality Excellence
+          <span className="highlight">22+ Years</span> of Engineering Quality Excellence
         </h1>
         <p>
-          Test Automation Leader | QA Strategist | Mentor | Agile & SAFe Expert | 
-          Driving scalable automation, AI-powered testing, cross-functional team leadership, 
-          and quality-first delivery across Banking, Health, Telecom, and other global industries
+          Quality Engineering Leader | Test Automation Architect | AI-Assisted Testing | QA Strategist
+        </p>
+        <p>
+          Designing scalable automation, leveraging Generative AI and AI Agents, 
+          and driving quality-first delivery across Banking, Financial Services, 
+          Government, Health Insurance, Land Information, and Telecom.
         </p>
         <div className="about-actions">
           <a href={RESUME_PDF} className="btn primary" download="Resume_Mahendra_Singh.pdf">Download Resume</a>

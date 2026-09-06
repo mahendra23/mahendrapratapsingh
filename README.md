@@ -1,5 +1,4 @@
-# mahendrapratapsingh
-My Portfolio / Resume app
+# My Portfolio / Resume app
 
 # Getting Started with Create React App
 

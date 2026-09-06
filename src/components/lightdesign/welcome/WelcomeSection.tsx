@@ -3,7 +3,7 @@ import { headerdata } from "../../../mockdata/lightdesign/headerdata";
 import { FaArrowDown } from "react-icons/fa";
 import { IconContext } from "react-icons";
 
-export const WelcomeSection = (): JSX.Element => {
+export const WelcomeSection = () => {
     return (
         <section id={headerdata.header[0].id} className="welcomesection">
             <div className="welcomesection-text-container">
@@ -19,7 +19,7 @@ export const WelcomeSection = (): JSX.Element => {
     );
 };
 
-const DownarrowIcon = (): JSX.Element => {
+const DownarrowIcon = () => {
     return (
     <IconContext.Provider value={{ size: "25px"}}>
         <FaArrowDown />

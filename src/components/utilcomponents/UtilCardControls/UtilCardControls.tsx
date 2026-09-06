@@ -8,7 +8,7 @@ type UtilButtonProps = {
   onClick: () => void;
 };
 
-export const UtilRunButton = ({title,  onClick }: UtilButtonProps): JSX.Element => {
+export const UtilRunButton = ({title,  onClick }: UtilButtonProps) => {
   const { isDark } = useTheme();
   return (
     <button className={(isDark ? "utilbuttondarkmode" : "utilbuttonlightmode") + " utilbutton"} title={title} onClick={onClick}>
@@ -17,7 +17,7 @@ export const UtilRunButton = ({title,  onClick }: UtilButtonProps): JSX.Element 
   );
 };
 
-export const UtilClearButton = ({title,  onClick }: UtilButtonProps): JSX.Element => {
+export const UtilClearButton = ({title,  onClick }: UtilButtonProps) => {
   const { isDark } = useTheme();
   return (
     <button className={(isDark ? "utilbuttondarkmode" : "utilbuttonlightmode") + " utilbutton"} title={title} onClick={onClick}>
@@ -26,7 +26,7 @@ export const UtilClearButton = ({title,  onClick }: UtilButtonProps): JSX.Elemen
   );
 };
 
-export const UtilCopyButton = ({title,  onClick }: UtilButtonProps): JSX.Element => {
+export const UtilCopyButton = ({title,  onClick }: UtilButtonProps) => {
   const { isDark } = useTheme();
   return (
     <button className={(isDark ? "utilbuttondarkmode" : "utilbuttonlightmode") + " utilbutton"} title={title} onClick={onClick}>

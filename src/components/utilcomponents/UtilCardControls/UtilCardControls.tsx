@@ -58,7 +58,7 @@ export const UtilInputField: React.FC<UtilInputFieldProps> = ({
   return (
     <div className="utilinputfield">
       <label htmlFor={id} className="utilinputfield-label">
-        {label}&nbsp;{required && <span className="utilinputfield-label-required">*</span>}
+        {label}
       </label>
       <input
         id={id}
@@ -70,6 +70,7 @@ export const UtilInputField: React.FC<UtilInputFieldProps> = ({
         onChange={onChange}
         className="utilinputfield-input"
       />
+      {required && <span className="utilinputfield-label-required">*</span>}
     </div>
   );
 };
@@ -101,7 +102,7 @@ export const UtilSelectField: React.FC<UtilSelectFieldProps> = ({
   return (
     <div className="utilselectfield">
       <label htmlFor={id} className="utilselectfield-label">
-        {label} {required && <span className="utilselectfield-required">*</span>}
+        {label}
       </label>
       <select
         id={id}
@@ -117,6 +118,7 @@ export const UtilSelectField: React.FC<UtilSelectFieldProps> = ({
           </option>
         ))}
       </select>
+      {required && <span className="utilselectfield-required">*</span>}
     </div>
   );
 };

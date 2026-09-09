@@ -288,7 +288,7 @@ export const timelineData: TimelineItem[] = [
     role: "Bachelor of Technology",
     logo: "Uptu.jpeg",
     company: "Dr. A.P.J. Abdul Kalam Technical University",
-    period: "August 2004 – May 2005",
+    period: "July 2000 – July 2004",
     highlight: "Bachelor of Technology in Computer Science & Engineering."
   },
 ];

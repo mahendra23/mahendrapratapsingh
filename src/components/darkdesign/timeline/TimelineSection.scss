@@ -9,59 +9,83 @@
   background: $myDarkDesignBackground;
 
   .timeline-container {
-    display: flex;
-    flex-direction: row; /* horizontal layout for desktop */
-    gap: 2rem;
-    overflow-x: auto; /* horizontal scroll */
-    padding-bottom: 2rem;
     position: relative;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    padding: 2.25rem 0 0;
 
-    &::-webkit-scrollbar {
-      height: 8px;
-    }
-    &::-webkit-scrollbar-thumb {
-      background: $myHighlightColor;
-      border-radius: 4px;
-    }
-
-    /* Horizontal timeline line */
     &::before {
       content: "";
       position: absolute;
-      top: 50%;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: $myHighlightColor;
-      transform: translateY(-50%);
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      transform: translateX(-50%);
+      border-radius: 999px;
+      background: linear-gradient(
+        to bottom,
+        rgba($myHighlightColor, 0.25),
+        $myHighlightColor,
+        rgba($myHighlightColor, 0.25)
+      );
     }
 
     .timeline-item {
-      flex: 0 0 auto;
-      min-width: 250px;
-      padding: 1rem 2rem;
-      background: $myCardBackground;
-      border-radius: 20px;
-      text-align: left;
       position: relative;
-      scroll-snap-align: start;
+      width: calc(50% - 2.6rem);
+      background: linear-gradient(180deg, rgba($myCardBackground, 0.96), rgba($myCardBackground, 0.9));
+      border: 1px solid rgba($myHighlightColor, 0.18);
+      border-radius: 18px;
+      padding: 1.35rem 1.5rem 1.25rem;
+      text-align: left;
       display: flex;
       flex-direction: column;
-      gap: 0.4rem;
+      gap: 0.55rem;
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.18);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+
+      &:nth-child(odd) {
+        margin-right: auto;
+      }
+
+      &:nth-child(even) {
+        margin-left: auto;
+      }
 
       &:hover {
         transform: translateY(-5px);
-        box-shadow: 0 4px 10px $myHighlightColor;
+        border-color: rgba($myHighlightColor, 0.5);
+        box-shadow: 0 12px 30px rgba($myHighlightColor, 0.18);
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 1.5rem;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: $myHighlightColor;
+        box-shadow: 0 0 0 6px rgba($myHighlightColor, 0.12);
+      }
+
+      &:nth-child(odd)::before {
+        right: -3.7rem;
+      }
+
+      &:nth-child(even)::before {
+        left: -3.7rem;
       }
 
       .year {
         font-weight: 700;
         color: $myHighlightColor;
         display: block;
-        margin-bottom: 0.5rem;
+        letter-spacing: 0.04em;
       }
 
       h6 {
@@ -71,19 +95,21 @@
 
       .role {
         color: $myDarkDesignTextColor;
+        font-size: $smallFontSize;
+        line-height: 1.35;
       }
 
       .company-row {
         display: flex;
         align-items: center;
-        gap: 0.6rem;
-        margin-top: 0.15rem;
+        gap: 0.7rem;
+        margin-top: 0.1rem;
       }
 
       .timeline-logo {
         width: 36px;
         height: 36px;
-        border-radius: 8px;
+        border-radius: 10px;
         object-fit: contain;
         padding: 2px;
         background: rgba($myHighlightColor, 0.12);
@@ -96,57 +122,49 @@
       }
 
       p {
-        margin-top: 0.5rem;
+        margin-top: 0.3rem;
         font-size: $xxsmallFontSize;
-        line-height: 1.5;
-        max-width: 300px;
+        line-height: 1.65;
+        color: rgba($myDarkDesignTextColor, 0.9);
       }
 
-      /* Animation for newly revealed items */
       &.slide-down {
-        animation: slideDown 0.5s ease forwards;
+        animation: slideDown 0.45s ease forwards;
       }
     }
   }
 
-  /* Responsive: tablet/mobile */
   @media (max-width: 900px) {
     padding: 2rem 3%;
     margin-bottom: 1.5rem;
 
     .timeline-container {
-      flex-direction: column;
-      overflow-x: hidden;
-      overflow-y: auto;
-      height: auto;
-      padding: 0;
+      max-width: none;
+      padding-top: 1rem;
 
       &::before {
-        width: 4px;
-        height: 100%;
         left: 20px;
-        top: 0;
-        bottom: 0;
         transform: none;
       }
 
       .timeline-item {
-        flex: 1;
+        width: calc(100% - 3.5rem);
         margin-left: 3rem;
-        margin-bottom: 2rem;
-        max-width: 100%;
-        text-align: left;
+        margin-right: 0;
+        padding: 1rem 1.2rem;
 
-        /* Timeline dot */
+        &:nth-child(odd),
+        &:nth-child(even) {
+          margin-left: 3rem;
+          margin-right: 0;
+        }
+
         &::before {
-          content: "";
-          position: absolute;
+          left: -2.2rem;
+          right: auto;
           top: 1rem;
-          left: -32px;
           width: 16px;
           height: 16px;
-          border-radius: 50%;
-          background: $myHighlightColor;
         }
 
         .timeline-logo {
@@ -157,42 +175,40 @@
     }
   }
 
-  /* Small mobile adjustments */
   @media (max-width: 600px) {
     padding: 2rem 1rem;
 
     .timeline-container .timeline-item {
-      padding: 1rem 1.2rem;
+      padding: 1rem 1rem;
     }
   }
 
-  /* Load More Button */
   .timeline-actions {
     text-align: center;
     margin-top: 2rem;
 
     .btn.load-more {
-      padding: 0.6rem 1.2rem;
+      padding: 0.7rem 1.4rem;
       background: $myHighlightColor;
       color: #000;
-      font-weight: 600;
-      border-radius: 8px;
+      font-weight: 700;
+      border-radius: 10px;
       border: none;
       cursor: pointer;
-      transition: 0.3s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
 
       &:hover {
-        background: darken($myHighlightColor, 10%);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba($myHighlightColor, 0.2);
       }
     }
   }
 }
 
-/* Slide-down animation */
 @keyframes slideDown {
   0% {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-16px);
   }
   100% {
     opacity: 1;

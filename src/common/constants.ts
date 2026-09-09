@@ -14,8 +14,6 @@ export const MY_LINKEDIN = "https://www.linkedin.com/in/mahendrapsingh23/";
 
 export const MY_EMAIL = "mpratap.singh@gmail.com";
 
-export const MY_MOBILE = "+64 29 127 6673"
+export const MY_MOBILE = "+64 29 127 6673";
 
-export const DEFAULT_THEME_IS_DARK = true;
-
-export const DISPLAY_THEME_TOGGLE = false;
+export const USE_LIGHT_DESIGN_TIMELINE = true;

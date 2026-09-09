@@ -39,7 +39,7 @@ export default function DateCalculator() {
                     <UtilInputField
                         id="endDate"
                         type="date"
-                        label="End Date:"
+                        label="End Date: "
                         value={endDate ? endDate.toISOString().split("T")[0] : ""}
                         onChange={(e) => setEndDate(e.target.value ? new Date(e.target.value) : null)}
                         required={true}

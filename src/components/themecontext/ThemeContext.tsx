@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useState, ReactNode, useEffect } from "react";
-import { DEFAULT_THEME_IS_DARK } from "../../common/constants";
 
 interface ThemeContextType {
   isDark: boolean;
@@ -11,9 +10,8 @@ const THEME_STORAGE_KEY = "app-theme-preference";
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [isDark, setIsDark] = useState<boolean>(() => {
-    // Initialize from localStorage or use default
     const stored = localStorage.getItem(THEME_STORAGE_KEY);
-    return stored ? JSON.parse(stored) : DEFAULT_THEME_IS_DARK;
+    return stored ? JSON.parse(stored) : true;
   });
 
   // Persist theme preference to localStorage whenever it changes

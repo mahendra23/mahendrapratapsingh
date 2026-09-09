@@ -1,7 +1,29 @@
-import { calculateNZTaxAndNetIncome } from './TaxUtilFunctions';
+import {
+  calculateNZTaxAccLevyNetIncome,
+  calculateNZTaxAndNetIncome,
+} from './TaxUtilFunctions';
 import { formatCurrency } from './EarningsDetailsUtilFunctions';
 
 describe('TaxUtilFunctions', () => {
+  describe('calculateNZTaxAccLevyNetIncome', () => {
+    test('calculates the levy for income below the maximum', () => {
+      const result = calculateNZTaxAccLevyNetIncome('100000');
+      expect(result.accLevy).toContain('$ 1,670.00');
+    });
+
+    test('caps the levy calculation at the maximum income', () => {
+      const result = calculateNZTaxAccLevyNetIncome('200000');
+      expect(result.accLevy).toContain('$ 2,551.59');
+    });
+
+    test('includes ACC levy in net income', () => {
+      const result = calculateNZTaxAccLevyNetIncome('100000');
+      expect(result.tax).toContain('$');
+      expect(result.accLevy).toContain('/');
+      expect(result.netIncome).toContain('$');
+    });
+  });
+
   describe('calculateNZTaxAndNetIncome', () => {
     test('calculates tax for income in first bracket', () => {
       const result = calculateNZTaxAndNetIncome('10000');

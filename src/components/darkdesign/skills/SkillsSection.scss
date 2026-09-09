@@ -3,14 +3,16 @@
 .skills {
   padding: 6rem 8%;
   text-align: center;
-  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
 
   .skills-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); // exactly 3 per row
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-auto-rows: auto;
     gap: 2rem;
     justify-items: stretch;
+    align-items: stretch;
   }
 
   .skill-card {
@@ -71,7 +73,7 @@
     margin-top: 2.5rem;
 
     .skills-grid {
-      grid-template-columns: repeat(2, 1fr); // 2 columns
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       justify-items: stretch;
       align-items: stretch;
       gap: 2rem;
@@ -95,10 +97,10 @@
     margin-top: 2.5rem;
 
     .skills-grid {
-      grid-template-columns: 1fr; // vertical stack
+      grid-template-columns: 1fr;
       justify-items: center;
       align-items: stretch;
-      gap: 2rem;
+      gap: 1.5rem;
     }
 
     .skill-card {

@@ -4,9 +4,10 @@
 .timeline {
   padding: 4rem 5%;
   text-align: center;
-  height: auto;
+  min-height: auto;
   margin-bottom: 2rem;
   background: $myDarkDesignBackground;
+  overflow-x: hidden;
 
   .timeline-container {
     position: relative;
@@ -16,6 +17,7 @@
     flex-direction: column;
     gap: 2.4rem;
     padding: 2.25rem 0 0;
+    overflow-x: hidden;
 
     &::before {
       content: "";

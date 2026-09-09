@@ -18,7 +18,7 @@ export const CountryNamesEnum: Record<CountryCodeEnum, string> = {
 
 export const FinancialYearsEnum = {
     DEFAULT: "Select Year",
-    PREVIOUS: `${new Date().getFullYear() - 1}-${new Date().getFullYear()}`,
     CURRENT: `${new Date().getFullYear()}-${new Date().getFullYear() + 1}`,
-    NEXT: `${new Date().getFullYear() + 1}-${new Date().getFullYear() + 2}`
+    NEXT: `${new Date().getFullYear() + 1}-${new Date().getFullYear() + 2}`,
+    AFTERNEXT: `${new Date().getFullYear() + 2}-${new Date().getFullYear() + 3}`,
 };

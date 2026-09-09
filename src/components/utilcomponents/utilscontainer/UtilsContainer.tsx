@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import "./UtilsContainer.scss";
 import { UtilityItemsData } from "../../../mockdata/utilsdata";
-import { useTheme } from "../../themecontext/ThemeContext";
 
 export default function UtilsContainer() {
-  const { isDark } = useTheme();
   const [selectedId, setSelectedId] = useState(UtilityItemsData[0]?.id ?? "");
 
   const selectedUtil =
@@ -18,7 +16,7 @@ export default function UtilsContainer() {
           id="util-selector"
           value={selectedId}
           onChange={(event) => setSelectedId(event.target.value)}
-          className={isDark ? "dark" : "light"}
+          className="dark"
         >
           {UtilityItemsData.map((utilItem) => (
             <option key={utilItem.id} value={utilItem.id}>
@@ -30,7 +28,7 @@ export default function UtilsContainer() {
 
       {selectedUtil && (
         <div className="utils-item">
-          <span className={"title " + (isDark ? "titledarkmode" : "")}>
+          <span className="title titledarkmode">
             <selectedUtil.icon />&nbsp;{selectedUtil.title}
           </span>
           <h6>{selectedUtil.description}</h6>

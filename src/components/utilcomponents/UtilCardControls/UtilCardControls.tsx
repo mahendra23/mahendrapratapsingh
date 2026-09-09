@@ -1,7 +1,6 @@
 import React from "react";
 import "./UtilCardControls.scss";
 import { FaForward, FaTrash, FaRegCopy} from "react-icons/fa6";
-import { useTheme } from "../../themecontext/ThemeContext";
 
 type UtilButtonProps = {
   title: string;
@@ -9,27 +8,24 @@ type UtilButtonProps = {
 };
 
 export const UtilRunButton = ({title,  onClick }: UtilButtonProps) => {
-  const { isDark } = useTheme();
   return (
-    <button className={(isDark ? "utilbuttondarkmode" : "utilbuttonlightmode") + " utilbutton"} title={title} onClick={onClick}>
+    <button className="utilbuttondarkmode utilbutton" title={title} onClick={onClick}>
       <FaForward />
     </button>
   );
 };
 
 export const UtilClearButton = ({title,  onClick }: UtilButtonProps) => {
-  const { isDark } = useTheme();
   return (
-    <button className={(isDark ? "utilbuttondarkmode" : "utilbuttonlightmode") + " utilbutton"} title={title} onClick={onClick}>
+    <button className="utilbuttondarkmode utilbutton" title={title} onClick={onClick}>
       <FaTrash />
     </button>
   );
 };
 
 export const UtilCopyButton = ({title,  onClick }: UtilButtonProps) => {
-  const { isDark } = useTheme();
   return (
-    <button className={(isDark ? "utilbuttondarkmode" : "utilbuttonlightmode") + " utilbutton"} title={title} onClick={onClick}>
+    <button className="utilbuttondarkmode utilbutton" title={title} onClick={onClick}>
       <FaRegCopy />
     </button>
   );

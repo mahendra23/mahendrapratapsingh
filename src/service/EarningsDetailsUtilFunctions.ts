@@ -1,5 +1,5 @@
 import { getWorkingDaysBetweenDates } from "./HolidaysAndDateUtilFunctions";
-import { calculateNZTaxAccLevyNetIncome } from "./TaxUtilFunctions";
+import { calculateNZAccLevy, calculateNZTax } from "./TaxUtilFunctions";
 
 export interface EarningsDetailItem {
     earningsDetailName: string,
@@ -35,7 +35,11 @@ export const calculateEarnings = (
     //indemnity insurance
     let indemnityInsurance = netWorkingDays * indemnityRate * 8;
     //tax
-    let taxDetails = calculateNZTaxAccLevyNetIncome(grossAnnualIncome.toString());
+    let tax = calculateNZTax(grossAnnualIncome.toString());
+    //acc levy
+    let accLevy = calculateNZAccLevy(finYear, grossAnnualIncome.toString());
+    //net income
+    let netIncome = grossAnnualIncome - tax - accLevy;
     //gst
     let gst = grossAnnualIncome * 0.15;
     const earningDetail: EarningsDetail = [
@@ -69,15 +73,15 @@ export const calculateEarnings = (
         },
         {
             earningsDetailName: "Income Tax",
-            earningsDetailValue: taxDetails.tax,
+            earningsDetailValue: `${formatCurrency(tax)} / ${formatCurrency(tax/12)}`,
         },
         {
             earningsDetailName: "ACC Levy",
-            earningsDetailValue: taxDetails.accLevy,
+            earningsDetailValue: `${formatCurrency(accLevy)} / ${formatCurrency(accLevy/12)}`,
         },
         {
             earningsDetailName: "Tax + ACC Levy",
-            earningsDetailValue: taxDetails.taxAccLevy,
+            earningsDetailValue: `${formatCurrency(tax + accLevy)} / ${formatCurrency((tax + accLevy) / 12)}`,
         },
         {
             earningsDetailName: "Indemnity Insurance",
@@ -85,7 +89,7 @@ export const calculateEarnings = (
         },
         {
             earningsDetailName: "Net Income",
-            earningsDetailValue: taxDetails.netIncome,
+            earningsDetailValue: `${formatCurrency(netIncome)} / ${formatCurrency(netIncome/12)}`,
         },
         {
             earningsDetailName: "GST",

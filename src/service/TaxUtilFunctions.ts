@@ -1,4 +1,5 @@
 import { formatCurrency } from "./EarningsDetailsUtilFunctions";
+import { FinancialYearsEnum } from "./AppEnums";
 
 interface TaxBracket {
     threshold: number; // lower bound of bracket
@@ -21,16 +22,30 @@ export interface TaxDetails {
     netIncome: string
 }
 
-const ACC_LEVY_MAX_INCOME = 152790;
-const ACC_LEVY_RATE = 1.67 / 100;
-
-const calculateNZAccLevy = (annualIncome: string): number => {
-    let income = parseFloat(annualIncome)
-    const earning = Math.min(income, ACC_LEVY_MAX_INCOME);
-    return earning * ACC_LEVY_RATE;
+const accLevyMaxIncomeByFinancialYear: Record<string, number> = {
+    [FinancialYearsEnum.DEFAULT]: 0,
+    [FinancialYearsEnum.CURRENT]: 156641,
+    [FinancialYearsEnum.NEXT]: 160244,
+    [FinancialYearsEnum.AFTERNEXT]: 163847,
 };
 
-const calculateNZTax = (annualIncome: string): number => {
+const accLevyRateByFinancialYear: Record<string, number> = {
+    [FinancialYearsEnum.DEFAULT]: 0,
+    [FinancialYearsEnum.CURRENT]: 1.75 / 100,
+    [FinancialYearsEnum.NEXT]: 1.83 / 100,
+    [FinancialYearsEnum.AFTERNEXT]: 1.90 / 100,
+};
+
+export const calculateNZAccLevy = (finYear: string, annualIncome: string): number => {
+    const income = parseFloat(annualIncome);
+    const maxIncome = accLevyMaxIncomeByFinancialYear[finYear] ?? 0;
+    const earning = Math.min(income, maxIncome);
+    const rate = accLevyRateByFinancialYear[finYear] ?? 0;
+    let accLevy = earning * rate;
+    return accLevy;
+};
+
+export const calculateNZTax = (annualIncome: string): number => {
     let income = parseFloat(annualIncome)
     let tax = 0;
     for (let i = nzTaxBrackets.length - 1; i >= 0; i--) {
@@ -41,20 +56,6 @@ const calculateNZTax = (annualIncome: string): number => {
         }
     }
     return tax;
-}
-
-
-export const calculateNZTaxAccLevyNetIncome = (annualIncome: string): TaxDetails => {
-    let tax = calculateNZTax(annualIncome);
-    let accLevy = calculateNZAccLevy(annualIncome);
-    let netIncome = parseFloat(annualIncome) - tax - accLevy;
-    let taxDetails: TaxDetails = {
-        tax: `${formatCurrency(tax)} / ${formatCurrency(tax/12)}`,
-        accLevy: `${formatCurrency(accLevy)} / ${formatCurrency(accLevy/12)}`,
-        taxAccLevy: `${formatCurrency(tax + accLevy)} / ${formatCurrency((tax + accLevy) / 12)}`,
-        netIncome: `${formatCurrency(netIncome)} / ${formatCurrency(netIncome/12)}`
-    };
-    return taxDetails;
 }
 
 export const calculateNZTaxAndNetIncome = (annualIncome: string): TaxDetails => {

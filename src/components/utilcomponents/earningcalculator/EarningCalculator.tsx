@@ -7,32 +7,17 @@ import { ErrorMessages } from "../../errors/ErrorMessages";
 
 export const EarningCalculator = () => {
   const [year, setYear] = useState<string>("");
-  const [hourlyRate, setHourlyRate] = useState<string>("");
-  const [hourlyIndemnityRate, setHourlyIndemnityRate] = useState<string>("");
-  const [publicHolidayCount, setPublicHolidayCount] = useState<string>("");
-  const [leaveCount, setLeaveCount] = useState<string>("");
+  const [hourlyRate, setHourlyRate] = useState<string>("120");
+  const [hourlyIndemnityRate, setHourlyIndemnityRate] = useState<string>("0.65");
+  const [publicHolidayCount, setPublicHolidayCount] = useState<string>("12");
+  const [leaveCount, setLeaveCount] = useState<string>("0");
   const [earningsData, setEarningsData] = useState<EarningsDetail | null>(null);
   const [errors, setErrors] = useState<string[] | null>(null);
 
-  const isLocalEnvironment =
-    window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
-
-  const setLocalDefaults = () => {
-    if (isLocalEnvironment) {
-      setHourlyRate("120");
-      setHourlyIndemnityRate("0.65");
-      setPublicHolidayCount("12");
-      setLeaveCount("0");
-      setYear("2026-2027");
-      setErrors(null);
-      setEarningsData(null);
-    }
-  };
-
   const resetAll = async () => {
     setYear("");
-    setHourlyRate("");
-    setHourlyIndemnityRate("");
+    setHourlyRate("120");
+    setHourlyIndemnityRate("0.65");
     setPublicHolidayCount("12");
     setLeaveCount("0");
     setErrors(null);
@@ -75,11 +60,6 @@ export const EarningCalculator = () => {
 
   return (
     <div id="earningcalculator" className="earningcalculator">
-      {isLocalEnvironment && (
-        <button className="earningcalculator-localdefault" onClick={setLocalDefaults}>
-          Fill Local Default
-        </button>
-      )}
       <div className="earningcalculatorcontrols">
         <div className="earningcalculator-row earningcalculator-row-first">
           <div className="earningcalculator-label">Financial Year:</div>

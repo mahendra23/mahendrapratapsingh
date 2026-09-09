@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import AboutSection from "../about/AboutSection";
 import UtilsSection from "../utils/UtilsSection";
 import { MPLogo } from "./MPLogo";
 
@@ -15,6 +16,16 @@ export default function UtilsToggleWrapper() {
     timeoutRef.current = setTimeout(() => {
       if (clickCountRef.current >= 5) {
         setShowUtils(true);
+        document.getElementById("utilssection")?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      } else {
+        setShowUtils(false);
+        document.getElementById("aboutsection")?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
       }
       clickCountRef.current = 0;
     }, 500);
@@ -23,7 +34,7 @@ export default function UtilsToggleWrapper() {
   return (
     <div>
       <MPLogo onClick={handleClick} />
-      {showUtils && <UtilsSection />}
+      {!showUtils ? <AboutSection /> : <UtilsSection />}
     </div>
   );
 }

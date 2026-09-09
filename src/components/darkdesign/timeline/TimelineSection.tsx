@@ -37,7 +37,7 @@ export default function TimelineSection() {
 
   return (
     <section id="timelinesection" className="timeline">
-      <Heading headingText="My Journey" />
+      <Heading headingText="Professional Journey" />
       <div className="timeline-container">
         {timelineData.slice(0, visibleCount).map((exp, index) => (
           <div className="timeline-item slide-down" key={index}>

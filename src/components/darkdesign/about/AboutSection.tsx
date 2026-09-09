@@ -1,6 +1,6 @@
 import React from "react";
 import "./AboutSection.scss";
-import { MY_IMAGE, MY_LINKEDIN, RESUME_PDF } from "../../../common/constants";
+import { MY_IMAGE, MY_LINKEDIN, RESUME_PDF, USE_LIGHT_DESIGN_TIMELINE } from "../../../common/constants";
 import { FaLinkedin } from "react-icons/fa";
 
 export default function AboutSection() {
@@ -25,9 +25,10 @@ export default function AboutSection() {
             rel="noopener noreferrer"
             className="btn secondary"
           >
-            <FaLinkedin /> Connect on LinkedIn
+            <FaLinkedin /> LinkedIn
           </a>
-          <a href={"#timelinesection"} className="btn secondary">View My Journey</a>
+          <a href="#skillssection" className="btn primary">Skills</a>
+          <a href={USE_LIGHT_DESIGN_TIMELINE ? "#timelinesection-light-design" : "#timelinesection"} className="btn secondary">Journey</a>
         </div>
       </div>
       <div className="about-right">

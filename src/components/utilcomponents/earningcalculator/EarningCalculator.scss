@@ -6,22 +6,7 @@
   align-items: flex-start;
   width: 100%;
   gap: 0.75rem;
-}
-
-.earningcalculator-localdefault {
-  align-self: flex-end;
-  border: 1px solid rgba($myHighlightColor, 0.35);
-  background: rgba($myHighlightColor, 0.5);
   color: $myDarkDesignTextColor;
-  border-radius: 8px;
-  padding: 0.5rem 0.75rem;
-  cursor: pointer;
-  font-weight: 600;
-  transition: all 0.2s ease;
-
-  &:hover {
-    background: rgba($myHighlightColor, 0.2);
-  }
 }
 
 .earningcalculatorcontrols {
@@ -44,8 +29,6 @@
 }
 
 .earningcalculator-label {
-  // font-weight: 700;
-  color: $myDarkDesignTextColor;
   text-align: left;
   white-space: nowrap;
 }
@@ -68,24 +51,24 @@
   padding: 0.75rem;
   border-radius: 6px;
   overflow-x: auto;
+  font-size: $xxsmallFontSize;
 }
 
 .earningcalculatoroutput table {
   width: 100%;
   border-collapse: collapse;
-  border: 3px solid $myLightBackground;
+  border: 2px solid $myLightBackground;
 }
 
 .earningcalculatoroutput td {
   padding: 8px 12px;
-  border-bottom: 3px solid $myLightBackground;
-  border-right: 3px solid $myLightBackground;
+  border-bottom: 1px solid $myLightBackground;
+  border-right: 1px solid $myLightBackground;
 }
 
 .earningcalculatoroutput tr:first-child td {
   text-align: center;
-  font-weight: 700;
-  background: rgba($myHighlightColor, 0.4);
+  background: rgba($myHighlightColor, 0.7);
 }
 
 .earningcalculatoroutput td:first-child {

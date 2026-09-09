@@ -20,7 +20,7 @@
 }
 
 .utilbuttondarkmode {
-  background: $myHighlightColorDark;
+  background: rgba($myHighlightColor, 0.7);
 }
 
 .utilinputfield {
@@ -37,7 +37,7 @@
 }
 
 .utilinputfield-label-required {
-  color: red;
+  color: $myErrorcolor;
   margin-left: 4px;
 }
 
@@ -46,7 +46,7 @@
   border-radius: 5px;
   border: 1px solid $myLightBackground;
   background: $myLightBackground;
-  min-width: 80px;
+  max-width: 170px;
 }
 
 .utilselectfield {
@@ -67,14 +67,15 @@
 }
 
 .utilselectfield-select {
-  appearance: none; // normalize
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  appearance: auto;
+  -webkit-appearance: menulist;
+  -moz-appearance: menulist;
 
   border-radius: 6px;
   border: 1px solid $myLightBackground;
   background: $myLightBackground;
   cursor: pointer;
+  padding-right: 2rem;
 
   &:focus {
     border-color: $myHighlightColor;

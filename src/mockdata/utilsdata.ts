@@ -23,13 +23,6 @@ export interface UtilityItemType {
 
 export const UtilityItemsData: UtilityItemType[] = [
     {
-        id: "passwordgenerator",
-        title: "Secure Password Generator",
-        description: "Generate strong and random passwords safely.",
-        icon: FaKey,
-        children: PasswordGenerator
-    },
-    {
         id: "earningcalculator",
         title: "NZ Contractor Earnings Calculator",
         description: "Annual Earnings for an hourly rate contractor.",
@@ -56,6 +49,13 @@ export const UtilityItemsData: UtilityItemType[] = [
         description: "Find age or countdown to an event.",
         icon: FaCalendarAlt,
         children: DateCalculator,
+    },
+    {
+        id: "passwordgenerator",
+        title: "Secure Password Generator",
+        description: "Generate strong and random passwords safely.",
+        icon: FaKey,
+        children: PasswordGenerator
     },
     {
         id: "converter",

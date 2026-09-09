@@ -31,6 +31,10 @@ export default function TimelineSection() {
     );
   };
 
+  const showLess = () => {
+    setVisibleCount(4);
+  };
+
   return (
     <section id="timelinesection" className="timeline">
       <Heading headingText="My Journey" />
@@ -60,10 +64,13 @@ export default function TimelineSection() {
         ))}
       </div>
 
-      {isMobile && visibleCount < timelineData.length && (
+      {isMobile && (
         <div className="timeline-actions">
-          <button className="btn load-more" onClick={showMore}>
-            Load More
+          <button
+            className="btn load-more"
+            onClick={visibleCount < timelineData.length ? showMore : showLess}
+          >
+            {visibleCount < timelineData.length ? "Load More" : "Show Less"}
           </button>
         </div>
       )}

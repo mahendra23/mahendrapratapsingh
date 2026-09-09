@@ -16,12 +16,22 @@ const nzTaxBrackets: TaxBracket[] = [
 
 export interface TaxDetails {
     tax: string,
+    accLevy: string,
+    taxAccLevy: string,
     netIncome: string
 }
 
-export const calculateNZTaxAndNetIncome = (annualIncome: string): TaxDetails => {
+const ACC_LEVY_MAX_INCOME = 152790;
+const ACC_LEVY_RATE = 1.67 / 100;
+
+const calculateNZAccLevy = (annualIncome: string): number => {
     let income = parseFloat(annualIncome)
-    // if (income <= 0) return 0;
+    const earning = Math.min(income, ACC_LEVY_MAX_INCOME);
+    return earning * ACC_LEVY_RATE;
+};
+
+const calculateNZTax = (annualIncome: string): number => {
+    let income = parseFloat(annualIncome)
     let tax = 0;
     for (let i = nzTaxBrackets.length - 1; i >= 0; i--) {
         const bracket = nzTaxBrackets[i];
@@ -30,9 +40,31 @@ export const calculateNZTaxAndNetIncome = (annualIncome: string): TaxDetails => 
             income = bracket.threshold;
         }
     }
+    return tax;
+}
+
+
+export const calculateNZTaxAccLevyNetIncome = (annualIncome: string): TaxDetails => {
+    let tax = calculateNZTax(annualIncome);
+    let accLevy = calculateNZAccLevy(annualIncome);
+    let netIncome = parseFloat(annualIncome) - tax - accLevy;
     let taxDetails: TaxDetails = {
         tax: `${formatCurrency(tax)} / ${formatCurrency(tax/12)}`,
-        netIncome: `${formatCurrency(parseFloat(annualIncome) - tax)} / ${formatCurrency((parseFloat(annualIncome) - tax)/12)}`
+        accLevy: `${formatCurrency(accLevy)} / ${formatCurrency(accLevy/12)}`,
+        taxAccLevy: `${formatCurrency(tax + accLevy)} / ${formatCurrency((tax + accLevy) / 12)}`,
+        netIncome: `${formatCurrency(netIncome)} / ${formatCurrency(netIncome/12)}`
+    };
+    return taxDetails;
+}
+
+export const calculateNZTaxAndNetIncome = (annualIncome: string): TaxDetails => {
+    let tax = calculateNZTax(annualIncome);
+    let netIncome = parseFloat(annualIncome) - tax;
+    let taxDetails: TaxDetails = {
+        tax: `${formatCurrency(tax)} / ${formatCurrency(tax/12)}`,
+        accLevy: "",
+        taxAccLevy: "",
+        netIncome: `${formatCurrency(netIncome)} / ${formatCurrency(netIncome/12)}`
     };
     return taxDetails;
 }

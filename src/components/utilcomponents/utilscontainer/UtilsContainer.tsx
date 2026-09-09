@@ -1,19 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import "./UtilsContainer.scss";
 import { UtilityItemsData } from "../../../mockdata/utilsdata";
 import { useTheme } from "../../themecontext/ThemeContext";
 
 export default function UtilsContainer() {
   const { isDark } = useTheme();
+  const [selectedId, setSelectedId] = useState(UtilityItemsData[0]?.id ?? "");
+
+  const selectedUtil =
+    UtilityItemsData.find((utilItem) => utilItem.id === selectedId) ?? UtilityItemsData[0];
+
   return (
     <div className="utils-container">
-      {UtilityItemsData.map((utilItem) => (
-        <div className="utils-item" key={utilItem.id}>
-          <span className={"title " + (isDark ? "titledarkmode" : "")}><utilItem.icon />&nbsp;{utilItem.title}</span>
-          <h6>{utilItem.description}</h6>
-          {utilItem.children && <utilItem.children />}
-        </div>          
-      ))}
+      <div className="utils-selector">
+        <label htmlFor="util-selector">Select a utility</label>
+        <select
+          id="util-selector"
+          value={selectedId}
+          onChange={(event) => setSelectedId(event.target.value)}
+          className={isDark ? "dark" : "light"}
+        >
+          {UtilityItemsData.map((utilItem) => (
+            <option key={utilItem.id} value={utilItem.id}>
+              {utilItem.title}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      {selectedUtil && (
+        <div className="utils-item">
+          <span className={"title " + (isDark ? "titledarkmode" : "")}>
+            <selectedUtil.icon />&nbsp;{selectedUtil.title}
+          </span>
+          <h6>{selectedUtil.description}</h6>
+          {selectedUtil.children && <selectedUtil.children />}
+        </div>
+      )}
     </div>
   );
 }

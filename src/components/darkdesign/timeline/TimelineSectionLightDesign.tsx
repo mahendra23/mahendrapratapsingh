@@ -6,7 +6,7 @@ import { Heading } from "../heading/heading";
 export default function TimelineSectionLightDesign() {
   return (
     <section id="timelinesection-light-design" className="timeline-light-design">
-      <Heading headingText="My Journey" />
+      <Heading headingText="Professional Journey" />
       <div className="journeysectioncontainer">
         <ul className="journetsectiontimeline">
           {timelineData.map((data, index) => (

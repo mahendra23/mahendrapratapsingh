@@ -30,16 +30,21 @@
 
     .about-actions {
       display: flex;
-      align-items: center;       /* ✅ align vertically */
-      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.875rem;
 
       .btn {
-        padding: 0.8rem 0.8rem;
-        width: auto;
-        border-radius: 8px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.9rem 1.2rem;
+        border-radius: 10px;
         text-decoration: none;
         font-weight: 600;
         transition: 0.3s ease;
+        white-space: nowrap;
 
         &.primary {
           background: $myHighlightColor;
@@ -55,8 +60,19 @@
           }
         }
 
+        &.tertiary {
+          border: 1px solid rgba($myHighlightColor, 0.55);
+          background: rgba($myHighlightColor, 0.08);
+          color: $myHighlightColor;
+
+          &:hover {
+            color: $myDarkDesignBackground;
+          }
+        }
+
         &:hover {
           background: darken($myHighlightColor, 10%);
+          transform: translateY(-1px);
         }
       }
     }
@@ -86,12 +102,11 @@
 
     .about-left {
       .about-actions {
-        flex-direction: column;
         justify-content: center;
         align-items: center;
-        
+
         .btn {
-          width: 70%;
+          width: min(240px, 100%);
         }
       }
     }

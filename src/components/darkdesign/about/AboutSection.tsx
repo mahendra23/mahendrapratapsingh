@@ -1,7 +1,7 @@
 import React from "react";
 import "./AboutSection.scss";
-import { MY_IMAGE, MY_LINKEDIN, RESUME_PDF } from "../../../common/constants";
-import { FaLinkedin } from "react-icons/fa";
+import { MY_IMAGE, MY_LINKEDIN, RESUME_PDF, USE_LIGHT_DESIGN_TIMELINE } from "../../../common/constants";
+import { FaDownload, FaLinkedin } from "react-icons/fa";
 
 export default function AboutSection() {
     return <section className="about" id="aboutsection">
@@ -18,16 +18,24 @@ export default function AboutSection() {
           Government, Health Insurance, Land Information, and Telecom.
         </p>
         <div className="about-actions">
-          <a href={RESUME_PDF} className="btn primary" download="Resume_Mahendra_Singh.pdf">Download Resume</a>
+          <a href={RESUME_PDF} className="btn primary" download="Resume_Mahendra_Singh.pdf">
+            <FaDownload /> Resume
+          </a>
           <a
             href={MY_LINKEDIN}
             target="_blank"
             rel="noopener noreferrer"
             className="btn secondary"
           >
-            <FaLinkedin /> Connect on LinkedIn
+            <FaLinkedin /> LinkedIn
           </a>
-          <a href={"#timelinesection"} className="btn secondary">View My Journey</a>
+          <a href="#skillssection" className="btn tertiary">Skills</a>
+          <a
+            href={USE_LIGHT_DESIGN_TIMELINE ? "#timelinesection-light-design" : "#timelinesection"}
+            className="btn tertiary"
+          >
+            Professional Journey
+          </a>
         </div>
       </div>
       <div className="about-right">

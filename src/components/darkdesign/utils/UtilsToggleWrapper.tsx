@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import AboutSection from "../about/AboutSection";
 import UtilsSection from "../utils/UtilsSection";
 import { MPLogo } from "./MPLogo";
 
@@ -22,10 +21,6 @@ export default function UtilsToggleWrapper() {
         });
       } else {
         setShowUtils(false);
-        document.getElementById("aboutsection")?.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
       }
       clickCountRef.current = 0;
     }, 500);
@@ -34,7 +29,8 @@ export default function UtilsToggleWrapper() {
   return (
     <div>
       <MPLogo onClick={handleClick} />
-      {!showUtils ? <AboutSection /> : <UtilsSection />}
+      {/* {!showUtils ? <AboutSection /> : <UtilsSection />} */}
+      {showUtils && <UtilsSection />}
     </div>
   );
 }

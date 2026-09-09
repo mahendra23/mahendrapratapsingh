@@ -61,7 +61,7 @@
       &:hover {
         transform: translateY(-5px);
         border-color: rgba($myHighlightColor, 0.5);
-        box-shadow: 0 12px 30px rgba($myHighlightColor, 0.18);
+        box-shadow: 0 4px 10px $myHighlightColor;
       }
 
       &::before {

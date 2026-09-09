@@ -39,7 +39,9 @@ export default function AboutSection() {
         </div>
       </div>
       <div className="about-right">
-        <img src={MY_IMAGE} alt="Me" />
+        <div className="image-frame">
+          <img src={MY_IMAGE} alt="Me" />
+        </div>
       </div>
     </section>;
   }

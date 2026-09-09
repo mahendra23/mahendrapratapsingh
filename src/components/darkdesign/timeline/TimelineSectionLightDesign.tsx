@@ -16,8 +16,8 @@ export default function TimelineSectionLightDesign() {
               data-date={data.period}
             >
               <h3>{data.role}</h3>
-              <p>{data.company}</p>
-              <p>{data.period}</p>
+              <h6>{data.company}</h6>
+              {/* <p>{data.period}</p> */}
               <p className="multiline-text">{data.highlight}</p>
             </li>
           ))}

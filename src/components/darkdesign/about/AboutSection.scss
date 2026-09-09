@@ -85,15 +85,27 @@
     flex: 1;
     display: flex;
     justify-content: center;
+    align-items: center;
     min-width: 0;
+    height: auto;
 
-    img {
-      width: min(100%, 500px);
-      max-width: 90%;
-      border-radius: 20px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
-      height: min(50vh, 420px);
-      object-fit: cover;
+    .image-frame {
+      width: min(100%, 390px);
+      max-width: 74%;
+      border-radius: 26px;
+      border: 5px solid rgba($myHighlightColor, 0.4);
+      // box-shadow: 0 10px 26px rgba(76, 75, 75, 0.45), 0 0 0 1px rgba($myHighlightColor, 0.5);
+      overflow: hidden;
+      background: rgba($myDarkDesignBackground, 0.4);
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: none;
+        object-fit: contain;
+        object-position: center;
+      }
     }
   }
 }
@@ -104,8 +116,9 @@
     flex-direction: column;
     text-align: center;
     min-height: unset;
-    padding-top: 5rem;
+    padding: 3rem 1.25rem 2.5rem;
     margin-bottom: 2.5rem;
+    height: auto;
 
     .about-left {
       width: 100%;
@@ -121,13 +134,25 @@
     }
 
     .about-right {
-      justify-content: space-evenly;
+      justify-content: center;
       width: 100%;
+      height: auto;
 
-      img {
-        border-radius: 5px;
-        height: min(28vh, 280px);
+      .image-frame {
+        width: min(100%, 320px);
         max-width: 100%;
+        // border-radius: 18px;
+        // border-width: 5px;
+        // box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba($myHighlightColor, 0.08);
+
+        img {
+          display: block;
+          width: 100%;
+          height: auto;
+          max-height: none;
+          max-width: 100%;
+          object-fit: contain;
+        }
       }
     }
   }
